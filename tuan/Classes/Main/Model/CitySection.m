@@ -16,6 +16,11 @@
 -(void)setCities:(NSArray *)cities{
     NSMutableArray *array = [[NSMutableArray alloc]init];
     for (NSDictionary *dict in cities) {
+        if (![dict isKindOfClass:[NSMutableDictionary class]]) {
+            //cities是模型
+            _cities = cities;
+            return;
+        }
         CityModel *city = [[CityModel alloc]init];
         [city setValues:dict];
         [array addObject:city];
