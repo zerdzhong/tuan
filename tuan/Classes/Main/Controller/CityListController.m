@@ -10,12 +10,13 @@
 #import "Common.h"
 #import "NSObject+Value.h"
 #import "CitySection.h"
+#import "MetaDataTool.h"
 
 #define kSearchHeight 44
 
 @interface CityListController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
 
-@property (nonatomic, strong)NSArray *citySections;
+@property (nonatomic, strong)NSMutableArray *citySections;
 @property (nonatomic, strong)UIView *cover;
 @property (nonatomic, strong)UITableView *tableView;
 @property (nonatomic, strong)UISearchBar *searchBar;
@@ -58,17 +59,10 @@
 }
 
 - (void)loadCityData{
-    NSArray *cityArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Cities" ofType:@"plist"]];
     
-    NSMutableArray *array = [[NSMutableArray alloc]init];
-    
-    for (NSDictionary *dict in cityArray) {
-        CitySection *section = [[CitySection alloc]init];
-        [section setValues:dict];
-        [array addObject:section];
-    }
-    
-    _citySections = array;
+    _citySections = [[NSMutableArray alloc]init];
+    NSArray *array = [MetaDataTool sharedMetaDataTool].totalCitySections;
+    [_citySections addObjectsFromArray:array];
 }
 
 #pragma mark- datasource

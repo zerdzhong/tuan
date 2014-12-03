@@ -26,6 +26,7 @@
 		5C47AA711A2CB65C0012EE42 /* Categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C47AA6F1A2CB65C0012EE42 /* Categories.plist */; };
 		5C47AA721A2CB65C0012EE42 /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C47AA701A2CB65C0012EE42 /* Cities.plist */; };
 		5C7C13661A2A0C95002120F7 /* MoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7C13651A2A0C95002120F7 /* MoreController.m */; };
+		5CBA81741A2F4E570025D988 /* MetaDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA81731A2F4E570025D988 /* MetaDataTool.m */; };
 		5CC125C61A24D548000C731E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC125C51A24D548000C731E /* Images.xcassets */; };
 		5CC125D51A24D548000C731E /* tuanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC125D41A24D548000C731E /* tuanTests.m */; };
 		5CC125FD1A24D879000C731E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC125FB1A24D879000C731E /* AppDelegate.m */; };
@@ -136,6 +137,9 @@
 		5C47AA701A2CB65C0012EE42 /* Cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Cities.plist; sourceTree = "<group>"; };
 		5C7C13641A2A0C95002120F7 /* MoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreController.h; sourceTree = "<group>"; };
 		5C7C13651A2A0C95002120F7 /* MoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreController.m; sourceTree = "<group>"; };
+		5CBA81721A2F4E570025D988 /* MetaDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetaDataTool.h; sourceTree = "<group>"; };
+		5CBA81731A2F4E570025D988 /* MetaDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetaDataTool.m; sourceTree = "<group>"; };
+		5CBA81751A2F4F490025D988 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		5CC125B51A24D548000C731E /* tuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC125B91A24D548000C731E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CC125C51A24D548000C731E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -361,6 +365,8 @@
 		5CBA81711A2F4DCC0025D988 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				5CBA81721A2F4E570025D988 /* MetaDataTool.h */,
+				5CBA81731A2F4E570025D988 /* MetaDataTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -480,6 +486,7 @@
 				5CC125FA1A24D879000C731E /* AppDelegate.h */,
 				5CC125FB1A24D879000C731E /* AppDelegate.m */,
 				5CC125FC1A24D879000C731E /* main.m */,
+				5CBA81751A2F4F490025D988 /* Singleton.h */,
 				5C1C43921A262624006CB752 /* Common.h */,
 			);
 			path = Other;
@@ -736,6 +743,7 @@
 				5C1C43911A26258E006CB752 /* SlideBarBaseItem.m in Sources */,
 				5C1C43991A262937006CB752 /* SlideBarMoreItem.m in Sources */,
 				5C03738E1A28BC14009C9B67 /* DealListController.m in Sources */,
+				5CBA81741A2F4E570025D988 /* MetaDataTool.m in Sources */,
 				5CC126011A24D8BF000C731E /* MainController.m in Sources */,
 				5CC200BB1A2767DD008F5F95 /* SlideBarTabItem.m in Sources */,
 				5C0D9CBB1A2F3AB900AED66E /* DistrictMode.m in Sources */,
