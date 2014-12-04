@@ -13,7 +13,7 @@
 @implementation CitySection
 
 
--(void)setCities:(NSArray *)cities{
+-(void)setCities:(NSMutableArray *)cities{
     NSMutableArray *array = [[NSMutableArray alloc]init];
     for (NSDictionary *dict in cities) {
         if (![dict isKindOfClass:[NSMutableDictionary class]]) {

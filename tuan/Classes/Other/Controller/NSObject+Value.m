@@ -56,17 +56,23 @@
             // 5.属性类型
             NSString *type = [NSString stringWithUTF8String:ivar_getTypeEncoding(ivar)];
             
+            int (*idAction)(id, SEL, id) = (int (*)(id, SEL, id)) objc_msgSend;
+            int (*doubleAction)(id, SEL, double) = (int (*)(id, SEL, double)) objc_msgSend;
+            int (*floatAction)(id, SEL, float) = (int (*)(id, SEL, float)) objc_msgSend;
+            int (*intAction)(id, SEL, int) = (int (*)(id, SEL, int)) objc_msgSend;
+            int (*longlongAction)(id, SEL,  long long) = (int (*)(id, SEL, long long)) objc_msgSend;
+            
             if ([type hasPrefix:@"@"]) { // 对象
-                objc_msgSend(self, selector, value);
+                idAction(self, selector, value);
             } else  { // 非对象类型
                 if ([type isEqualToString:@"d"]) {
-                    objc_msgSend(self, selector, [value doubleValue]);
+                    doubleAction(self, selector, [value doubleValue]);
                 } else if ([type isEqualToString:@"f"]) {
-                    objc_msgSend(self, selector, [value floatValue]);
-                } else if ([type isEqualToString:@"i"]) { 
-                    objc_msgSend(self, selector, [value intValue]);
-                }  else { 
-                    objc_msgSend(self, selector, [value longLongValue]);
+                    floatAction(self, selector, [value floatValue]);
+                } else if ([type isEqualToString:@"i"]) {
+                    intAction(self, selector, [value intValue]);
+                }  else {
+                    longlongAction(self, selector, [value longLongValue]);
                 }
             }
         }

@@ -11,6 +11,6 @@
 
 @interface CitySection : CityBaseModel
 
-@property (nonatomic, strong)NSArray *cities;   //城市
+@property (nonatomic, strong)NSMutableArray *cities;   //城市
 
 @end

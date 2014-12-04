@@ -9,6 +9,7 @@
 #import "SlideBarLocationItem.h"
 #import "CityListController.h"
 #import "Common.h"
+#import "MetaDataTool.h"
 
 #define kImageScale 0.6
 
@@ -41,6 +42,9 @@
         //设置监听
         [self addTarget:self action:@selector(onLocationClicked) forControlEvents:UIControlEventTouchDown];
         
+        // 6.监听城市改变的通知
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cityChange) name:kCityChanged object:nil];
+        
     }
     return self;
 }
@@ -55,6 +59,20 @@
         [self onLocationClicked];
     }
     
+}
+
+- (void)cityChange
+{
+    CityModel *city = [MetaDataTool sharedMetaDataTool].currentCity;
+    
+    // 1.更改显示的城市名称
+    [self setTitle:city.name forState:UIControlStateNormal];
+    
+    // 2.关闭popover（代码关闭popover不会触发代理方法）
+    [_popover dismissPopoverAnimated:YES];
+    
+    // 3.变为enable
+    self.enabled = YES;
 }
 
 - (void)onLocationClicked{

@@ -11,6 +11,7 @@
 #import "NSObject+Value.h"
 #import "CitySection.h"
 #import "MetaDataTool.h"
+#import "CitySearchReslutController.h"
 
 #define kSearchHeight 44
 
@@ -20,6 +21,7 @@
 @property (nonatomic, strong)UIView *cover;
 @property (nonatomic, strong)UITableView *tableView;
 @property (nonatomic, strong)UISearchBar *searchBar;
+@property (nonatomic, strong)CitySearchReslutController *searchResult;
 
 @end
 
@@ -65,7 +67,7 @@
     [_citySections addObjectsFromArray:array];
 }
 
-#pragma mark- datasource
+#pragma mark- TableViewdatasource
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return _citySections.count;
@@ -90,12 +92,23 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    MyLog(@"---%ld",(long)section);
     CitySection *sec = _citySections[section];
     return sec.name;
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView{
     return [_citySections valueForKeyPath:@"name"];;
+}
+#pragma mark- TableView delegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    CitySection *sec = _citySections[indexPath.section];
+    CityModel *city = sec.cities[indexPath.row];
+    
+    [MetaDataTool sharedMetaDataTool].currentCity = city;
+    //发出通知
+    [[NSNotificationCenter defaultCenter]postNotificationName:kCityChanged object:nil userInfo:@{kCityKey:city}];
 }
 
 #pragma mark- SearchBar delegate
@@ -119,6 +132,23 @@
 }
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    
+    if (searchText.length == 0) {
+        //隐藏搜索结果控制器
+        
+        [_searchResult.view removeFromSuperview];
+    }else{
+        //显示搜索结果控制器
+        if (_searchResult == nil) {
+            _searchResult = [[CitySearchReslutController alloc]init];
+            _searchResult.view.frame = _cover.frame;
+            _searchResult.view.autoresizingMask = _cover.autoresizingMask;
+            [self addChildViewController:_searchResult];
+        }
+        _searchResult.searchText = searchText;
+        [self.view addSubview:_searchResult.view];
+        
+    }
 
 }
 
