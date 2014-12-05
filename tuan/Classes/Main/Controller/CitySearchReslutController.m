@@ -54,6 +54,10 @@
         for (NSString *word in pinyinArray) {
             [pinyinHeader appendString:[word substringToIndex:1]];
         }
+        
+        //去掉所有的#
+        pinyin = [pinyin stringByReplacingOccurrencesOfString:@"#" withString:@""];
+        
         if ([obj.name rangeOfString:searchText].length != 0
             ||[pinyin rangeOfString:searchText.uppercaseString].length != 0
             || [pinyinHeader rangeOfString:searchText.uppercaseString].length != 0

@@ -36,6 +36,9 @@
     //添加tableview
     [self addTableView];
     
+    //添加蒙层
+    [self addSearchCover];
+    
     //加载数据
     [self loadCityData];
 }
@@ -58,6 +61,17 @@
     table.frame = CGRectMake(0, kSearchHeight, self.view.frame.size.width, height);
     _tableView = table;
     [self.view addSubview:table];
+}
+
+- (void)addSearchCover{
+    _cover = [[UIView alloc]init];
+    _cover.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    _cover.backgroundColor = [UIColor blackColor];
+    CGFloat height = self.view.frame.size.height - kSearchHeight;
+    _cover.frame = CGRectMake(0, kSearchHeight, self.view.frame.size.width, height);
+    [_cover addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onCoverClicked)]];
+    [self.view addSubview:_cover];
+    _cover.hidden = YES;
 }
 
 - (void)loadCityData{
@@ -115,14 +129,8 @@
     [searchBar setShowsCancelButton:YES animated:YES];
     
     //显示蒙层
-    if (_cover == nil){
-        _cover = [[UIView alloc]init];
-        _cover.backgroundColor = [UIColor blackColor];
-        _cover.frame = _tableView.frame;
-        _cover.autoresizingMask = _tableView.autoresizingMask;
-        [_cover addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onCoverClicked)]];
-    }
-    [self.view addSubview:_cover];
+    _cover.hidden = NO;
+    
     _cover.alpha = 0.0;
     [UIView animateWithDuration:0.3 animations:^{
         _cover.alpha = 0.7;
@@ -166,7 +174,7 @@
     [UIView animateWithDuration:0.5 animations:^{
         _cover.alpha = 0.0;
     } completion:^(BOOL finished) {
-        [_cover removeFromSuperview];
+        _cover.hidden = YES;
     }];
     //去掉searchBar的取消
     [_searchBar setShowsCancelButton:NO animated:YES];

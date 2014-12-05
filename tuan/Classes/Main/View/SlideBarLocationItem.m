@@ -69,12 +69,11 @@
     if ([_popover isPopoverVisible]) {
         [_popover dismissPopoverAnimated:NO];
         
-        [_popover presentPopoverFromRect:self.frame inView:self.superview permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-        
-//        [self performSelector:@selector(onLocationClicked) withObject:self afterDelay:0.5];
-//        [self onLocationClicked];
+        [_popover presentPopoverFromRect:self.bounds
+                                  inView:self
+                permittedArrowDirections:UIPopoverArrowDirectionLeft
+                                animated:YES];
     }
-    
 }
 
 - (void)onLocationClicked{
@@ -84,7 +83,11 @@
     CityListController *city = [[CityListController alloc]init];
     _popover = [[UIPopoverController alloc]initWithContentViewController:city];
     _popover.delegate = self;
-    [_popover presentPopoverFromRect:self.frame inView:self.superview permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    
+    [_popover presentPopoverFromRect:self.bounds
+                              inView:self
+            permittedArrowDirections:UIPopoverArrowDirectionLeft
+                            animated:YES];
     
     //监听屏幕旋转
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(screenRotate) name:UIDeviceOrientationDidChangeNotification object:nil];

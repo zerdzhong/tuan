@@ -33,11 +33,6 @@
     slideBar.delegate = self;
     [self.view addSubview:slideBar];
     
-    //
-//    _contentView = [[UIView alloc]init];
-//    _contentView.frame = CGRectMake(kItemWidth, 0,self.view.frame.size.width - kItemWidth, self.view.frame.size.height);
-//    _contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    
     //添加子控制器
     [self addAllChildController];
     
@@ -47,7 +42,6 @@
 - (void)addAllChildController{
     //团购
     DealListController *deal = [[DealListController alloc]init];
-    deal.view.backgroundColor = [UIColor yellowColor];
     BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:deal];
     [self addChildViewController:nav];
 

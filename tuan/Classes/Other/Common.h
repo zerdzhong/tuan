@@ -19,6 +19,12 @@
 #define kCityChanged @"tuan_cityChanged"
 #define kCityKey @"tuan_city"
 
+#define kGlobalBgColor [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_deal.png"]]
+
+//顶部菜单item宽度
+#define kTopMenuItemWidth 100
+#define kTopMenuItemHeight 44
+
 // 2.日志输出宏定义
 #ifdef DEBUG
 // 调试状态

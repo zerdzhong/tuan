@@ -65,11 +65,15 @@ singleton_implementation(MetaDataTool)
         _visitedSection = [[CitySection alloc]init];
         _visitedSection.name = @"最近访问";
         _visitedSection.cities = [[NSMutableArray alloc]init];
-        [tempTotalArray insertObject:_visitedSection atIndex:0];
+        
         
         for (NSString *name in _visitedCityNames) {
             CityModel *city = [_totalCities valueForKey:name];
             [_visitedSection.cities addObject:city];
+        }
+        
+        if (_visitedSection.cities.count != 0) {
+            [tempTotalArray insertObject:_visitedSection atIndex:0];
         }
         
         _totalCitySections = tempTotalArray;
@@ -91,6 +95,11 @@ singleton_implementation(MetaDataTool)
     //将新的插到城市组的最前面
     [_visitedSection.cities removeObject:currentCity ];
     [_visitedSection.cities insertObject:currentCity atIndex:0];
+    
+    if (![_totalCitySections containsObject:_visitedSection]) {
+        NSMutableArray *totalSections = (NSMutableArray *)_totalCitySections;
+        [totalSections insertObject:_visitedSection atIndex:0];
+    }
     
     //发出通知
     [[NSNotificationCenter defaultCenter]postNotificationName:kCityChanged object:nil userInfo:nil];
