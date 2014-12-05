@@ -13,7 +13,6 @@
 
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController{
     if (self =[super initWithRootViewController:rootViewController]) {
-        
     }
     return self;
 }
@@ -28,7 +27,6 @@
     // 1.appearance方法返回一个导航栏的外观对象
     // 修改了这个外观对象，相当于修改了整个项目中的外观
     UINavigationBar *bar = [UINavigationBar appearance];
-    
     // 2.设置导航栏的背景图片
     bar.barTintColor = [UIColor whiteColor];
     

@@ -49,18 +49,6 @@
     return self;
 }
 
-- (void)screenRotate{
-    MyLog(@"Rotate");
-    
-    if ([_popover isPopoverVisible]) {
-        [_popover dismissPopoverAnimated:NO];
-        
-//        [self performSelector:@selector(onLocationClicked) withObject:self afterDelay:0.5];
-        [self onLocationClicked];
-    }
-    
-}
-
 - (void)cityChange
 {
     CityModel *city = [MetaDataTool sharedMetaDataTool].currentCity;
@@ -75,6 +63,20 @@
     self.enabled = YES;
 }
 
+- (void)screenRotate{
+    MyLog(@"Rotate");
+    
+    if ([_popover isPopoverVisible]) {
+        [_popover dismissPopoverAnimated:NO];
+        
+        [_popover presentPopoverFromRect:self.frame inView:self.superview permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        
+//        [self performSelector:@selector(onLocationClicked) withObject:self afterDelay:0.5];
+//        [self onLocationClicked];
+    }
+    
+}
+
 - (void)onLocationClicked{
     
     self.enabled = NO;
@@ -84,7 +86,7 @@
     _popover.delegate = self;
     [_popover presentPopoverFromRect:self.frame inView:self.superview permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     
-    //监听屏幕旋转的
+    //监听屏幕旋转
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(screenRotate) name:UIDeviceOrientationDidChangeNotification object:nil];
     
 }

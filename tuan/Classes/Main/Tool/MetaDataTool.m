@@ -9,6 +9,7 @@
 #import "MetaDataTool.h"
 #import "CitySection.h"
 #import "CityModel.h"
+#import "Common.h"
 #import "NSObject+Value.h"
 
 #define kFilePath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"visitedCityNames.data"]
@@ -90,6 +91,9 @@ singleton_implementation(MetaDataTool)
     //将新的插到城市组的最前面
     [_visitedSection.cities removeObject:currentCity ];
     [_visitedSection.cities insertObject:currentCity atIndex:0];
+    
+    //发出通知
+    [[NSNotificationCenter defaultCenter]postNotificationName:kCityChanged object:nil userInfo:nil];
 }
 
 

@@ -107,8 +107,6 @@
     CityModel *city = sec.cities[indexPath.row];
     
     [MetaDataTool sharedMetaDataTool].currentCity = city;
-    //发出通知
-    [[NSNotificationCenter defaultCenter]postNotificationName:kCityChanged object:nil userInfo:@{kCityKey:city}];
 }
 
 #pragma mark- SearchBar delegate

@@ -16,8 +16,8 @@
 #define kItemWidth 100
 #define kItemHeight 80
 
-#define kCityChanged @"cityChanged"
-#define kCityKey @"city"
+#define kCityChanged @"tuan_cityChanged"
+#define kCityKey @"tuan_city"
 
 // 2.日志输出宏定义
 #ifdef DEBUG
