@@ -7,6 +7,7 @@
 //
 
 #import "DealTopMenuItem.h"
+#import "UIImage+ZD.h"
 #import "Common.h"
 
 #define kTitleScale 0.8
@@ -24,12 +25,9 @@
         //设置图片
         [self setImage:[UIImage imageNamed:@"ic_arrow_down.png"] forState:UIControlStateNormal];
         self.imageView.contentMode = UIViewContentModeCenter;
-//        //右边分割线
-//        UIImage *separateImage = [UIImage imageNamed:@"separator_filter_item.png"];
-//        UIImageView *separate = [[UIImageView alloc]initWithImage:separateImage];
-//        separate.bounds = CGRectMake(0, 0, separateImage.size.width, kTopMenuItemHeight * 0.7);
-//        separate.center = CGPointMake(kTopMenuItemWidth, kTopMenuItemHeight * 0.5);
-//        [self addSubview:separate];
+        //选中的背景
+        [self setBackgroundImage:[UIImage resizedImage:@"slider_filter_bg_normal.png"] forState:UIControlStateSelected];
+        
     }
     return self;
 }
