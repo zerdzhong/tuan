@@ -13,17 +13,23 @@
  控件属性
  */
 
+//侧边菜单栏item宽高
 #define kItemWidth 100
 #define kItemHeight 80
+
+
+//顶部菜单item宽度
+#define kTopMenuItemWidth 100
+#define kTopMenuItemHeight 44
+
+//底部菜单栏item宽高
+#define kDropDownItemWidth  100
+#define kDropDownItemHeight 60
 
 #define kCityChanged @"tuan_cityChanged"
 #define kCityKey @"tuan_city"
 
 #define kGlobalBgColor [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_deal.png"]]
-
-//顶部菜单item宽度
-#define kTopMenuItemWidth 100
-#define kTopMenuItemHeight 44
 
 // 2.日志输出宏定义
 #ifdef DEBUG

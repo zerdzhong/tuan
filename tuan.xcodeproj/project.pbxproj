@@ -26,6 +26,10 @@
 		5C1C43991A262937006CB752 /* SlideBarMoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C43981A262937006CB752 /* SlideBarMoreItem.m */; };
 		5C47AA711A2CB65C0012EE42 /* Categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C47AA6F1A2CB65C0012EE42 /* Categories.plist */; };
 		5C47AA721A2CB65C0012EE42 /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C47AA701A2CB65C0012EE42 /* Cities.plist */; };
+		5C548D291A35D5B6003C46A7 /* DropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D281A35D5B6003C46A7 /* DropDownMenu.m */; };
+		5C548D301A35DA67003C46A7 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D2F1A35DA67003C46A7 /* CategoryModel.m */; };
+		5C548D391A35DCEE003C46A7 /* CategoryMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D361A35DCEE003C46A7 /* CategoryMenu.m */; };
+		5C548D3A1A35DCEE003C46A7 /* CategoryMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D381A35DCEE003C46A7 /* CategoryMenuItem.m */; };
 		5C7C13661A2A0C95002120F7 /* MoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7C13651A2A0C95002120F7 /* MoreController.m */; };
 		5C7F62691A30A42A00DA74F8 /* CitySearchReslutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7F62681A30A42A00DA74F8 /* CitySearchReslutController.m */; };
 		5CBA81741A2F4E570025D988 /* MetaDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA81731A2F4E570025D988 /* MetaDataTool.m */; };
@@ -260,6 +264,14 @@
 		5C1C43981A262937006CB752 /* SlideBarMoreItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideBarMoreItem.m; sourceTree = "<group>"; };
 		5C47AA6F1A2CB65C0012EE42 /* Categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Categories.plist; sourceTree = "<group>"; };
 		5C47AA701A2CB65C0012EE42 /* Cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Cities.plist; sourceTree = "<group>"; };
+		5C548D271A35D5B6003C46A7 /* DropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownMenu.h; sourceTree = "<group>"; };
+		5C548D281A35D5B6003C46A7 /* DropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownMenu.m; sourceTree = "<group>"; };
+		5C548D2E1A35DA67003C46A7 /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
+		5C548D2F1A35DA67003C46A7 /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
+		5C548D351A35DCEE003C46A7 /* CategoryMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryMenu.h; sourceTree = "<group>"; };
+		5C548D361A35DCEE003C46A7 /* CategoryMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryMenu.m; sourceTree = "<group>"; };
+		5C548D371A35DCEE003C46A7 /* CategoryMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryMenuItem.h; sourceTree = "<group>"; };
+		5C548D381A35DCEE003C46A7 /* CategoryMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryMenuItem.m; sourceTree = "<group>"; };
 		5C7C13641A2A0C95002120F7 /* MoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreController.h; sourceTree = "<group>"; };
 		5C7C13651A2A0C95002120F7 /* MoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreController.m; sourceTree = "<group>"; };
 		5C7F62671A30A42A00DA74F8 /* CitySearchReslutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitySearchReslutController.h; sourceTree = "<group>"; };
@@ -514,6 +526,7 @@
 		5C0373861A28BB64009C9B67 /* Deal */ = {
 			isa = PBXGroup;
 			children = (
+				5C548D2D1A35DA3B003C46A7 /* Model */,
 				5CECBCE71A31EF9C0016C211 /* View */,
 				5C0373871A28BB64009C9B67 /* Controller */,
 			);
@@ -609,6 +622,26 @@
 				5C47AA701A2CB65C0012EE42 /* Cities.plist */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		5C548D2D1A35DA3B003C46A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5C548D2E1A35DA67003C46A7 /* CategoryModel.h */,
+				5C548D2F1A35DA67003C46A7 /* CategoryModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5C548D341A35DCEE003C46A7 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5C548D351A35DCEE003C46A7 /* CategoryMenu.h */,
+				5C548D361A35DCEE003C46A7 /* CategoryMenu.m */,
+				5C548D371A35DCEE003C46A7 /* CategoryMenuItem.h */,
+				5C548D381A35DCEE003C46A7 /* CategoryMenuItem.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		5C7C13621A2A0C73002120F7 /* More */ = {
@@ -1018,10 +1051,13 @@
 		5CECBCE71A31EF9C0016C211 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5C548D341A35DCEE003C46A7 /* Category */,
 				5CECBCE81A31EFBA0016C211 /* DealTopMenu.h */,
 				5CECBCE91A31EFBA0016C211 /* DealTopMenu.m */,
 				5CECBCEB1A31F0420016C211 /* DealTopMenuItem.h */,
 				5CECBCEC1A31F0420016C211 /* DealTopMenuItem.m */,
+				5C548D271A35D5B6003C46A7 /* DropDownMenu.h */,
+				5C548D281A35D5B6003C46A7 /* DropDownMenu.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1354,11 +1390,14 @@
 				5CECBCEA1A31EFBA0016C211 /* DealTopMenu.m in Sources */,
 				5CECBCED1A31F0420016C211 /* DealTopMenuItem.m in Sources */,
 				5CC200BB1A2767DD008F5F95 /* SlideBarTabItem.m in Sources */,
+				5C548D301A35DA67003C46A7 /* CategoryModel.m in Sources */,
 				5C0D9CBB1A2F3AB900AED66E /* DistrictMode.m in Sources */,
 				5CDBFD591A2B531D00C3ADC8 /* CityListController.m in Sources */,
+				5C548D391A35DCEE003C46A7 /* CategoryMenu.m in Sources */,
 				5CC125FD1A24D879000C731E /* AppDelegate.m in Sources */,
 				5C0D9CB51A2F3A1D00AED66E /* CityBaseModel.m in Sources */,
 				5C03739B1A28C711009C9B67 /* BaseNavigationController.m in Sources */,
+				5C548D3A1A35DCEE003C46A7 /* CategoryMenuItem.m in Sources */,
 				5C0373941A28BC30009C9B67 /* CollectController.m in Sources */,
 				5C0373A01A28C88C009C9B67 /* UIBarButtonItem+ZD.m in Sources */,
 				5C0D9CBE1A2F437200AED66E /* NSObject+Value.m in Sources */,
@@ -1368,6 +1407,7 @@
 				5C0373971A28BC3C009C9B67 /* MineController.m in Sources */,
 				5C0373911A28BC21009C9B67 /* MapController.m in Sources */,
 				5C7F62691A30A42A00DA74F8 /* CitySearchReslutController.m in Sources */,
+				5C548D291A35D5B6003C46A7 /* DropDownMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import "MetaDataTool.h"
 #import "CitySection.h"
 #import "CityModel.h"
+#import "CategoryModel.h"
 #import "Common.h"
 #import "NSObject+Value.h"
 
@@ -28,58 +29,78 @@ singleton_implementation(MetaDataTool)
 -(instancetype)init{
     if (self = [super init]) {
         
-        _totalCities = [[NSMutableDictionary alloc]init];
-        NSMutableArray *tempTotalArray = [[NSMutableArray alloc]init];
-        
-        //所有城市
-        //加载plist数据
-        NSArray *a2zCityArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Cities" ofType:@"plist"]];
-        
-        //初始化热门城市
-        CitySection *hotSection = [[CitySection alloc]init];
-        hotSection.name = @"热门城市";
-        hotSection.cities = [[NSMutableArray alloc]init];
-        [tempTotalArray addObject:hotSection];
-        
-        //添加A-Z城市
-        for (NSDictionary *dict in a2zCityArray) {
-            CitySection *section = [[CitySection alloc]init];
-            [section setValues:dict];
-            [tempTotalArray addObject:section];
-            for (CityModel *city in section.cities) {
-                if (city.hot) {
-                    //添加热门城市
-                    [hotSection.cities addObject:city];
-                }
-                [_totalCities setValue:city forKey:city.name];
-            }
-        }
-
-        //从沙盒中读取最近城市
-        _visitedCityNames = [NSKeyedUnarchiver unarchiveObjectWithFile:kFilePath];
-        if (_visitedCityNames == nil) {
-            _visitedCityNames = [[NSMutableArray alloc]init];
-        }
-
-        //添加最近访问城市组
-        _visitedSection = [[CitySection alloc]init];
-        _visitedSection.name = @"最近访问";
-        _visitedSection.cities = [[NSMutableArray alloc]init];
-        
-        
-        for (NSString *name in _visitedCityNames) {
-            CityModel *city = [_totalCities valueForKey:name];
-            [_visitedSection.cities addObject:city];
-        }
-        
-        if (_visitedSection.cities.count != 0) {
-            [tempTotalArray insertObject:_visitedSection atIndex:0];
-        }
-        
-        _totalCitySections = tempTotalArray;
+        //1.加载城市
+        [self loadCityData];
+        //2.加载分类数据
+        [self loadCategoryData];
     }
     
     return self;
+}
+
+- (void)loadCityData{
+    _totalCities = [[NSMutableDictionary alloc]init];
+    NSMutableArray *tempTotalArray = [[NSMutableArray alloc]init];
+    
+    //所有城市
+    //加载plist数据
+    NSArray *a2zCityArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Cities" ofType:@"plist"]];
+    
+    //初始化热门城市
+    CitySection *hotSection = [[CitySection alloc]init];
+    hotSection.name = @"热门城市";
+    hotSection.cities = [[NSMutableArray alloc]init];
+    [tempTotalArray addObject:hotSection];
+    
+    //添加A-Z城市
+    for (NSDictionary *dict in a2zCityArray) {
+        CitySection *section = [[CitySection alloc]init];
+        [section setValues:dict];
+        [tempTotalArray addObject:section];
+        for (CityModel *city in section.cities) {
+            if (city.hot) {
+                //添加热门城市
+                [hotSection.cities addObject:city];
+            }
+            [_totalCities setValue:city forKey:city.name];
+        }
+    }
+    
+    //从沙盒中读取最近城市
+    _visitedCityNames = [NSKeyedUnarchiver unarchiveObjectWithFile:kFilePath];
+    if (_visitedCityNames == nil) {
+        _visitedCityNames = [[NSMutableArray alloc]init];
+    }
+    
+    //添加最近访问城市组
+    _visitedSection = [[CitySection alloc]init];
+    _visitedSection.name = @"最近访问";
+    _visitedSection.cities = [[NSMutableArray alloc]init];
+    
+    
+    for (NSString *name in _visitedCityNames) {
+        CityModel *city = [_totalCities valueForKey:name];
+        [_visitedSection.cities addObject:city];
+    }
+    
+    if (_visitedSection.cities.count != 0) {
+        [tempTotalArray insertObject:_visitedSection atIndex:0];
+    }
+    
+    _totalCitySections = tempTotalArray;
+}
+
+- (void)loadCategoryData{
+    NSMutableArray *tempTotalArray = [[NSMutableArray alloc]init];
+    //加载plist数据
+    NSArray *categoryArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Categories"
+                                                                                              ofType:@"plist"]];
+    for (NSDictionary *dict in categoryArray) {
+        CategoryModel *category = [[CategoryModel alloc]init];
+        [category setValues:dict];
+        [tempTotalArray addObject:category];
+    }
+    _totalCategories = tempTotalArray;
 }
 
 -(void)setCurrentCity:(CityModel *)currentCity{

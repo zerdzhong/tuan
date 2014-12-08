@@ -30,6 +30,7 @@
     
     //添加左边的菜单栏
     DealTopMenu *topMenu = [[DealTopMenu alloc]init];
+    topMenu.contentView = self.view;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:topMenu];
     
 }

@@ -10,4 +10,7 @@
 
 @interface DealTopMenu : UIView
 
+//容纳底部菜单
+@property (nonatomic, weak)UIView *contentView;
+
 @end

@@ -8,6 +8,7 @@
 
 #import "DealTopMenu.h"
 #import "DealTopMenuItem.h"
+#import "CategoryMenu.h"
 #import "Common.h"
 
 #define kItemMargin 10
@@ -34,6 +35,7 @@
 - (void)addItem:(NSString *)title index:(int)index{
     DealTopMenuItem *item = [[DealTopMenuItem alloc]init];
     item.title = title;
+    item.tag = index;
     item.frame = CGRectMake((kTopMenuItemWidth + kItemMargin) * index, 0, 0, 0);
     
     [item addTarget:self
@@ -49,6 +51,20 @@
         _selectedItem = nil;
     }else{
         _selectedItem = item;
+        //选中菜单，显示DropMenu
+        switch (_selectedItem.tag) {
+            case 0:{//分类菜单
+                CategoryMenu *categoryMenu = [[CategoryMenu alloc]initWithFrame:_contentView.bounds];
+                [_contentView addSubview:categoryMenu];
+                break;
+            }
+            case 1:
+                break;
+            case 2:
+                break;
+            default:
+                break;
+        }
     }
     _selectedItem.selected = YES;
 }
