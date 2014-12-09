@@ -10,6 +10,7 @@
 #import "CitySection.h"
 #import "CityModel.h"
 #import "CategoryModel.h"
+#import "OrderModel.h"
 #import "Common.h"
 #import "NSObject+Value.h"
 
@@ -33,6 +34,8 @@ singleton_implementation(MetaDataTool)
         [self loadCityData];
         //2.加载分类数据
         [self loadCategoryData];
+        //3.排序数据
+        [self loadOrderData];
     }
     
     return self;
@@ -101,6 +104,20 @@ singleton_implementation(MetaDataTool)
         [tempTotalArray addObject:category];
     }
     _totalCategories = tempTotalArray;
+}
+
+- (void)loadOrderData{
+    NSMutableArray *tempTotalArray = [[NSMutableArray alloc]init];
+    NSArray *orderArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Orders"
+                                                                                              ofType:@"plist"]];
+    
+    for (int i = 0; i < orderArray.count; i++) {
+        OrderModel *order = [[OrderModel alloc]init];
+        order.name = orderArray[i];
+        order.index = i;
+        [tempTotalArray addObject:order];
+    }
+    _totalOrders = tempTotalArray;
 }
 
 -(void)setCurrentCity:(CityModel *)currentCity{

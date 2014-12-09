@@ -28,7 +28,7 @@
         //添加scroolview
         UIScrollView *scrollView = [[UIScrollView alloc]init];
         scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        MyLog(@"width:%f,height:%d",self.frame.size.width,kDropDownItemHeight);
+        scrollView.backgroundColor = [UIColor whiteColor];
         scrollView.frame = CGRectMake(0, 64, self.frame.size.width, kDropDownItemHeight);
         [self addSubview:scrollView];
         _scrollView = scrollView;

@@ -24,6 +24,13 @@
 		5C1C43911A26258E006CB752 /* SlideBarBaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C43901A26258E006CB752 /* SlideBarBaseItem.m */; };
 		5C1C43961A2627AE006CB752 /* NSString+ZD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C43951A2627AE006CB752 /* NSString+ZD.m */; };
 		5C1C43991A262937006CB752 /* SlideBarMoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C43981A262937006CB752 /* SlideBarMoreItem.m */; };
+		5C43C8B11A3735E400CCD86A /* DistrictMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C43C8B01A3735E400CCD86A /* DistrictMenu.m */; };
+		5C43C8B41A37368F00CCD86A /* DropDownMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C43C8B31A37368F00CCD86A /* DropDownMenuItem.m */; };
+		5C43C8B71A37370200CCD86A /* DistrictMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C43C8B61A37370200CCD86A /* DistrictMenuItem.m */; };
+		5C43C8BB1A373D2B00CCD86A /* OrderMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C43C8BA1A373D2B00CCD86A /* OrderMenu.m */; };
+		5C43C8BE1A373D3900CCD86A /* OrderMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C43C8BD1A373D3900CCD86A /* OrderMenuItem.m */; };
+		5C43C8C11A3743C400CCD86A /* OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C43C8C01A3743C400CCD86A /* OrderModel.m */; };
+		5C43C8C31A37465D00CCD86A /* Orders.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C43C8C21A37465D00CCD86A /* Orders.plist */; };
 		5C47AA711A2CB65C0012EE42 /* Categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C47AA6F1A2CB65C0012EE42 /* Categories.plist */; };
 		5C47AA721A2CB65C0012EE42 /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C47AA701A2CB65C0012EE42 /* Cities.plist */; };
 		5C548D291A35D5B6003C46A7 /* DropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D281A35D5B6003C46A7 /* DropDownMenu.m */; };
@@ -262,6 +269,19 @@
 		5C1C43951A2627AE006CB752 /* NSString+ZD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZD.m"; sourceTree = "<group>"; };
 		5C1C43971A262937006CB752 /* SlideBarMoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideBarMoreItem.h; sourceTree = "<group>"; };
 		5C1C43981A262937006CB752 /* SlideBarMoreItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideBarMoreItem.m; sourceTree = "<group>"; };
+		5C43C8AF1A3735E400CCD86A /* DistrictMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistrictMenu.h; sourceTree = "<group>"; };
+		5C43C8B01A3735E400CCD86A /* DistrictMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictMenu.m; sourceTree = "<group>"; };
+		5C43C8B21A37368F00CCD86A /* DropDownMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownMenuItem.h; sourceTree = "<group>"; };
+		5C43C8B31A37368F00CCD86A /* DropDownMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownMenuItem.m; sourceTree = "<group>"; };
+		5C43C8B51A37370200CCD86A /* DistrictMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistrictMenuItem.h; sourceTree = "<group>"; };
+		5C43C8B61A37370200CCD86A /* DistrictMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictMenuItem.m; sourceTree = "<group>"; };
+		5C43C8B91A373D2B00CCD86A /* OrderMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderMenu.h; sourceTree = "<group>"; };
+		5C43C8BA1A373D2B00CCD86A /* OrderMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderMenu.m; sourceTree = "<group>"; };
+		5C43C8BC1A373D3900CCD86A /* OrderMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderMenuItem.h; sourceTree = "<group>"; };
+		5C43C8BD1A373D3900CCD86A /* OrderMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderMenuItem.m; sourceTree = "<group>"; };
+		5C43C8BF1A3743C400CCD86A /* OrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderModel.h; sourceTree = "<group>"; };
+		5C43C8C01A3743C400CCD86A /* OrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderModel.m; sourceTree = "<group>"; };
+		5C43C8C21A37465D00CCD86A /* Orders.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Orders.plist; sourceTree = "<group>"; };
 		5C47AA6F1A2CB65C0012EE42 /* Categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Categories.plist; sourceTree = "<group>"; };
 		5C47AA701A2CB65C0012EE42 /* Cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Cities.plist; sourceTree = "<group>"; };
 		5C548D271A35D5B6003C46A7 /* DropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownMenu.h; sourceTree = "<group>"; };
@@ -615,9 +635,32 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		5C43C8AE1A3735D300CCD86A /* District */ = {
+			isa = PBXGroup;
+			children = (
+				5C43C8AF1A3735E400CCD86A /* DistrictMenu.h */,
+				5C43C8B01A3735E400CCD86A /* DistrictMenu.m */,
+				5C43C8B51A37370200CCD86A /* DistrictMenuItem.h */,
+				5C43C8B61A37370200CCD86A /* DistrictMenuItem.m */,
+			);
+			path = District;
+			sourceTree = "<group>";
+		};
+		5C43C8B81A373CE600CCD86A /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				5C43C8B91A373D2B00CCD86A /* OrderMenu.h */,
+				5C43C8BA1A373D2B00CCD86A /* OrderMenu.m */,
+				5C43C8BC1A373D3900CCD86A /* OrderMenuItem.h */,
+				5C43C8BD1A373D3900CCD86A /* OrderMenuItem.m */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
 		5C47AA6E1A2CB65C0012EE42 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				5C43C8C21A37465D00CCD86A /* Orders.plist */,
 				5C47AA6F1A2CB65C0012EE42 /* Categories.plist */,
 				5C47AA701A2CB65C0012EE42 /* Cities.plist */,
 			);
@@ -629,6 +672,8 @@
 			children = (
 				5C548D2E1A35DA67003C46A7 /* CategoryModel.h */,
 				5C548D2F1A35DA67003C46A7 /* CategoryModel.m */,
+				5C43C8BF1A3743C400CCD86A /* OrderModel.h */,
+				5C43C8C01A3743C400CCD86A /* OrderModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1052,12 +1097,16 @@
 			isa = PBXGroup;
 			children = (
 				5C548D341A35DCEE003C46A7 /* Category */,
+				5C43C8AE1A3735D300CCD86A /* District */,
+				5C43C8B81A373CE600CCD86A /* Order */,
 				5CECBCE81A31EFBA0016C211 /* DealTopMenu.h */,
 				5CECBCE91A31EFBA0016C211 /* DealTopMenu.m */,
 				5CECBCEB1A31F0420016C211 /* DealTopMenuItem.h */,
 				5CECBCEC1A31F0420016C211 /* DealTopMenuItem.m */,
 				5C548D271A35D5B6003C46A7 /* DropDownMenu.h */,
 				5C548D281A35D5B6003C46A7 /* DropDownMenu.m */,
+				5C43C8B21A37368F00CCD86A /* DropDownMenuItem.h */,
+				5C43C8B31A37368F00CCD86A /* DropDownMenuItem.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1198,6 +1247,7 @@
 				5CECBCC21A31EDB50016C211 /* ic_mine_account_arrow.png in Resources */,
 				5CC1266E1A24DAF9000C731E /* bg_uinavigation@2x.png in Resources */,
 				5CC126601A24DAF9000C731E /* ic_more_hl.png in Resources */,
+				5C43C8C31A37465D00CCD86A /* Orders.plist in Resources */,
 				5CC126651A24DAF9000C731E /* bg_navigation_back.png in Resources */,
 				5CECBC781A31EDB50016C211 /* bg_top_deal.png in Resources */,
 				5CC1263F1A24DAF9000C731E /* icon-152x152.png in Resources */,
@@ -1381,15 +1431,20 @@
 				5CC125FE1A24D879000C731E /* main.m in Sources */,
 				5C0373A11A28C88C009C9B67 /* UIImage+ZD.m in Sources */,
 				5C1C43961A2627AE006CB752 /* NSString+ZD.m in Sources */,
+				5C43C8B11A3735E400CCD86A /* DistrictMenu.m in Sources */,
 				5C0D9CB81A2F3A6500AED66E /* CityModel.m in Sources */,
 				5C1C43911A26258E006CB752 /* SlideBarBaseItem.m in Sources */,
+				5C43C8BB1A373D2B00CCD86A /* OrderMenu.m in Sources */,
 				5C1C43991A262937006CB752 /* SlideBarMoreItem.m in Sources */,
 				5C03738E1A28BC14009C9B67 /* DealListController.m in Sources */,
 				5CBA81741A2F4E570025D988 /* MetaDataTool.m in Sources */,
 				5CC126011A24D8BF000C731E /* MainController.m in Sources */,
+				5C43C8B71A37370200CCD86A /* DistrictMenuItem.m in Sources */,
 				5CECBCEA1A31EFBA0016C211 /* DealTopMenu.m in Sources */,
 				5CECBCED1A31F0420016C211 /* DealTopMenuItem.m in Sources */,
+				5C43C8C11A3743C400CCD86A /* OrderModel.m in Sources */,
 				5CC200BB1A2767DD008F5F95 /* SlideBarTabItem.m in Sources */,
+				5C43C8B41A37368F00CCD86A /* DropDownMenuItem.m in Sources */,
 				5C548D301A35DA67003C46A7 /* CategoryModel.m in Sources */,
 				5C0D9CBB1A2F3AB900AED66E /* DistrictMode.m in Sources */,
 				5CDBFD591A2B531D00C3ADC8 /* CityListController.m in Sources */,
@@ -1399,6 +1454,7 @@
 				5C03739B1A28C711009C9B67 /* BaseNavigationController.m in Sources */,
 				5C548D3A1A35DCEE003C46A7 /* CategoryMenuItem.m in Sources */,
 				5C0373941A28BC30009C9B67 /* CollectController.m in Sources */,
+				5C43C8BE1A373D3900CCD86A /* OrderMenuItem.m in Sources */,
 				5C0373A01A28C88C009C9B67 /* UIBarButtonItem+ZD.m in Sources */,
 				5C0D9CBE1A2F437200AED66E /* NSObject+Value.m in Sources */,
 				5C1C438E1A261833006CB752 /* SlideBar.m in Sources */,

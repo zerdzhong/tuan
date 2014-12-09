@@ -9,12 +9,16 @@
 #import "CategoryMenuItem.h"
 #import "Common.h"
 
+#define kImageScale 0.6
+
 @implementation CategoryMenuItem
 
--(void)setFrame:(CGRect)frame{
-    frame.size.height = kDropDownItemHeight;
-    frame.size.width = kDropDownItemWidth;
-    [super setFrame:frame];
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+    }
+    return self;
 }
 
 -(void)setCategory:(CategoryModel *)category{
@@ -23,6 +27,16 @@
     [self setImage:[UIImage imageNamed:category.icon] forState:UIControlStateNormal];
     [self setTitle:category.name forState:UIControlStateNormal];
     self.titleLabel.textColor = [UIColor whiteColor];
+}
+
+-(CGRect)titleRectForContentRect:(CGRect)contentRect{
+    CGFloat titleHeight = contentRect.size.height *(1 - kImageScale);
+    CGFloat titleY = contentRect.size.height - titleHeight;
+    return CGRectMake(0, titleY, contentRect.size.width, titleHeight);
+}
+
+-(CGRect)imageRectForContentRect:(CGRect)contentRect{
+    return CGRectMake(0, 0, contentRect.size.width, contentRect.size.height * kImageScale);
 }
 
 @end

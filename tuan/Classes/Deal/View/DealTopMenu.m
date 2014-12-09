@@ -9,13 +9,20 @@
 #import "DealTopMenu.h"
 #import "DealTopMenuItem.h"
 #import "CategoryMenu.h"
+#import "DistrictMenu.h"
+#import "OrderMenu.h"
 #import "Common.h"
 
 #define kItemMargin 10
 
 @interface DealTopMenu ()
 
-@property (nonatomic, strong)DealTopMenuItem *selectedItem;
+@property (nonatomic, strong) DealTopMenuItem *selectedItem;
+@property (nonatomic, strong) DropDownMenu *showingMenu;    // CategoryMenu/DistrictMenu/OrderMenu
+
+@property (nonatomic, strong) CategoryMenu *categoryMenu;   //分类菜单
+@property (nonatomic, strong) DistrictMenu *districtMenu;   //区域菜单
+@property (nonatomic, strong) OrderMenu *orderMenu;         //排序菜单
 
 @end
 
@@ -47,6 +54,9 @@
 
 - (void)onItemClicked:(DealTopMenuItem *)item{
     _selectedItem.selected = NO;
+    //去掉之前显示的
+    [_showingMenu removeFromSuperview];
+
     if (_selectedItem == item) {
         _selectedItem = nil;
     }else{
@@ -54,14 +64,29 @@
         //选中菜单，显示DropMenu
         switch (_selectedItem.tag) {
             case 0:{//分类菜单
-                CategoryMenu *categoryMenu = [[CategoryMenu alloc]initWithFrame:_contentView.bounds];
-                [_contentView addSubview:categoryMenu];
+                if (_categoryMenu == nil) {
+                    _categoryMenu = [[CategoryMenu alloc]initWithFrame:_contentView.bounds];
+                }
+                [_contentView addSubview:_categoryMenu];
+                _showingMenu = _categoryMenu;
                 break;
             }
-            case 1:
+            case 1:{//区域菜单
+                if (_districtMenu == nil) {
+                    _districtMenu = [[DistrictMenu alloc]initWithFrame:_contentView.bounds];
+                }
+                [_contentView addSubview:_districtMenu];
+                _showingMenu = _districtMenu;
                 break;
-            case 2:
+            }
+            case 2:{//排序菜单
+                if (_orderMenu == nil) {
+                    _orderMenu = [[OrderMenu alloc]initWithFrame:_contentView.bounds];
+                }
+                [_contentView addSubview:_orderMenu];
+                _showingMenu = _orderMenu;
                 break;
+            }
             default:
                 break;
         }

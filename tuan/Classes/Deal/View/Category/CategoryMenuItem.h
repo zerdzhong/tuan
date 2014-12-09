@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DropDownMenuItem.h"
 #import "CategoryModel.h"
 
-@interface CategoryMenuItem : UIButton
+@interface CategoryMenuItem : DropDownMenuItem
 
 @property (nonatomic, strong) CategoryModel *category;  //需要显示的数据Model
 
