@@ -54,44 +54,74 @@
 
 - (void)onItemClicked:(DealTopMenuItem *)item{
     _selectedItem.selected = NO;
-    //去掉之前显示的
-    [_showingMenu removeFromSuperview];
-
+    
     if (_selectedItem == item) {
         _selectedItem = nil;
+        //隐藏本来显示的菜单
+        [self hideDropMenu];
     }else{
-        _selectedItem = item;
         //选中菜单，显示DropMenu
-        switch (_selectedItem.tag) {
-            case 0:{//分类菜单
-                if (_categoryMenu == nil) {
-                    _categoryMenu = [[CategoryMenu alloc]initWithFrame:_contentView.bounds];
-                }
-                [_contentView addSubview:_categoryMenu];
-                _showingMenu = _categoryMenu;
-                break;
-            }
-            case 1:{//区域菜单
-                if (_districtMenu == nil) {
-                    _districtMenu = [[DistrictMenu alloc]initWithFrame:_contentView.bounds];
-                }
-                [_contentView addSubview:_districtMenu];
-                _showingMenu = _districtMenu;
-                break;
-            }
-            case 2:{//排序菜单
-                if (_orderMenu == nil) {
-                    _orderMenu = [[OrderMenu alloc]initWithFrame:_contentView.bounds];
-                }
-                [_contentView addSubview:_orderMenu];
-                _showingMenu = _orderMenu;
-                break;
-            }
-            default:
-                break;
-        }
+        _selectedItem = item;
+        [self showDropMenu:item];
     }
     _selectedItem.selected = YES;
+}
+
+#pragma mark- 显示底部菜单
+- (void)showDropMenu:(DealTopMenuItem *)item{
+    
+    [_showingMenu removeFromSuperview];
+    
+    //没有菜单在显示 需要菜单
+    BOOL needAnimation = _showingMenu == nil;
+    
+    switch (item .tag) {
+        case 0:{//分类菜单
+            if (_categoryMenu == nil) {
+                _categoryMenu = [[CategoryMenu alloc]initWithFrame:_contentView.bounds];
+            }
+            _showingMenu = _categoryMenu;
+            break;
+        }
+        case 1:{//区域菜单
+            if (_districtMenu == nil) {
+                _districtMenu = [[DistrictMenu alloc]initWithFrame:_contentView.bounds];
+            }
+            _showingMenu = _districtMenu;
+            break;
+        }
+        case 2:{//排序菜单
+            if (_orderMenu == nil) {
+                _orderMenu = [[OrderMenu alloc]initWithFrame:_contentView.bounds];
+            }
+            _showingMenu = _orderMenu;
+            break;
+        }
+        default:
+            break;
+    }
+    
+    __unsafe_unretained DealTopMenu *menu = self;
+    
+    _showingMenu.hiddenBlock = ^(void){
+        //清空菜单选中
+        menu->_selectedItem.selected = NO;
+        menu->_selectedItem = nil;
+        //清空showingMenu
+        menu->_showingMenu = nil;
+    };
+    
+    [_contentView addSubview:_showingMenu];
+    
+    //执行动画
+    if (needAnimation) {
+        [_showingMenu showWithAnimation];
+    }
+}
+
+#pragma mark- 隐藏  底部菜单
+- (void)hideDropMenu{
+    [_showingMenu hideWithAnimation];
 }
 
 -(void)setFrame:(CGRect)frame{

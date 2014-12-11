@@ -10,6 +10,12 @@
 
 @interface DropDownMenu : UIView
 
-@property (nonatomic, strong)UIScrollView *scrollView;
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, copy) void(^hiddenBlock)();
+
+//通过动画显示出来
+- (void)showWithAnimation;
+//通过动画隐藏出来
+- (void)hideWithAnimation;
 
 @end

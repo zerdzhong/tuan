@@ -106,7 +106,6 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    MyLog(@"---%ld",(long)section);
     CitySection *sec = _citySections[section];
     return sec.name;
 }
