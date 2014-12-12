@@ -7,6 +7,9 @@
 //
 
 #import "DropDownMenu.h"
+#import "CategoryMenuItem.h"
+#import "DistrictMenuItem.h"
+#import "OrderMenuItem.h"
 #import "Common.h"
 
 #define kDuration 0.4
@@ -15,6 +18,8 @@
 @interface DropDownMenu ()
 
 @property (nonatomic, strong) UIView *cover;
+@property (nonatomic, strong) UIView *contentView;
+@property (nonatomic, strong) DropDownMenuItem *selectedItem;
 
 @end
 
@@ -41,12 +46,19 @@
         
         [self addSubview:cover];
         _cover = cover;
+        
+        //内容view
+        _contentView = [[UIView alloc]init];
+        _contentView.frame = CGRectMake(0, 64, self.frame.size.width, kDropDownItemHeight);
+        _contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        [self addSubview:_contentView];
+        
         //添加scroolview
         UIScrollView *scrollView = [[UIScrollView alloc]init];
         scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         scrollView.backgroundColor = [UIColor whiteColor];
-        scrollView.frame = CGRectMake(0, 64, self.frame.size.width, kDropDownItemHeight);
-        [self addSubview:scrollView];
+        scrollView.frame = CGRectMake(0, 0, self.frame.size.width, kDropDownItemHeight);
+        [_contentView  addSubview:scrollView];
         _scrollView = scrollView;
     }
     return self;
@@ -55,11 +67,13 @@
 #pragma mark- 通过动画显示出来
 - (void)showWithAnimation{
 
-    _scrollView.transform = CGAffineTransformMakeTranslation(0, -kDropDownItemHeight);
+    _contentView.transform = CGAffineTransformMakeTranslation(0, -_contentView.frame.size.height);
+    _contentView.alpha = 0;
     _cover.alpha = 0;
     [UIView animateWithDuration:kDuration animations:^{
         //1.scrollview 从上方出现
-        _scrollView.transform = CGAffineTransformIdentity;
+        _contentView.transform = CGAffineTransformIdentity;
+        _contentView.alpha = 1;
         //2.cover alpha 0 -> 0.4
         _cover.alpha = kCoverAlpha;
     }];
@@ -70,12 +84,14 @@
 - (void)hideWithAnimation{
     [UIView animateWithDuration:kDuration animations:^{
         //1.scrollview 缩到上方
-        _scrollView.transform = CGAffineTransformMakeTranslation(0, -kDropDownItemHeight);
+        _contentView.transform = CGAffineTransformMakeTranslation(0, -_contentView.frame.size.height);
+        _contentView.alpha = 0;
         //2.cover alpha 0.4 -> 0
         _cover.alpha = 0;
     } completion:^(BOOL finished) {
         //重置属性
-        _scrollView.transform = CGAffineTransformIdentity;
+        _contentView.transform = CGAffineTransformIdentity;
+        _contentView.alpha = 1;
         _cover.alpha = kCoverAlpha;
         //从父控件移除
         [self removeFromSuperview];
@@ -83,6 +99,46 @@
             _hiddenBlock();
         }
     }];
+}
+
+
+- (void)onItemClicked:(DropDownMenuItem *)item{
+    //控制item状态
+    _selectedItem.selected = NO;
+    _selectedItem = item;
+    _selectedItem.selected = YES;
+
+    
+    //判断当前item有没有子类别
+    if (item.titles.count){
+        //显示所有子标题
+        if (_subTitleView == nil) {
+            _subTitleView = [[DropDownSubTitle alloc]init];
+        }
+        CGFloat y = self.scrollView.frame.origin.y + kDropDownItemHeight;
+        _subTitleView.frame = CGRectMake(0, y, self.frame.size.width, _subTitleView.frame.size.height);
+
+        _subTitleView.titles = item.titles ;
+        
+        if (_subTitleView.superview == nil){
+            //执行动画
+            MyLog(@"showWithAnimation");
+            [_subTitleView showWithAnimation];
+        }
+        
+        [_contentView insertSubview:_subTitleView belowSubview:self.scrollView];
+        
+        CGRect frame = _contentView.frame;
+        frame.size.height = kDropDownItemHeight + _subTitleView.frame.size.height;
+        _contentView.frame = frame;
+        
+    }else{
+        //隐藏子标题
+        [_subTitleView removeFromSuperview];
+        CGRect frame = _contentView.frame;
+        frame.size.height = kDropDownItemHeight;
+        _contentView.frame = frame;
+    }
 }
 
 @end

@@ -39,4 +39,8 @@
     return CGRectMake(0, 0, contentRect.size.width, contentRect.size.height * kImageScale);
 }
 
+-(NSArray *)titles{
+    return _category.subcategories;
+}
+
 @end

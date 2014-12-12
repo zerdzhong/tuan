@@ -11,6 +11,6 @@
 
 @interface DistrictMode : CityBaseModel
 
-@property (nonatomic, strong)NSArray *neighbohoods; //街道
+@property (nonatomic, strong)NSArray *neighborhoods; //街道
 
 @end

@@ -12,15 +12,15 @@
 
 @implementation DistrictMode
 
--(void)setNeighbohoods:(NSArray *)neighbohoods{
-    NSMutableArray *array = [[NSMutableArray alloc]init];
-    for (NSDictionary *dict in neighbohoods) {
-        NSString *neighbohood = [[NSString alloc]init];
-        [neighbohood setValues:dict];
-        [array addObject:neighbohood];
-    }
-    
-    _neighbohoods = array;
-}
+//-(void)setNeighborhoods:(NSArray *)neighbohoods{
+//    NSMutableArray *array = [[NSMutableArray alloc]init];
+//    for (NSDictionary *dict in neighbohoods) {
+//        NSString *neighbohood = [[NSString alloc]init];
+//        [neighbohood setValues:dict];
+//        [array addObject:neighbohood];
+//    }
+//    
+//    _neighborhoods = array;
+//}
 
 @end

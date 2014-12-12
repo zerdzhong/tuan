@@ -21,6 +21,7 @@
         for (int i = 0; i < orderArray.count; i++) {
             OrderMenuItem *item = [[OrderMenuItem alloc]init];
             item.order = orderArray[i];
+            [item addTarget:self action:@selector(onItemClicked:) forControlEvents:UIControlEventTouchUpInside];
             item.frame = CGRectMake(i * kDropDownItemWidth, 0, 0, 0);
             [self.scrollView addSubview:item];
         }

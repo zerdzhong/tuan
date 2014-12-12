@@ -7,15 +7,20 @@
 //  底部菜单(基类)
 
 #import <UIKit/UIKit.h>
+#import "DropDownMenuItem.h"
+#import "DropDownSubTitle.h"
 
 @interface DropDownMenu : UIView
 
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) DropDownSubTitle *subTitleView;
 @property (nonatomic, copy) void(^hiddenBlock)();
 
 //通过动画显示出来
 - (void)showWithAnimation;
 //通过动画隐藏出来
 - (void)hideWithAnimation;
+
+- (void)onItemClicked:(DropDownMenuItem *)item;
 
 @end

@@ -26,6 +26,7 @@
         for (int i = 0; i < districtArray.count; i++) {
             DistrictMenuItem *item = [[DistrictMenuItem alloc]init];
             item.district = districtArray[i];
+            [item addTarget:self action:@selector(onItemClicked:) forControlEvents:UIControlEventTouchUpInside];
             item.frame = CGRectMake(i * kDropDownItemWidth, 0, 0, 0);
             [self.scrollView addSubview:item];
         }

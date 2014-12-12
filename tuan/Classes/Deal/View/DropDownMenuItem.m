@@ -7,6 +7,7 @@
 //
 
 #import "DropDownMenuItem.h"
+#import "UIImage+ZD.h"
 #import "Common.h"
 
 @implementation DropDownMenuItem
@@ -21,6 +22,10 @@
         separatorImage.bounds = CGRectMake(0, 0, 2, kDropDownItemHeight * 0.7);
         separatorImage.center = CGPointMake(kDropDownItemWidth, kDropDownItemHeight * 0.5);
         [self addSubview:separatorImage];
+        
+        //设置选中背景
+        [self setBackgroundImage:[UIImage resizedImage:@"bg_filter_toggle_hl.png"]
+                        forState:UIControlStateSelected];
         
         //文字颜色
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -37,5 +42,11 @@
     [super setFrame:frame];
 }
 
+//屏蔽点击时高亮的效果
+-(void)setHighlighted:(BOOL)highlighted{}
+
+-(NSArray *)titles{
+    return nil;
+}
 
 @end

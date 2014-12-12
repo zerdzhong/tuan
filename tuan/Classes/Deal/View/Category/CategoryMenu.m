@@ -11,6 +11,11 @@
 #import "CategoryModel.h"
 #import "CategoryMenuItem.h"
 #import "Common.h"
+#import "DropDownSubTitle.h"
+
+@interface CategoryMenu ()
+
+@end
 
 @implementation CategoryMenu
 
@@ -22,15 +27,21 @@
         //往scrollView添加分类数据
         
         for (int i = 0; i < categoryArray.count; i++) {
-            CategoryModel *category = categoryArray[i];
             CategoryMenuItem *item = [[CategoryMenuItem alloc]init];
-            item.category = category;
+            item.category = categoryArray[i];;
             item.frame = CGRectMake(i * kDropDownItemWidth, 0, 0, 0);
+            [item addTarget:self action:@selector(onItemClicked:) forControlEvents:UIControlEventTouchUpInside];
             [self.scrollView addSubview:item];
         }
         self.scrollView.contentSize = CGSizeMake(categoryArray.count * kDropDownItemWidth, 0);
     }
     return self;
+}
+
+-(void)hideWithAnimation{
+
+    [super hideWithAnimation];
+    [self.subTitleView hideWithAnimation];
 }
 
 @end

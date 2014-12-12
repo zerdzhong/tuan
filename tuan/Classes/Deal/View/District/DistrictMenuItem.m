@@ -15,4 +15,8 @@
     [self setTitle:district.name forState:UIControlStateNormal];
 }
 
+-(NSArray *)titles{
+    return _district.neighborhoods;
+}
+
 @end

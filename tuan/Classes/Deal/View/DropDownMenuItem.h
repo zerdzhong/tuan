@@ -10,4 +10,6 @@
 
 @interface DropDownMenuItem : UIButton
 
+- (NSArray *)titles;
+
 @end

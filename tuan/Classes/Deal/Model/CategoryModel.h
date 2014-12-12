@@ -12,6 +12,6 @@
 
 @property (nonatomic, copy) NSString *name;  //名字
 @property (nonatomic, copy) NSString *icon;     //图标
-@property (nonatomic, strong)NSArray *subCategory;  //子分类
+@property (nonatomic, strong)NSArray *subcategories;  //子分类
 
 @end
