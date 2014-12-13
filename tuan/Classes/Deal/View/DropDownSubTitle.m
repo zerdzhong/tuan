@@ -9,11 +9,18 @@
 #import "DropDownSubTitle.h"
 #import "Common.h"
 #import "UIImage+ZD.h"
+#import "MetaDataTool.h"
 
 #define kDuration 0.6
 
 #define kTitleWidth 100
 #define kTitleHeight 44
+
+@interface DropDownSubTitle ()
+
+@property (nonatomic, strong) UIButton *selectedButton;
+
+@end
 
 @implementation DropDownSubTitle
 
@@ -23,6 +30,7 @@
     if (self) {
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         self.image = [UIImage resizedImage:@"bg_subfilter_other.png"];
+        self.userInteractionEnabled = YES;
         self.clipsToBounds = YES;           //不显示超出自身控件范围的子控件
     }
     return self;
@@ -35,6 +43,8 @@
         for (NSUInteger i = self.subviews.count; i < _titles.count; i++) {
             //创建少的按钮
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+            [btn addTarget:self action:@selector(onTitleClicked:) forControlEvents:UIControlEventTouchUpInside];
+            [btn setBackgroundImage:[UIImage resizedImage:@"slider_filter_bg_active.png"] forState:UIControlStateSelected];
             [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [self addSubview:btn];
         }
@@ -51,11 +61,23 @@
         UIButton *btn = self.subviews[i];
         btn.hidden = NO;
         [btn setTitle:_titles[i] forState:UIControlStateNormal];
+        btn.selected = [_titles[i] isEqualToString:[MetaDataTool sharedMetaDataTool].currentCategory];
     }
     
     [self layoutSubviews];
 }
 
+
+- (void)onTitleClicked:(UIButton *)btn{
+    MyLog(@"%@",[btn titleForState:UIControlStateNormal]);
+    //控制按钮状态
+    _selectedButton.selected = NO;
+    _selectedButton = btn;
+    _selectedButton.selected = YES;
+    
+    //设置当前选中文字
+    [MetaDataTool sharedMetaDataTool].currentCategory = [_selectedButton titleForState:UIControlStateNormal];
+}
 
 -(void)layoutSubviews{
     [super layoutSubviews];
