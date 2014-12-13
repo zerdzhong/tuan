@@ -64,7 +64,6 @@
 }
 
 - (void)screenRotate{
-    MyLog(@"Rotate");
     
     if ([_popover isPopoverVisible]) {
         [_popover dismissPopoverAnimated:NO];

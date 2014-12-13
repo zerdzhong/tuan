@@ -23,6 +23,7 @@
     if (self) {
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         self.image = [UIImage resizedImage:@"bg_subfilter_other.png"];
+        self.clipsToBounds = YES;           //不显示超出自身控件范围的子控件
     }
     return self;
 }
@@ -31,14 +32,14 @@
     _titles = titles;
     //显示按钮
     if (self.subviews.count < _titles.count) {
-        for (int i = self.subviews.count; i < _titles.count; i++) {
+        for (NSUInteger i = self.subviews.count; i < _titles.count; i++) {
             //创建少的按钮
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
             [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [self addSubview:btn];
         }
     }else if (self.subviews.count > _titles.count){
-        for (int i = _titles.count; i < self.subviews.count; i++) {
+        for (NSUInteger i = _titles.count; i < self.subviews.count; i++) {
             //隐藏多余的按钮
             UIButton *btn = self.subviews[i];
             btn.hidden = YES;
@@ -62,7 +63,7 @@
     //调整子控件位置
     
     //算出当前屏幕能放几列按钮
-    int columns = self.frame.size.width / kTitleWidth;
+    NSUInteger columns = self.frame.size.width / kTitleWidth;
     
     for (int i = 0; i < _titles.count; i++) {
         UIButton *btn = self.subviews[i];
@@ -74,13 +75,12 @@
     }
  
     //设置自身高度
-//    [UIView animateWithDuration:1.0 animations:^{
-        int row = (_titles.count + columns - 1) / columns;
+    [UIView animateWithDuration:1.0 animations:^{
+        NSUInteger row = (_titles.count + columns - 1) / columns;
         CGRect frame = self.frame;
-        frame.size.height = row * kTitleHeight;
-        MyLog(@"height:%f",frame.size.height);
+        frame.size.height = row * kTitleHeight; 
         self.frame = frame;
-//    }];
+    }];
 }
 
 //通过动画显示出来

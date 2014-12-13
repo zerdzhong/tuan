@@ -101,8 +101,9 @@
     }];
 }
 
-
+#pragma mark- 菜单项点击事件处理 分类，商区，排序item点击事件
 - (void)onItemClicked:(DropDownMenuItem *)item{
+    
     //控制item状态
     _selectedItem.selected = NO;
     _selectedItem = item;
@@ -115,6 +116,7 @@
         if (_subTitleView == nil) {
             _subTitleView = [[DropDownSubTitle alloc]init];
         }
+        
         CGFloat y = self.scrollView.frame.origin.y + kDropDownItemHeight;
         _subTitleView.frame = CGRectMake(0, y, self.frame.size.width, _subTitleView.frame.size.height);
 
@@ -122,9 +124,8 @@
         
         if (_subTitleView.superview == nil){
             //执行动画
-            MyLog(@"showWithAnimation");
             [_subTitleView showWithAnimation];
-        }
+        }  
         
         [_contentView insertSubview:_subTitleView belowSubview:self.scrollView];
         
