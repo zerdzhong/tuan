@@ -39,9 +39,7 @@
 }
 
 -(void)hideWithAnimation{
-
     [super hideWithAnimation];
-    [self.subTitleView hideWithAnimation];
 }
 
 @end
