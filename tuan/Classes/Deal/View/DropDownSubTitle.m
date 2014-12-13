@@ -105,6 +105,11 @@
         //2.cover alpha 0 -> 0.4
         self.alpha = 0;
     } completion:^(BOOL finished) {
+        [self removeFromSuperview];
+        CGRect frame = self.frame;
+        frame.size.height = 0;
+        self.frame = frame;
+        
         self.transform = CGAffineTransformIdentity;
         self.alpha = 1;
     }];

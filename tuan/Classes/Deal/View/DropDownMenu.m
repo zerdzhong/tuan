@@ -112,34 +112,43 @@
     
     //判断当前item有没有子类别
     if (item.titles.count){
-        //显示所有子标题
-        if (_subTitleView == nil) {
-            _subTitleView = [[DropDownSubTitle alloc]init];
-        }
-        
-        CGFloat y = self.scrollView.frame.origin.y + kDropDownItemHeight;
-        _subTitleView.frame = CGRectMake(0, y, self.frame.size.width, _subTitleView.frame.size.height);
-
-        _subTitleView.titles = item.titles ;
-        
-        if (_subTitleView.superview == nil){
-            //执行动画
-            [_subTitleView showWithAnimation];
-        }  
-        
-        [_contentView insertSubview:_subTitleView belowSubview:self.scrollView];
-        
-        CGRect frame = _contentView.frame;
-        frame.size.height = kDropDownItemHeight + _subTitleView.frame.size.height;
-        _contentView.frame = frame;
-        
+        [self showSubtitlesView:item.titles];
     }else{
         //隐藏子标题
-        [_subTitleView removeFromSuperview];
-        CGRect frame = _contentView.frame;
-        frame.size.height = kDropDownItemHeight;
-        _contentView.frame = frame;
+        [self hideSubtitlesView];
     }
+}
+
+#pragma mark- 隐藏子标题
+- (void)hideSubtitlesView{
+    [_subTitleView hideWithAnimation];
+    CGRect frame = _contentView.frame;
+    frame.size.height = kDropDownItemHeight;
+    _contentView.frame = frame;
+}
+
+#pragma mark- 显示子标题
+- (void)showSubtitlesView:(NSArray *)titles{
+    //显示所有子标题
+    if (_subTitleView == nil) {
+        _subTitleView = [[DropDownSubTitle alloc]init];
+    }
+    
+    CGFloat y = self.scrollView.frame.origin.y + kDropDownItemHeight;
+    _subTitleView.frame = CGRectMake(0, y, self.frame.size.width, _subTitleView.frame.size.height);
+    
+    _subTitleView.titles = titles ;
+    
+    if (_subTitleView.superview == nil){
+        //执行动画
+        [_subTitleView showWithAnimation];
+    }
+    
+    [_contentView insertSubview:_subTitleView belowSubview:self.scrollView];
+    
+    CGRect frame = _contentView.frame;
+    frame.size.height = kDropDownItemHeight + _subTitleView.frame.size.height;
+    _contentView.frame = frame;
 }
 
 @end
