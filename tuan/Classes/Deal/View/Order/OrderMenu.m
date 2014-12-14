@@ -30,4 +30,9 @@
     return self;
 }
 
+- (void)setItemMetaData:(DropDownMenuItem *)item{
+    [MetaDataTool sharedMetaDataTool].currentOrder = [[MetaDataTool sharedMetaDataTool]
+                                                      orderWithName:[item titleForState:UIControlStateNormal]];
+}
+
 @end

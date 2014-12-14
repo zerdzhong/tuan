@@ -17,6 +17,8 @@
 @property (nonatomic, copy) void(^hiddenBlock)();
 
 - (void)settingSubTitleBlock;
+- (void)setItemMetaData:(DropDownMenuItem *)item;
+
 
 //通过动画显示出来
 - (void)showWithAnimation;

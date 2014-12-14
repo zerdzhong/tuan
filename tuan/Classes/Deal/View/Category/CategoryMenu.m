@@ -50,4 +50,8 @@
     };
 }
 
+- (void)setItemMetaData:(DropDownMenuItem *)item{
+    [MetaDataTool sharedMetaDataTool].currentCategory = [item titleForState:UIControlStateNormal];
+}
+
 @end

@@ -11,6 +11,7 @@
 #import "DistrictMenuItem.h"
 #import "OrderMenuItem.h"
 #import "Common.h"
+#import "MetaDataTool.h"
 
 #define kDuration 0.4
 #define kCoverAlpha 0.4
@@ -115,16 +116,23 @@
         [self showSubtitlesView:item.titles];
     }else{
         //隐藏子标题
-        [self hideSubtitlesView];
+        [self hideSubtitlesView:item];
     }
 }
 
 #pragma mark- 隐藏子标题
-- (void)hideSubtitlesView{
+- (void)hideSubtitlesView:(DropDownMenuItem *)item{
+    
+    //隐藏subTitle
     [_subTitleView hideWithAnimation];
+    
     CGRect frame = _contentView.frame;
     frame.size.height = kDropDownItemHeight;
     _contentView.frame = frame;
+    
+    //设置Item
+    [self setItemMetaData:item];
+    
 }
 
 #pragma mark- 显示子标题
@@ -151,5 +159,8 @@
     frame.size.height = kDropDownItemHeight + _subTitleView.frame.size.height;
     _contentView.frame = frame;
 }
+
+- (void)settingSubTitleBlock{}
+- (void)setItemMetaData:(DropDownMenuItem *)item{}
 
 @end

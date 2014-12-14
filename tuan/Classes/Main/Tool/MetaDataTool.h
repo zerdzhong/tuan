@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CityModel.h"
 #import "Singleton.h"
+#import "OrderModel.h"
 
 @interface MetaDataTool : NSObject
 
@@ -23,5 +24,8 @@ singleton_interface(MetaDataTool)
 @property (nonatomic, strong) CityModel *currentCity;     //当前城市
 @property (nonatomic, copy) NSString *currentCategory;    //当前选中类别
 @property (nonatomic, copy) NSString *currentDistrict;    //当前选中区域
+@property (nonatomic, strong) OrderModel *currentOrder;   //当前排序
+
+- (OrderModel *)orderWithName:(NSString *)name;
 
 @end

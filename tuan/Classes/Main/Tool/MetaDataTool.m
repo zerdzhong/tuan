@@ -120,6 +120,16 @@ singleton_implementation(MetaDataTool)
     _totalOrders = tempTotalArray;
 }
 
+- (OrderModel *)orderWithName:(NSString *)name{
+    for (OrderModel *order in _totalOrders) {
+        if ([order.name isEqualToString:name]) {
+            return order;
+        }
+    }
+    
+    return nil;
+}
+
 -(void)setCurrentCity:(CityModel *)currentCity{
     _currentCity = currentCity;
     //移除之前相同的城市
@@ -141,6 +151,24 @@ singleton_implementation(MetaDataTool)
     
     //发出通知
     [[NSNotificationCenter defaultCenter]postNotificationName:kCityChanged object:nil userInfo:nil];
+}
+
+- (void)setCurrentCategory:(NSString *)currentCategory{
+    _currentCategory = currentCategory;
+    //发出通知
+    [[NSNotificationCenter defaultCenter]postNotificationName:KCategoryChanged object:nil userInfo:nil];
+}
+
+- (void)setCurrentDistrict:(NSString *)currentDistrict{
+    _currentDistrict = currentDistrict;
+    //发出通知
+    [[NSNotificationCenter defaultCenter]postNotificationName:KDistrictChanged object:nil userInfo:nil];
+}
+
+-(void)setCurrentOrder:(OrderModel *)currentOrder{
+    _currentOrder = currentOrder;
+    //发出通知
+    [[NSNotificationCenter defaultCenter]postNotificationName:KOrderChanged object:nil userInfo:nil];
 }
 
 

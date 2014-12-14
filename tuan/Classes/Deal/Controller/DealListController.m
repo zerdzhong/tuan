@@ -16,8 +16,7 @@
     [super viewDidLoad];
 
     // 1.监听城市改变的通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cityChange) name:kCityChanged object:nil];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cityChange) name:kCityChanged object:nil];    
     //设置背景色
     self.view.backgroundColor = kGlobalBgColor;
     

@@ -12,6 +12,7 @@
 #import "DistrictMenu.h"
 #import "OrderMenu.h"
 #import "Common.h"
+#import "MetaDataTool.h"
 
 #define kItemMargin 10
 
@@ -24,6 +25,10 @@
 @property (nonatomic, strong) DistrictMenu *districtMenu;   //区域菜单
 @property (nonatomic, strong) OrderMenu *orderMenu;         //排序菜单
 
+@property (nonatomic, strong) DealTopMenuItem *categoryMenuItem;        //分类菜单item
+@property (nonatomic, strong) DealTopMenuItem *districtMenuItem;        //区域菜单item
+@property (nonatomic, strong) DealTopMenuItem *orderMenuItem;           //排序菜单item
+
 @end
 
 @implementation DealTopMenu
@@ -32,24 +37,46 @@
 {
     self = [super init];
     if (self) {
-        [self addItem:@"全部分类" index:0];
-        [self addItem:@"全部商区" index:1];
-        [self addItem:@"默认排序" index:2];
+        _categoryMenuItem = [self addItem:@"全部分类" index:0];
+        _districtMenuItem = [self addItem:@"全部商区" index:1];
+        _orderMenuItem = [self addItem:@"默认排序" index:2];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(dataChange)
+                                                     name:kCityChanged
+                                                   object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(dataChange)
+                                                     name:KCategoryChanged
+                                                   object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(dataChange)
+                                                     name:KDistrictChanged
+                                                   object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(dataChange)
+                                                     name:KOrderChanged
+                                                   object:nil];
+        
     }
     return self;
 }
 
-- (void)addItem:(NSString *)title index:(int)index{
+- (DealTopMenuItem *)addItem:(NSString *)title index:(int)index{
     DealTopMenuItem *item = [[DealTopMenuItem alloc]init];
     item.title = title;
     item.tag = index;
     item.frame = CGRectMake((kTopMenuItemWidth + kItemMargin) * index, 0, 0, 0);
     
     [item addTarget:self
-                     action:@selector(onItemClicked:)
-           forControlEvents:UIControlEventTouchUpInside];
+             action:@selector(onItemClicked:)
+   forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:item];
+    return item;
 }
 
 - (void)onItemClicked:(DealTopMenuItem *)item{
@@ -128,5 +155,34 @@
     frame.size = CGSizeMake(3*kTopMenuItemWidth, kTopMenuItemHeight);
     [super setFrame:frame];
 }
+
+#pragma mark- notification
+
+
+
+- (void)dataChange{
+    _selectedItem.selected = NO;
+    _selectedItem = nil;
+    
+    //更新分类按钮的文字
+    if ([MetaDataTool sharedMetaDataTool].currentCategory != nil) {
+        _categoryMenuItem.title = [MetaDataTool sharedMetaDataTool].currentCategory;
+    }
+    //更新商区按钮的文字
+    if ([MetaDataTool sharedMetaDataTool].currentDistrict != nil) {
+        _districtMenuItem.title = [MetaDataTool sharedMetaDataTool].currentDistrict;
+    }
+
+    //更新排序按钮的文字
+    if ([MetaDataTool sharedMetaDataTool].currentOrder.name != nil) {
+        _orderMenuItem.title = [MetaDataTool sharedMetaDataTool].currentOrder.name;
+    }
+    
+    //隐藏
+    [self hideDropMenu];
+    _showingMenu = nil;
+    
+}
+
 
 @end

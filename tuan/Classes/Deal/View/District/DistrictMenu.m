@@ -31,6 +31,12 @@
             [self.scrollView addSubview:item];
         }
         self.scrollView.contentSize = CGSizeMake(districtArray.count * kDropDownItemWidth, 0);
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(cityChange)
+                                                     name:kCityChanged
+                                                   object:nil];
+        
     }
     return self;
 }
@@ -42,6 +48,28 @@
     self.subTitleView.getTitleBlock = ^(){
         return [MetaDataTool sharedMetaDataTool].currentDistrict;
     };
+}
+
+- (void)setItemMetaData:(DropDownMenuItem *)item{
+    [MetaDataTool sharedMetaDataTool].currentDistrict = [item titleForState:UIControlStateNormal];
+}
+
+- (void)cityChange{
+    for (UIView *view in self.scrollView.subviews) {
+        [view removeFromSuperview];
+    }
+    CityModel *city = [MetaDataTool sharedMetaDataTool].currentCity;
+    NSArray *districtArray = city.districts;
+    //往scrollView添加分类数据
+    
+    for (int i = 0; i < districtArray.count; i++) {
+        DistrictMenuItem *item = [[DistrictMenuItem alloc]init];
+        item.district = districtArray[i];
+        [item addTarget:self action:@selector(onItemClicked:) forControlEvents:UIControlEventTouchUpInside];
+        item.frame = CGRectMake(i * kDropDownItemWidth, 0, 0, 0);
+        [self.scrollView addSubview:item];
+    }
+    self.scrollView.contentSize = CGSizeMake(districtArray.count * kDropDownItemWidth, 0);
 }
 
 @end

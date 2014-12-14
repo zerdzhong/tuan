@@ -29,6 +29,10 @@
 #define kCityChanged @"tuan_cityChanged"
 #define kCityKey @"tuan_city"
 
+#define KCategoryChanged @"tuan_categoryChanged"
+#define KDistrictChanged @"tuan_districtChanged"
+#define KOrderChanged @"tuan_orderChanged"
+
 #define kGlobalBgColor [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_deal.png"]]
 
 // 2.日志输出宏定义
