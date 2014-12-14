@@ -140,7 +140,6 @@
     
     if (searchText.length == 0) {
         //隐藏搜索结果控制器
-        
         [_searchResult.view removeFromSuperview];
     }else{
         //显示搜索结果控制器

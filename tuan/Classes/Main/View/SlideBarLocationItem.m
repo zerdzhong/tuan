@@ -103,7 +103,7 @@
 
 -(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController{
     self.enabled = YES;
-    [[NSNotificationCenter defaultCenter]removeObserver:self];
+//    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 -(void)dealloc{
