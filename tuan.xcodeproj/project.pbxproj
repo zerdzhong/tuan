@@ -15,6 +15,8 @@
 		5C03739B1A28C711009C9B67 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C03739A1A28C711009C9B67 /* BaseNavigationController.m */; };
 		5C0373A01A28C88C009C9B67 /* UIBarButtonItem+ZD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C03739D1A28C88C009C9B67 /* UIBarButtonItem+ZD.m */; };
 		5C0373A11A28C88C009C9B67 /* UIImage+ZD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C03739F1A28C88C009C9B67 /* UIImage+ZD.m */; };
+		5C0D66931A3DC1FE00684377 /* DPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D668F1A3DC1FE00684377 /* DPAPI.m */; };
+		5C0D66941A3DC1FE00684377 /* DPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D66921A3DC1FE00684377 /* DPRequest.m */; };
 		5C0D9CB21A2F39B300AED66E /* CitySection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D9CB11A2F39B300AED66E /* CitySection.m */; };
 		5C0D9CB51A2F3A1D00AED66E /* CityBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D9CB41A2F3A1D00AED66E /* CityBaseModel.m */; };
 		5C0D9CB81A2F3A6500AED66E /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D9CB71A2F3A6500AED66E /* CityModel.m */; };
@@ -251,6 +253,11 @@
 		5C03739D1A28C88C009C9B67 /* UIBarButtonItem+ZD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+ZD.m"; sourceTree = "<group>"; };
 		5C03739E1A28C88C009C9B67 /* UIImage+ZD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZD.h"; sourceTree = "<group>"; };
 		5C03739F1A28C88C009C9B67 /* UIImage+ZD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZD.m"; sourceTree = "<group>"; };
+		5C0D668E1A3DC1FE00684377 /* DPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPAPI.h; sourceTree = "<group>"; };
+		5C0D668F1A3DC1FE00684377 /* DPAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPAPI.m; sourceTree = "<group>"; };
+		5C0D66901A3DC1FE00684377 /* DPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPConstants.h; sourceTree = "<group>"; };
+		5C0D66911A3DC1FE00684377 /* DPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRequest.h; sourceTree = "<group>"; };
+		5C0D66921A3DC1FE00684377 /* DPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRequest.m; sourceTree = "<group>"; };
 		5C0D9CB01A2F39B300AED66E /* CitySection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitySection.h; sourceTree = "<group>"; };
 		5C0D9CB11A2F39B300AED66E /* CitySection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitySection.m; sourceTree = "<group>"; };
 		5C0D9CB31A2F3A1D00AED66E /* CityBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityBaseModel.h; sourceTree = "<group>"; };
@@ -610,6 +617,18 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		5C0D668D1A3DC1FE00684377 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5C0D668E1A3DC1FE00684377 /* DPAPI.h */,
+				5C0D668F1A3DC1FE00684377 /* DPAPI.m */,
+				5C0D66901A3DC1FE00684377 /* DPConstants.h */,
+				5C0D66911A3DC1FE00684377 /* DPRequest.h */,
+				5C0D66921A3DC1FE00684377 /* DPRequest.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		5C0D9CAF1A2F399F00AED66E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -832,6 +851,7 @@
 		5CC125F91A24D879000C731E /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				5C0D668D1A3DC1FE00684377 /* API */,
 				5C0373981A28C6E6009C9B67 /* Controller */,
 				5C1C43931A2627A7006CB752 /* Category */,
 				5CC125FA1A24D879000C731E /* AppDelegate.h */,
@@ -1467,7 +1487,9 @@
 				5CC200B81A276470008F5F95 /* SlideBarLocationItem.m in Sources */,
 				5C7C13661A2A0C95002120F7 /* MoreController.m in Sources */,
 				5C0373971A28BC3C009C9B67 /* MineController.m in Sources */,
+				5C0D66941A3DC1FE00684377 /* DPRequest.m in Sources */,
 				5C0373911A28BC21009C9B67 /* MapController.m in Sources */,
+				5C0D66931A3DC1FE00684377 /* DPAPI.m in Sources */,
 				5C7F62691A30A42A00DA74F8 /* CitySearchReslutController.m in Sources */,
 				5C548D291A35D5B6003C46A7 /* DropDownMenu.m in Sources */,
 			);
