@@ -132,6 +132,7 @@
     //显示所有子标题
     if (_subTitleView == nil) {
         _subTitleView = [[DropDownSubTitle alloc]init];
+        [self settingSubTitleBlock];
     }
     
     CGFloat y = self.scrollView.frame.origin.y + kDropDownItemHeight;

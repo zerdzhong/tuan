@@ -61,7 +61,16 @@
         UIButton *btn = self.subviews[i];
         btn.hidden = NO;
         [btn setTitle:_titles[i] forState:UIControlStateNormal];
-        btn.selected = [_titles[i] isEqualToString:[MetaDataTool sharedMetaDataTool].currentCategory];
+        if (_getTitleBlock) {
+            //获取选中的title
+            btn.selected = [_titles[i] isEqualToString:_getTitleBlock()];
+            if (btn.selected) {
+                _selectedButton = btn;
+            }
+        }else{
+            btn.selected = NO;
+        }
+        
     }
     
     [self layoutSubviews];
@@ -69,14 +78,15 @@
 
 
 - (void)onTitleClicked:(UIButton *)btn{
-    MyLog(@"%@",[btn titleForState:UIControlStateNormal]);
     //控制按钮状态
     _selectedButton.selected = NO;
     _selectedButton = btn;
     _selectedButton.selected = YES;
     
-    //设置当前选中文字
-    [MetaDataTool sharedMetaDataTool].currentCategory = [_selectedButton titleForState:UIControlStateNormal];
+    if (_setTitleBlock) {
+        //设置当前选中文字
+        _setTitleBlock([_selectedButton titleForState:UIControlStateNormal]);
+    }
 }
 
 -(void)layoutSubviews{

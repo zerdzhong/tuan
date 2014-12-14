@@ -13,6 +13,9 @@
 //所有子标题
 @property (nonatomic, strong) NSArray *titles;
 
+@property (nonatomic, copy) void(^setTitleBlock)(NSString *title);
+@property (nonatomic, copy) NSString *(^getTitleBlock)();
+
 //通过动画显示出来
 - (void)showWithAnimation;
 //通过动画隐藏出来

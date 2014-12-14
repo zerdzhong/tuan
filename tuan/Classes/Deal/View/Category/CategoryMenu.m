@@ -11,7 +11,6 @@
 #import "CategoryModel.h"
 #import "CategoryMenuItem.h"
 #import "Common.h"
-#import "DropDownSubTitle.h"
 
 @interface CategoryMenu ()
 
@@ -40,6 +39,15 @@
 
 -(void)hideWithAnimation{
     [super hideWithAnimation];
+}
+
+- (void)settingSubTitleBlock{
+    self.subTitleView.setTitleBlock = ^(NSString *title){
+        [MetaDataTool sharedMetaDataTool].currentCategory = title;
+    };
+    self.subTitleView.getTitleBlock = ^(){
+        return [MetaDataTool sharedMetaDataTool].currentCategory;
+    };
 }
 
 @end

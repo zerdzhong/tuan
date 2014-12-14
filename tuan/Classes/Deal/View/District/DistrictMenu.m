@@ -35,4 +35,13 @@
     return self;
 }
 
+- (void)settingSubTitleBlock{
+    self.subTitleView.setTitleBlock = ^(NSString *title){
+        [MetaDataTool sharedMetaDataTool].currentDistrict = title;
+    };
+    self.subTitleView.getTitleBlock = ^(){
+        return [MetaDataTool sharedMetaDataTool].currentDistrict;
+    };
+}
+
 @end

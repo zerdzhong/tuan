@@ -22,5 +22,6 @@ singleton_interface(MetaDataTool)
 
 @property (nonatomic, strong) CityModel *currentCity;     //当前城市
 @property (nonatomic, copy) NSString *currentCategory;    //当前选中类别
+@property (nonatomic, copy) NSString *currentDistrict;    //当前选中区域
 
 @end

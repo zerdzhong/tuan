@@ -16,6 +16,8 @@
 @property (nonatomic, strong) DropDownSubTitle *subTitleView;
 @property (nonatomic, copy) void(^hiddenBlock)();
 
+- (void)settingSubTitleBlock;
+
 //通过动画显示出来
 - (void)showWithAnimation;
 //通过动画隐藏出来
