@@ -21,7 +21,6 @@
 		5C0D9CB51A2F3A1D00AED66E /* CityBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D9CB41A2F3A1D00AED66E /* CityBaseModel.m */; };
 		5C0D9CB81A2F3A6500AED66E /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D9CB71A2F3A6500AED66E /* CityModel.m */; };
 		5C0D9CBB1A2F3AB900AED66E /* DistrictMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D9CBA1A2F3AB900AED66E /* DistrictMode.m */; };
-		5C0D9CBE1A2F437200AED66E /* NSObject+Value.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0D9CBD1A2F437200AED66E /* NSObject+Value.m */; };
 		5C1C438E1A261833006CB752 /* SlideBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C438D1A261833006CB752 /* SlideBar.m */; };
 		5C1C43911A26258E006CB752 /* SlideBarBaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C43901A26258E006CB752 /* SlideBarBaseItem.m */; };
 		5C1C43961A2627AE006CB752 /* NSString+ZD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C43951A2627AE006CB752 /* NSString+ZD.m */; };
@@ -40,6 +39,8 @@
 		5C548D301A35DA67003C46A7 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D2F1A35DA67003C46A7 /* CategoryModel.m */; };
 		5C548D391A35DCEE003C46A7 /* CategoryMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D361A35DCEE003C46A7 /* CategoryMenu.m */; };
 		5C548D3A1A35DCEE003C46A7 /* CategoryMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D381A35DCEE003C46A7 /* CategoryMenuItem.m */; };
+		5C649E931A3DCBDC00073256 /* DealModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C649E921A3DCBDC00073256 /* DealModel.m */; };
+		5C649E961A3DCDC100073256 /* NSObject+Value.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C649E951A3DCDC100073256 /* NSObject+Value.m */; };
 		5C7C13661A2A0C95002120F7 /* MoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7C13651A2A0C95002120F7 /* MoreController.m */; };
 		5C7F62691A30A42A00DA74F8 /* CitySearchReslutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7F62681A30A42A00DA74F8 /* CitySearchReslutController.m */; };
 		5CBA81741A2F4E570025D988 /* MetaDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA81731A2F4E570025D988 /* MetaDataTool.m */; };
@@ -266,8 +267,6 @@
 		5C0D9CB71A2F3A6500AED66E /* CityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityModel.m; sourceTree = "<group>"; };
 		5C0D9CB91A2F3AB900AED66E /* DistrictMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistrictMode.h; sourceTree = "<group>"; };
 		5C0D9CBA1A2F3AB900AED66E /* DistrictMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictMode.m; sourceTree = "<group>"; };
-		5C0D9CBC1A2F437200AED66E /* NSObject+Value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Value.h"; sourceTree = "<group>"; };
-		5C0D9CBD1A2F437200AED66E /* NSObject+Value.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Value.m"; sourceTree = "<group>"; };
 		5C1C438C1A261833006CB752 /* SlideBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideBar.h; sourceTree = "<group>"; };
 		5C1C438D1A261833006CB752 /* SlideBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideBar.m; sourceTree = "<group>"; };
 		5C1C438F1A26258E006CB752 /* SlideBarBaseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideBarBaseItem.h; sourceTree = "<group>"; };
@@ -302,6 +301,10 @@
 		5C548D361A35DCEE003C46A7 /* CategoryMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryMenu.m; sourceTree = "<group>"; };
 		5C548D371A35DCEE003C46A7 /* CategoryMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryMenuItem.h; sourceTree = "<group>"; };
 		5C548D381A35DCEE003C46A7 /* CategoryMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryMenuItem.m; sourceTree = "<group>"; };
+		5C649E911A3DCBDC00073256 /* DealModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealModel.h; sourceTree = "<group>"; };
+		5C649E921A3DCBDC00073256 /* DealModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealModel.m; sourceTree = "<group>"; };
+		5C649E941A3DCDC100073256 /* NSObject+Value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Value.h"; sourceTree = "<group>"; };
+		5C649E951A3DCDC100073256 /* NSObject+Value.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Value.m"; sourceTree = "<group>"; };
 		5C7C13641A2A0C95002120F7 /* MoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreController.h; sourceTree = "<group>"; };
 		5C7C13651A2A0C95002120F7 /* MoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreController.m; sourceTree = "<group>"; };
 		5C7F62671A30A42A00DA74F8 /* CitySearchReslutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitySearchReslutController.h; sourceTree = "<group>"; };
@@ -609,8 +612,6 @@
 		5C0373981A28C6E6009C9B67 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5C0D9CBC1A2F437200AED66E /* NSObject+Value.h */,
-				5C0D9CBD1A2F437200AED66E /* NSObject+Value.m */,
 				5C0373991A28C711009C9B67 /* BaseNavigationController.h */,
 				5C03739A1A28C711009C9B67 /* BaseNavigationController.m */,
 			);
@@ -647,6 +648,8 @@
 		5C1C43931A2627A7006CB752 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				5C649E941A3DCDC100073256 /* NSObject+Value.h */,
+				5C649E951A3DCDC100073256 /* NSObject+Value.m */,
 				5C03739C1A28C88C009C9B67 /* UIBarButtonItem+ZD.h */,
 				5C03739D1A28C88C009C9B67 /* UIBarButtonItem+ZD.m */,
 				5C03739E1A28C88C009C9B67 /* UIImage+ZD.h */,
@@ -692,6 +695,8 @@
 		5C548D2D1A35DA3B003C46A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5C649E911A3DCBDC00073256 /* DealModel.h */,
+				5C649E921A3DCBDC00073256 /* DealModel.m */,
 				5C548D2E1A35DA67003C46A7 /* CategoryModel.h */,
 				5C548D2F1A35DA67003C46A7 /* CategoryModel.m */,
 				5C43C8BF1A3743C400CCD86A /* OrderModel.h */,
@@ -1473,16 +1478,17 @@
 				5C43C8B41A37368F00CCD86A /* DropDownMenuItem.m in Sources */,
 				5C548D301A35DA67003C46A7 /* CategoryModel.m in Sources */,
 				5C0D9CBB1A2F3AB900AED66E /* DistrictMode.m in Sources */,
+				5C649E931A3DCBDC00073256 /* DealModel.m in Sources */,
 				5CDBFD591A2B531D00C3ADC8 /* CityListController.m in Sources */,
 				5C548D391A35DCEE003C46A7 /* CategoryMenu.m in Sources */,
 				5CC125FD1A24D879000C731E /* AppDelegate.m in Sources */,
 				5C0D9CB51A2F3A1D00AED66E /* CityBaseModel.m in Sources */,
 				5C03739B1A28C711009C9B67 /* BaseNavigationController.m in Sources */,
+				5C649E961A3DCDC100073256 /* NSObject+Value.m in Sources */,
 				5C548D3A1A35DCEE003C46A7 /* CategoryMenuItem.m in Sources */,
 				5C0373941A28BC30009C9B67 /* CollectController.m in Sources */,
 				5C43C8BE1A373D3900CCD86A /* OrderMenuItem.m in Sources */,
 				5C0373A01A28C88C009C9B67 /* UIBarButtonItem+ZD.m in Sources */,
-				5C0D9CBE1A2F437200AED66E /* NSObject+Value.m in Sources */,
 				5C1C438E1A261833006CB752 /* SlideBar.m in Sources */,
 				5CC200B81A276470008F5F95 /* SlideBarLocationItem.m in Sources */,
 				5C7C13661A2A0C95002120F7 /* MoreController.m in Sources */,

@@ -158,8 +158,6 @@
 
 #pragma mark- notification
 
-
-
 - (void)dataChange{
     _selectedItem.selected = NO;
     _selectedItem = nil;
@@ -184,5 +182,8 @@
     
 }
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 @end

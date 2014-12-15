@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "DPRequest.h"
 #import "Singleton.h"
-#define kDPAppKey             @"975791789"
-#define kDPAppSecret          @"5e4dcaf696394707b9a0139e40074ce9"
+
+/*zerd*/
+#define kDPAppKey             @"719325937"
+#define kDPAppSecret          @"f5202de9b3c748199f633132eb186966"
 
 #ifndef kDPAppKey
 #error

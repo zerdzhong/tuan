@@ -9,6 +9,16 @@
 #import "DealListController.h"
 #import "DealTopMenu.h"
 #import "Common.h"
+#import "DPAPI.h"
+#import "MetaDataTool.h"
+#import "DealModel.h"
+#import "NSObject+Value.h"
+
+@interface DealListController ()<DPRequestDelegate>
+
+@property (nonatomic, strong) NSMutableArray *dealArray;
+
+@end
 
 @implementation DealListController
 
@@ -16,7 +26,26 @@
     [super viewDidLoad];
 
     // 1.监听城市改变的通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cityChange) name:kCityChanged object:nil];    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(dataChange)
+                                                 name:kCityChanged
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(dataChange)
+                                                 name:KCategoryChanged
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(dataChange)
+                                                 name:KDistrictChanged
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(dataChange)
+                                                 name:KOrderChanged
+                                               object:nil];
+    
     //设置背景色
     self.view.backgroundColor = kGlobalBgColor;
     
@@ -34,9 +63,28 @@
     
 }
 
-- (void)cityChange
-{
-    MyLog(@"TGDealListController监听到城市改变了");
+#pragma mark- notification
+- (void)dataChange{
+    
+    DPAPI *api = [[DPAPI alloc]init];
+    
+    [api requestWithURL:@"v1/deal/find_deals"
+                 params:@{@"city":[MetaDataTool sharedMetaDataTool].currentCity.name}
+               delegate:self];
+    
+}
+
+#pragma mark- 点评delegate
+
+-(void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result{
+    NSArray *array = result[@"deals"];
+    
+    _dealArray = [[NSMutableArray alloc]init];
+    for (NSDictionary *deal in array) {
+        DealModel *dealModel = [[DealModel alloc]init];
+        [dealModel setValues:deal];
+        [_dealArray addObject:dealModel];
+    }
 }
 
 - (void)dealloc
