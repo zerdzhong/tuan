@@ -34,6 +34,7 @@
 		5C43C8C31A37465D00CCD86A /* Orders.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C43C8C21A37465D00CCD86A /* Orders.plist */; };
 		5C47AA711A2CB65C0012EE42 /* Categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C47AA6F1A2CB65C0012EE42 /* Categories.plist */; };
 		5C47AA721A2CB65C0012EE42 /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C47AA701A2CB65C0012EE42 /* Cities.plist */; };
+		5C4DF5F91A3F062D00760231 /* DealCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4DF5F81A3F062D00760231 /* DealCollectionCell.xib */; };
 		5C4EA2A11A3B1B4200A5E7D4 /* DropDownSubTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4EA2A01A3B1B4200A5E7D4 /* DropDownSubTitle.m */; };
 		5C548D291A35D5B6003C46A7 /* DropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D281A35D5B6003C46A7 /* DropDownMenu.m */; };
 		5C548D301A35DA67003C46A7 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D2F1A35DA67003C46A7 /* CategoryModel.m */; };
@@ -291,6 +292,7 @@
 		5C43C8C21A37465D00CCD86A /* Orders.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Orders.plist; sourceTree = "<group>"; };
 		5C47AA6F1A2CB65C0012EE42 /* Categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Categories.plist; sourceTree = "<group>"; };
 		5C47AA701A2CB65C0012EE42 /* Cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Cities.plist; sourceTree = "<group>"; };
+		5C4DF5F81A3F062D00760231 /* DealCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealCollectionCell.xib; sourceTree = "<group>"; };
 		5C4EA29F1A3B1B4200A5E7D4 /* DropDownSubTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownSubTitle.h; sourceTree = "<group>"; };
 		5C4EA2A01A3B1B4200A5E7D4 /* DropDownSubTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownSubTitle.m; sourceTree = "<group>"; };
 		5C548D271A35D5B6003C46A7 /* DropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownMenu.h; sourceTree = "<group>"; };
@@ -1137,6 +1139,7 @@
 				5C43C8B31A37368F00CCD86A /* DropDownMenuItem.m */,
 				5C4EA29F1A3B1B4200A5E7D4 /* DropDownSubTitle.h */,
 				5C4EA2A01A3B1B4200A5E7D4 /* DropDownSubTitle.m */,
+				5C4DF5F81A3F062D00760231 /* DealCollectionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1249,6 +1252,7 @@
 				5CECBCDF1A31EDB50016C211 /* ic_deal_soldsOver@2x.png in Resources */,
 				5CECBCA41A31EDB50016C211 /* btn_dealinfo_pressed.png in Resources */,
 				5CC1264A1A24DAF9000C731E /* ic_collect@2x.png in Resources */,
+				5C4DF5F91A3F062D00760231 /* DealCollectionCell.xib in Resources */,
 				5CECBCAD1A31EDB50016C211 /* btn_merchant_pressed@2x.png in Resources */,
 				5CECBC8E1A31EDB50016C211 /* ic_filter_category_4.png in Resources */,
 				5CECBC901A31EDB50016C211 /* ic_filter_category_5.png in Resources */,
