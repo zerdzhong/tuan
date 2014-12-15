@@ -35,6 +35,7 @@
 		5C47AA711A2CB65C0012EE42 /* Categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C47AA6F1A2CB65C0012EE42 /* Categories.plist */; };
 		5C47AA721A2CB65C0012EE42 /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C47AA701A2CB65C0012EE42 /* Cities.plist */; };
 		5C4DF5F91A3F062D00760231 /* DealCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4DF5F81A3F062D00760231 /* DealCollectionCell.xib */; };
+		5C4DF5FC1A3F347200760231 /* DealCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DF5FB1A3F347200760231 /* DealCollectionCell.m */; };
 		5C4EA2A11A3B1B4200A5E7D4 /* DropDownSubTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4EA2A01A3B1B4200A5E7D4 /* DropDownSubTitle.m */; };
 		5C548D291A35D5B6003C46A7 /* DropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D281A35D5B6003C46A7 /* DropDownMenu.m */; };
 		5C548D301A35DA67003C46A7 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D2F1A35DA67003C46A7 /* CategoryModel.m */; };
@@ -293,6 +294,8 @@
 		5C47AA6F1A2CB65C0012EE42 /* Categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Categories.plist; sourceTree = "<group>"; };
 		5C47AA701A2CB65C0012EE42 /* Cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Cities.plist; sourceTree = "<group>"; };
 		5C4DF5F81A3F062D00760231 /* DealCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealCollectionCell.xib; sourceTree = "<group>"; };
+		5C4DF5FA1A3F347200760231 /* DealCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealCollectionCell.h; sourceTree = "<group>"; };
+		5C4DF5FB1A3F347200760231 /* DealCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealCollectionCell.m; sourceTree = "<group>"; };
 		5C4EA29F1A3B1B4200A5E7D4 /* DropDownSubTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownSubTitle.h; sourceTree = "<group>"; };
 		5C4EA2A01A3B1B4200A5E7D4 /* DropDownSubTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownSubTitle.m; sourceTree = "<group>"; };
 		5C548D271A35D5B6003C46A7 /* DropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownMenu.h; sourceTree = "<group>"; };
@@ -1140,6 +1143,8 @@
 				5C4EA29F1A3B1B4200A5E7D4 /* DropDownSubTitle.h */,
 				5C4EA2A01A3B1B4200A5E7D4 /* DropDownSubTitle.m */,
 				5C4DF5F81A3F062D00760231 /* DealCollectionCell.xib */,
+				5C4DF5FA1A3F347200760231 /* DealCollectionCell.h */,
+				5C4DF5FB1A3F347200760231 /* DealCollectionCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1474,6 +1479,7 @@
 				5CBA81741A2F4E570025D988 /* MetaDataTool.m in Sources */,
 				5CC126011A24D8BF000C731E /* MainController.m in Sources */,
 				5C4EA2A11A3B1B4200A5E7D4 /* DropDownSubTitle.m in Sources */,
+				5C4DF5FC1A3F347200760231 /* DealCollectionCell.m in Sources */,
 				5C43C8B71A37370200CCD86A /* DistrictMenuItem.m in Sources */,
 				5CECBCEA1A31EFBA0016C211 /* DealTopMenu.m in Sources */,
 				5CECBCED1A31F0420016C211 /* DealTopMenuItem.m in Sources */,

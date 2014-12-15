@@ -13,6 +13,7 @@
 #import "MetaDataTool.h"
 #import "DealModel.h"
 #import "NSObject+Value.h"
+#import "DealCollectionCell.h"
 
 #define kCellHeight 250
 #define kCellWidth 250
@@ -162,10 +163,12 @@
 
     static NSString *iden = @"dealCell";
     
-    UICollectionViewCell *cell = [collectionView
+    DealCollectionCell *cell = [collectionView
                                   dequeueReusableCellWithReuseIdentifier:iden
                                   forIndexPath:indexPath];
     
+    
+    cell.dealModel = _dealArray[indexPath.row];
     
     return cell;
 }
