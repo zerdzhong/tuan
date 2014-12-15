@@ -7,6 +7,7 @@
 //
 
 #import "DealCollectionCell.h"
+#import "ImageTool.h"
 
 @implementation DealCollectionCell
 
@@ -16,6 +17,7 @@
     _desc.text = _dealModel.desc;
     
     // 2.图片
+    [ImageTool loadImage:_dealModel.image_url placeholder:@"placeholder_deal.png" imageView:_image];
     
     // 3.购买人数
     [_joinCount setTitle:[NSString stringWithFormat:@"%d", _dealModel.purchase_count] forState:UIControlStateNormal];

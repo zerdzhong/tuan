@@ -45,6 +45,7 @@
 		5C649E961A3DCDC100073256 /* NSObject+Value.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C649E951A3DCDC100073256 /* NSObject+Value.m */; };
 		5C7C13661A2A0C95002120F7 /* MoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7C13651A2A0C95002120F7 /* MoreController.m */; };
 		5C7F62691A30A42A00DA74F8 /* CitySearchReslutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7F62681A30A42A00DA74F8 /* CitySearchReslutController.m */; };
+		5C91A2661A3F3B6600B34142 /* ImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C91A2651A3F3B6600B34142 /* ImageTool.m */; };
 		5CBA81741A2F4E570025D988 /* MetaDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA81731A2F4E570025D988 /* MetaDataTool.m */; };
 		5CC125C61A24D548000C731E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC125C51A24D548000C731E /* Images.xcassets */; };
 		5CC125D51A24D548000C731E /* tuanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC125D41A24D548000C731E /* tuanTests.m */; };
@@ -314,6 +315,8 @@
 		5C7C13651A2A0C95002120F7 /* MoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreController.m; sourceTree = "<group>"; };
 		5C7F62671A30A42A00DA74F8 /* CitySearchReslutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitySearchReslutController.h; sourceTree = "<group>"; };
 		5C7F62681A30A42A00DA74F8 /* CitySearchReslutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitySearchReslutController.m; sourceTree = "<group>"; };
+		5C91A2641A3F3B6600B34142 /* ImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTool.h; sourceTree = "<group>"; };
+		5C91A2651A3F3B6600B34142 /* ImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTool.m; sourceTree = "<group>"; };
 		5CBA81721A2F4E570025D988 /* MetaDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetaDataTool.h; sourceTree = "<group>"; };
 		5CBA81731A2F4E570025D988 /* MetaDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetaDataTool.m; sourceTree = "<group>"; };
 		5CBA81751A2F4F490025D988 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
@@ -738,6 +741,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		5C91A2631A3F3B5700B34142 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				5C91A2641A3F3B6600B34142 /* ImageTool.h */,
+				5C91A2651A3F3B6600B34142 /* ImageTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		5CBA81711A2F4DCC0025D988 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -861,6 +873,7 @@
 		5CC125F91A24D879000C731E /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				5C91A2631A3F3B5700B34142 /* Tool */,
 				5C0D668D1A3DC1FE00684377 /* API */,
 				5C0373981A28C6E6009C9B67 /* Controller */,
 				5C1C43931A2627A7006CB752 /* Category */,
@@ -1476,6 +1489,7 @@
 				5C43C8BB1A373D2B00CCD86A /* OrderMenu.m in Sources */,
 				5C1C43991A262937006CB752 /* SlideBarMoreItem.m in Sources */,
 				5C03738E1A28BC14009C9B67 /* DealListController.m in Sources */,
+				5C91A2661A3F3B6600B34142 /* ImageTool.m in Sources */,
 				5CBA81741A2F4E570025D988 /* MetaDataTool.m in Sources */,
 				5CC126011A24D8BF000C731E /* MainController.m in Sources */,
 				5C4EA2A11A3B1B4200A5E7D4 /* DropDownSubTitle.m in Sources */,
