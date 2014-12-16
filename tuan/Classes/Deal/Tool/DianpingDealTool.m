@@ -36,6 +36,8 @@ singleton_implementation(DianpingDealTool)
 - (void)dealsWithPage:(int)page success:(SuccessBlock)success failure:(FailureBlock)failure{
 
     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+    [params setValue:@"5" forKey:@"limit"];
+    [params setValue:@(page) forKey:@"page"];
     //添加城市参数
     NSString *city = [MetaDataTool sharedMetaDataTool].currentCity.name;
     if (city != nil) {

@@ -42,6 +42,14 @@
 		5C548D391A35DCEE003C46A7 /* CategoryMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D361A35DCEE003C46A7 /* CategoryMenu.m */; };
 		5C548D3A1A35DCEE003C46A7 /* CategoryMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D381A35DCEE003C46A7 /* CategoryMenuItem.m */; };
 		5C5D372C1A4065A900E16FB3 /* DianpingDealTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D372B1A4065A900E16FB3 /* DianpingDealTool.m */; };
+		5C5D374B1A40832700E16FB3 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C5D373B1A40832700E16FB3 /* MJRefresh.bundle */; };
+		5C5D374C1A40832700E16FB3 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D373E1A40832700E16FB3 /* MJRefreshBaseView.m */; };
+		5C5D374D1A40832700E16FB3 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D37401A40832700E16FB3 /* MJRefreshConst.m */; };
+		5C5D374E1A40832700E16FB3 /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D37421A40832700E16FB3 /* MJRefreshFooterView.m */; };
+		5C5D374F1A40832700E16FB3 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D37441A40832700E16FB3 /* MJRefreshHeaderView.m */; };
+		5C5D37501A40832700E16FB3 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D37461A40832700E16FB3 /* UIScrollView+MJExtension.m */; };
+		5C5D37511A40832700E16FB3 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D37481A40832700E16FB3 /* UIScrollView+MJRefresh.m */; };
+		5C5D37521A40832700E16FB3 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D374A1A40832700E16FB3 /* UIView+MJExtension.m */; };
 		5C649E931A3DCBDC00073256 /* DealModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C649E921A3DCBDC00073256 /* DealModel.m */; };
 		5C649E961A3DCDC100073256 /* NSObject+Value.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C649E951A3DCDC100073256 /* NSObject+Value.m */; };
 		5C7C13661A2A0C95002120F7 /* MoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7C13651A2A0C95002120F7 /* MoreController.m */; };
@@ -310,6 +318,22 @@
 		5C548D381A35DCEE003C46A7 /* CategoryMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryMenuItem.m; sourceTree = "<group>"; };
 		5C5D372A1A4065A900E16FB3 /* DianpingDealTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DianpingDealTool.h; sourceTree = "<group>"; };
 		5C5D372B1A4065A900E16FB3 /* DianpingDealTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DianpingDealTool.m; sourceTree = "<group>"; };
+		5C5D373B1A40832700E16FB3 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
+		5C5D373C1A40832700E16FB3 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
+		5C5D373D1A40832700E16FB3 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
+		5C5D373E1A40832700E16FB3 /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
+		5C5D373F1A40832700E16FB3 /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
+		5C5D37401A40832700E16FB3 /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
+		5C5D37411A40832700E16FB3 /* MJRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooterView.h; sourceTree = "<group>"; };
+		5C5D37421A40832700E16FB3 /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooterView.m; sourceTree = "<group>"; };
+		5C5D37431A40832700E16FB3 /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
+		5C5D37441A40832700E16FB3 /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
+		5C5D37451A40832700E16FB3 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
+		5C5D37461A40832700E16FB3 /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
+		5C5D37471A40832700E16FB3 /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
+		5C5D37481A40832700E16FB3 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
+		5C5D37491A40832700E16FB3 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
+		5C5D374A1A40832700E16FB3 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		5C649E911A3DCBDC00073256 /* DealModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealModel.h; sourceTree = "<group>"; };
 		5C649E921A3DCBDC00073256 /* DealModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealModel.m; sourceTree = "<group>"; };
 		5C649E941A3DCDC100073256 /* NSObject+Value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Value.h"; sourceTree = "<group>"; };
@@ -737,6 +761,37 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		5C5D372D1A40798900E16FB3 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				5C5D372E1A40798900E16FB3 /* MJRefresh */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		5C5D372E1A40798900E16FB3 /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				5C5D373B1A40832700E16FB3 /* MJRefresh.bundle */,
+				5C5D373C1A40832700E16FB3 /* MJRefresh.h */,
+				5C5D373D1A40832700E16FB3 /* MJRefreshBaseView.h */,
+				5C5D373E1A40832700E16FB3 /* MJRefreshBaseView.m */,
+				5C5D373F1A40832700E16FB3 /* MJRefreshConst.h */,
+				5C5D37401A40832700E16FB3 /* MJRefreshConst.m */,
+				5C5D37411A40832700E16FB3 /* MJRefreshFooterView.h */,
+				5C5D37421A40832700E16FB3 /* MJRefreshFooterView.m */,
+				5C5D37431A40832700E16FB3 /* MJRefreshHeaderView.h */,
+				5C5D37441A40832700E16FB3 /* MJRefreshHeaderView.m */,
+				5C5D37451A40832700E16FB3 /* UIScrollView+MJExtension.h */,
+				5C5D37461A40832700E16FB3 /* UIScrollView+MJExtension.m */,
+				5C5D37471A40832700E16FB3 /* UIScrollView+MJRefresh.h */,
+				5C5D37481A40832700E16FB3 /* UIScrollView+MJRefresh.m */,
+				5C5D37491A40832700E16FB3 /* UIView+MJExtension.h */,
+				5C5D374A1A40832700E16FB3 /* UIView+MJExtension.m */,
+			);
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
 		5C7C13621A2A0C73002120F7 /* More */ = {
 			isa = PBXGroup;
 			children = (
@@ -886,6 +941,7 @@
 		5CC125F91A24D879000C731E /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				5C5D372D1A40798900E16FB3 /* Lib */,
 				5C91A2631A3F3B5700B34142 /* Tool */,
 				5C0D668D1A3DC1FE00684377 /* API */,
 				5C0373981A28C6E6009C9B67 /* Controller */,
@@ -1342,6 +1398,7 @@
 				5CC126591A24DAF9000C731E /* ic_map_hl@2x.png in Resources */,
 				5CECBC951A31EDB50016C211 /* ic_filter_category_99@2x.png in Resources */,
 				5CC126421A24DAF9000C731E /* Icon-Small-50.png in Resources */,
+				5C5D374B1A40832700E16FB3 /* MJRefresh.bundle in Resources */,
 				5CECBCDD1A31EDB50016C211 /* ic_deal_second.png in Resources */,
 				5CECBC8F1A31EDB50016C211 /* ic_filter_category_4@2x.png in Resources */,
 				5CC1263C1A24DAF9000C731E /* Default-Landscape~ipad.png in Resources */,
@@ -1495,6 +1552,7 @@
 				5C0D9CB21A2F39B300AED66E /* CitySection.m in Sources */,
 				5CC125FE1A24D879000C731E /* main.m in Sources */,
 				5C0373A11A28C88C009C9B67 /* UIImage+ZD.m in Sources */,
+				5C5D374E1A40832700E16FB3 /* MJRefreshFooterView.m in Sources */,
 				5C1C43961A2627AE006CB752 /* NSString+ZD.m in Sources */,
 				5C43C8B11A3735E400CCD86A /* DistrictMenu.m in Sources */,
 				5C0D9CB81A2F3A6500AED66E /* CityModel.m in Sources */,
@@ -1504,6 +1562,7 @@
 				5C03738E1A28BC14009C9B67 /* DealListController.m in Sources */,
 				5C91A2661A3F3B6600B34142 /* ImageTool.m in Sources */,
 				5CBA81741A2F4E570025D988 /* MetaDataTool.m in Sources */,
+				5C5D37521A40832700E16FB3 /* UIView+MJExtension.m in Sources */,
 				5CC126011A24D8BF000C731E /* MainController.m in Sources */,
 				5C4EA2A11A3B1B4200A5E7D4 /* DropDownSubTitle.m in Sources */,
 				5C4DF5FC1A3F347200760231 /* DealCollectionCell.m in Sources */,
@@ -1514,6 +1573,7 @@
 				5C5D372C1A4065A900E16FB3 /* DianpingDealTool.m in Sources */,
 				5CC200BB1A2767DD008F5F95 /* SlideBarTabItem.m in Sources */,
 				5C43C8B41A37368F00CCD86A /* DropDownMenuItem.m in Sources */,
+				5C5D37501A40832700E16FB3 /* UIScrollView+MJExtension.m in Sources */,
 				5C548D301A35DA67003C46A7 /* CategoryModel.m in Sources */,
 				5C0D9CBB1A2F3AB900AED66E /* DistrictMode.m in Sources */,
 				5C649E931A3DCBDC00073256 /* DealModel.m in Sources */,
@@ -1522,15 +1582,19 @@
 				5CC125FD1A24D879000C731E /* AppDelegate.m in Sources */,
 				5C0D9CB51A2F3A1D00AED66E /* CityBaseModel.m in Sources */,
 				5C03739B1A28C711009C9B67 /* BaseNavigationController.m in Sources */,
+				5C5D374D1A40832700E16FB3 /* MJRefreshConst.m in Sources */,
 				5C649E961A3DCDC100073256 /* NSObject+Value.m in Sources */,
 				5C548D3A1A35DCEE003C46A7 /* CategoryMenuItem.m in Sources */,
 				5C0373941A28BC30009C9B67 /* CollectController.m in Sources */,
+				5C5D374C1A40832700E16FB3 /* MJRefreshBaseView.m in Sources */,
 				5C43C8BE1A373D3900CCD86A /* OrderMenuItem.m in Sources */,
+				5C5D37511A40832700E16FB3 /* UIScrollView+MJRefresh.m in Sources */,
 				5C0373A01A28C88C009C9B67 /* UIBarButtonItem+ZD.m in Sources */,
 				5C1C438E1A261833006CB752 /* SlideBar.m in Sources */,
 				5CC200B81A276470008F5F95 /* SlideBarLocationItem.m in Sources */,
 				5C7C13661A2A0C95002120F7 /* MoreController.m in Sources */,
 				5C0373971A28BC3C009C9B67 /* MineController.m in Sources */,
+				5C5D374F1A40832700E16FB3 /* MJRefreshHeaderView.m in Sources */,
 				5C0D66941A3DC1FE00684377 /* DPRequest.m in Sources */,
 				5C0373911A28BC21009C9B67 /* MapController.m in Sources */,
 				5C0D66931A3DC1FE00684377 /* DPAPI.m in Sources */,

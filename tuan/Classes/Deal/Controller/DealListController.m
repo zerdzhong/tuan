@@ -13,6 +13,7 @@
 #import "DealModel.h"
 #import "DealCollectionCell.h"
 #import "DianpingDealTool.h"
+#import "MJRefresh.h"
 
 #define kCellHeight 250
 #define kCellWidth 250
@@ -20,6 +21,7 @@
 @interface DealListController ()
 
 @property (nonatomic, strong) NSMutableArray *dealArray;
+@property (nonatomic, assign) int page;
 
 @end
 
@@ -80,6 +82,49 @@
     //设置collectionview永远支持垂直滚动(数据不足时，默认不能滚动)
     self.collectionView.alwaysBounceVertical = YES;
     
+    //刷新控件
+    [self addMJRefresh];
+    
+}
+
+- (void)addMJRefresh{
+    
+    [self.collectionView addHeaderWithTarget:self action:@selector(onHeaderRefresh)];
+    
+    [self.collectionView addFooterWithTarget:self action:@selector(onFooterRefresh)];
+    
+}
+
+- (void)onHeaderRefresh{
+    //下拉刷新
+    _page = 1;
+    [[DianpingDealTool sharedDianpingDealTool] dealsWithPage:_page success:^(NSArray *deals) {
+        _dealArray = [NSMutableArray array];
+        [_dealArray addObjectsFromArray:deals];
+        //刷新数据
+        [self.collectionView reloadData];
+        //停止刷新
+        [self.collectionView headerEndRefreshing];
+    } failure:^(NSError *error) {
+        //停止刷新
+        [self.collectionView headerEndRefreshing];
+    }];
+}
+
+- (void)onFooterRefresh{
+    //上拉加载
+    _page++;
+    
+    [[DianpingDealTool sharedDianpingDealTool] dealsWithPage:_page success:^(NSArray *deals) {
+        [_dealArray addObjectsFromArray:deals];
+        //刷新数据
+        [self.collectionView reloadData];
+        //停止刷新
+        [self.collectionView footerEndRefreshing];
+    } failure:^(NSError *error) {
+        //停止刷新
+        [self.collectionView footerEndRefreshing];
+    }];
 }
 
 #pragma mark- notification
@@ -88,6 +133,7 @@
     [[DianpingDealTool sharedDianpingDealTool] dealsWithPage:1 success:^(NSArray *deals) {
         _dealArray = [[NSMutableArray alloc]init];
         [_dealArray addObjectsFromArray:deals];
+        _page = 1;  //回到第一页
         //刷新数据
         [self.collectionView reloadData];
     } failure:^(NSError *error) {
