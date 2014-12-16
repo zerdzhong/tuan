@@ -9,16 +9,15 @@
 #import "DealListController.h"
 #import "DealTopMenu.h"
 #import "Common.h"
-#import "DPAPI.h"
 #import "MetaDataTool.h"
 #import "DealModel.h"
-#import "NSObject+Value.h"
 #import "DealCollectionCell.h"
+#import "DianpingDealTool.h"
 
 #define kCellHeight 250
 #define kCellWidth 250
 
-@interface DealListController ()<DPRequestDelegate>
+@interface DealListController ()
 
 @property (nonatomic, strong) NSMutableArray *dealArray;
 
@@ -86,11 +85,14 @@
 #pragma mark- notification
 - (void)dataChange{
     
-    DPAPI *api = [[DPAPI alloc]init];
-    
-    [api requestWithURL:@"v1/deal/find_deals"
-                 params:@{@"city":[MetaDataTool sharedMetaDataTool].currentCity.name}
-               delegate:self];
+    [[DianpingDealTool sharedDianpingDealTool] dealsWithPage:1 success:^(NSArray *deals) {
+        _dealArray = [[NSMutableArray alloc]init];
+        [_dealArray addObjectsFromArray:deals];
+        //刷新数据
+        [self.collectionView reloadData];
+    } failure:^(NSError *error) {
+        
+    }];
     
 }
 
@@ -115,26 +117,6 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    //计算默认间距
-    CGSize size = [UIScreen mainScreen].bounds.size;
-    [self viewWillTransitionToSize:size withTransitionCoordinator:nil];
-}
-
-#pragma mark- 点评delegate
-
--(void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result{
-    //转换成数据Model
-    NSArray *array = result[@"deals"];
-    
-    _dealArray = [[NSMutableArray alloc]init];
-    for (NSDictionary *deal in array) {
-        DealModel *dealModel = [[DealModel alloc]init];
-        [dealModel setValues:deal];
-        [_dealArray addObject:dealModel];
-    }
-    
-    //刷新数据
-    [self.collectionView reloadData];
     //计算默认间距
     CGSize size = [UIScreen mainScreen].bounds.size;
     [self viewWillTransitionToSize:size withTransitionCoordinator:nil];

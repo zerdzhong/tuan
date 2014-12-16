@@ -114,7 +114,7 @@ singleton_implementation(MetaDataTool)
     for (int i = 0; i < orderArray.count; i++) {
         OrderModel *order = [[OrderModel alloc]init];
         order.name = orderArray[i];
-        order.index = i;
+        order.index = i + 1;
         [tempTotalArray addObject:order];
     }
     _totalOrders = tempTotalArray;

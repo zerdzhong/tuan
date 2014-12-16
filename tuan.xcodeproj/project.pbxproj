@@ -41,6 +41,7 @@
 		5C548D301A35DA67003C46A7 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D2F1A35DA67003C46A7 /* CategoryModel.m */; };
 		5C548D391A35DCEE003C46A7 /* CategoryMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D361A35DCEE003C46A7 /* CategoryMenu.m */; };
 		5C548D3A1A35DCEE003C46A7 /* CategoryMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D381A35DCEE003C46A7 /* CategoryMenuItem.m */; };
+		5C5D372C1A4065A900E16FB3 /* DianpingDealTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D372B1A4065A900E16FB3 /* DianpingDealTool.m */; };
 		5C649E931A3DCBDC00073256 /* DealModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C649E921A3DCBDC00073256 /* DealModel.m */; };
 		5C649E961A3DCDC100073256 /* NSObject+Value.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C649E951A3DCDC100073256 /* NSObject+Value.m */; };
 		5C7C13661A2A0C95002120F7 /* MoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7C13651A2A0C95002120F7 /* MoreController.m */; };
@@ -307,6 +308,8 @@
 		5C548D361A35DCEE003C46A7 /* CategoryMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryMenu.m; sourceTree = "<group>"; };
 		5C548D371A35DCEE003C46A7 /* CategoryMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryMenuItem.h; sourceTree = "<group>"; };
 		5C548D381A35DCEE003C46A7 /* CategoryMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryMenuItem.m; sourceTree = "<group>"; };
+		5C5D372A1A4065A900E16FB3 /* DianpingDealTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DianpingDealTool.h; sourceTree = "<group>"; };
+		5C5D372B1A4065A900E16FB3 /* DianpingDealTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DianpingDealTool.m; sourceTree = "<group>"; };
 		5C649E911A3DCBDC00073256 /* DealModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealModel.h; sourceTree = "<group>"; };
 		5C649E921A3DCBDC00073256 /* DealModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealModel.m; sourceTree = "<group>"; };
 		5C649E941A3DCDC100073256 /* NSObject+Value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Value.h"; sourceTree = "<group>"; };
@@ -567,6 +570,7 @@
 		5C0373861A28BB64009C9B67 /* Deal */ = {
 			isa = PBXGroup;
 			children = (
+				5C5D37291A40658400E16FB3 /* Tool */,
 				5C548D2D1A35DA3B003C46A7 /* Model */,
 				5CECBCE71A31EF9C0016C211 /* View */,
 				5C0373871A28BB64009C9B67 /* Controller */,
@@ -722,6 +726,15 @@
 				5C548D381A35DCEE003C46A7 /* CategoryMenuItem.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		5C5D37291A40658400E16FB3 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				5C5D372A1A4065A900E16FB3 /* DianpingDealTool.h */,
+				5C5D372B1A4065A900E16FB3 /* DianpingDealTool.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		5C7C13621A2A0C73002120F7 /* More */ = {
@@ -1498,6 +1511,7 @@
 				5CECBCEA1A31EFBA0016C211 /* DealTopMenu.m in Sources */,
 				5CECBCED1A31F0420016C211 /* DealTopMenuItem.m in Sources */,
 				5C43C8C11A3743C400CCD86A /* OrderModel.m in Sources */,
+				5C5D372C1A4065A900E16FB3 /* DianpingDealTool.m in Sources */,
 				5CC200BB1A2767DD008F5F95 /* SlideBarTabItem.m in Sources */,
 				5C43C8B41A37368F00CCD86A /* DropDownMenuItem.m in Sources */,
 				5C548D301A35DA67003C46A7 /* CategoryModel.m in Sources */,
