@@ -13,6 +13,10 @@
  控件属性
  */
 
+#define kAllCategory @"全部分类"
+#define kAllDistrict @"全部商区"
+#define kAllSubTitle @"全部"
+
 //侧边菜单栏item宽高
 #define kItemWidth 100
 #define kItemHeight 80

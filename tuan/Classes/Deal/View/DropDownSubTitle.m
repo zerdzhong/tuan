@@ -37,7 +37,10 @@
 }
 
 -(void)setTitles:(NSArray *)titles{
-    _titles = titles;
+    NSMutableArray *array = [NSMutableArray array];
+    [array addObject:kAllSubTitle];
+    [array addObjectsFromArray:titles];
+    _titles = array;
     //显示按钮
     if (self.subviews.count < _titles.count) {
         for (NSUInteger i = self.subviews.count; i < _titles.count; i++) {
@@ -63,9 +66,15 @@
         [btn setTitle:_titles[i] forState:UIControlStateNormal];
         if (_getTitleBlock) {
             //获取选中的title
-            btn.selected = [_titles[i] isEqualToString:_getTitleBlock()];
-            if (btn.selected) {
+            if ([_superTitle isEqualToString:_getTitleBlock()] && i == 0) {
+                //选中全部
+                btn.selected = YES;
                 _selectedButton = btn;
+            }else{
+                btn.selected = [_titles[i] isEqualToString:_getTitleBlock()];
+                if (btn.selected) {
+                    _selectedButton = btn;
+                }
             }
         }else{
             btn.selected = NO;
@@ -77,15 +86,23 @@
 }
 
 
+#pragma mark- 响应事件
 - (void)onTitleClicked:(UIButton *)btn{
     //控制按钮状态
     _selectedButton.selected = NO;
     _selectedButton = btn;
     _selectedButton.selected = YES;
     
-    if (_setTitleBlock) {
-        //设置当前选中文字
-        _setTitleBlock([_selectedButton titleForState:UIControlStateNormal]);
+    if ([[_selectedButton titleForState:UIControlStateNormal] isEqualToString:kAllSubTitle]) {
+        if (_setTitleBlock) {
+            //设置父标题的值
+            _setTitleBlock(_superTitle);
+        }
+    }else{
+        if (_setTitleBlock) {
+            //设置当前选中文字
+            _setTitleBlock([_selectedButton titleForState:UIControlStateNormal]);
+        }
     }
 }
 

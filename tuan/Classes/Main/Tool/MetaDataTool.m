@@ -41,6 +41,8 @@ singleton_implementation(MetaDataTool)
     return self;
 }
 
+
+#pragma mark- 初始化城市数据
 - (void)loadCityData{
     _totalCities = [[NSMutableDictionary alloc]init];
     NSMutableArray *tempTotalArray = [[NSMutableArray alloc]init];
@@ -93,11 +95,18 @@ singleton_implementation(MetaDataTool)
     _totalCitySections = tempTotalArray;
 }
 
+#pragma mark- 初始化类别数据
 - (void)loadCategoryData{
     NSMutableArray *tempTotalArray = [[NSMutableArray alloc]init];
     //加载plist数据
     NSArray *categoryArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Categories"
                                                                                               ofType:@"plist"]];
+    //添加全部分类
+    CategoryModel *all = [[CategoryModel alloc]init];
+    all.name = kAllCategory;
+    all.icon = @"ic_filter_category_-1.png";
+    [tempTotalArray addObject:all];
+    
     for (NSDictionary *dict in categoryArray) {
         CategoryModel *category = [[CategoryModel alloc]init];
         [category setValues:dict];
@@ -106,6 +115,7 @@ singleton_implementation(MetaDataTool)
     _totalCategories = tempTotalArray;
 }
 
+#pragma mark- 初始化排序数据
 - (void)loadOrderData{
     NSMutableArray *tempTotalArray = [[NSMutableArray alloc]init];
     NSArray *orderArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Orders"
@@ -130,8 +140,12 @@ singleton_implementation(MetaDataTool)
     return nil;
 }
 
+#pragma mark- 改变当前城市
 -(void)setCurrentCity:(CityModel *)currentCity{
     _currentCity = currentCity;
+    
+    //修改当前商区
+    _currentDistrict = kAllDistrict;
     //移除之前相同的城市
     [_visitedCityNames removeObject:_currentCity.name];
     

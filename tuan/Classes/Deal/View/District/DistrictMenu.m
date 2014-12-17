@@ -13,25 +13,24 @@
 #import "DistrictMode.h"
 #import "Common.h"
 
+@interface DistrictMenu ()
+
+@property (nonatomic, strong) NSMutableArray *itemArray;
+
+@end
+
 @implementation DistrictMenu
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        CityModel *city = [MetaDataTool sharedMetaDataTool].currentCity;
-        NSArray *districtArray = city.districts;
-        //往scrollView添加分类数据
         
-        for (int i = 0; i < districtArray.count; i++) {
-            DistrictMenuItem *item = [[DistrictMenuItem alloc]init];
-            item.district = districtArray[i];
-            [item addTarget:self action:@selector(onItemClicked:) forControlEvents:UIControlEventTouchUpInside];
-            item.frame = CGRectMake(i * kDropDownItemWidth, 0, 0, 0);
-            [self.scrollView addSubview:item];
-        }
-        self.scrollView.contentSize = CGSizeMake(districtArray.count * kDropDownItemWidth, 0);
+        _itemArray = [NSMutableArray array];
         
+        [self cityChange];
+        
+        //城市改变
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(cityChange)
                                                      name:kCityChanged
@@ -54,22 +53,51 @@
     [MetaDataTool sharedMetaDataTool].currentDistrict = [item titleForState:UIControlStateNormal];
 }
 
+#pragma mark- 城市改变监听
 - (void)cityChange{
-    for (UIView *view in self.scrollView.subviews) {
-        [view removeFromSuperview];
-    }
+    
     CityModel *city = [MetaDataTool sharedMetaDataTool].currentCity;
     NSArray *districtArray = city.districts;
     //往scrollView添加分类数据
     
     for (int i = 0; i < districtArray.count; i++) {
-        DistrictMenuItem *item = [[DistrictMenuItem alloc]init];
+        DistrictMenuItem *item = nil;
+        if (i >= _itemArray.count) {
+            //item不够新创建
+            item = [[DistrictMenuItem alloc]init];
+            [_itemArray addObject:item];
+            [self.scrollView addSubview:item];
+        }else{
+            item = _itemArray[i];
+        }
+        
+        item.hidden = NO;
         item.district = districtArray[i];
         [item addTarget:self action:@selector(onItemClicked:) forControlEvents:UIControlEventTouchUpInside];
         item.frame = CGRectMake(i * kDropDownItemWidth, 0, 0, 0);
-        [self.scrollView addSubview:item];
+        //默认选中第0个
+        if (i == 0) {
+            item.selected = YES;
+            self.selectedItem = item;
+        }else{
+            item.selected = NO;
+        }
+    }
+    //隐藏多余的Item
+    for (int i = districtArray.count; i < _itemArray.count; i++) {
+        DistrictMenuItem *item = _itemArray[i];
+        item.hidden = YES;
     }
     self.scrollView.contentSize = CGSizeMake(districtArray.count * kDropDownItemWidth, 0);
+    
+    //隐藏subtitle
+    [self.subTitleView hideWithAnimation];
+    
+    MyLog(@"%d，%d",self.scrollView.subviews.count,[districtArray count]);
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

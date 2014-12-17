@@ -37,8 +37,8 @@
 {
     self = [super init];
     if (self) {
-        _categoryMenuItem = [self addItem:@"全部分类" index:0];
-        _districtMenuItem = [self addItem:@"全部商区" index:1];
+        _categoryMenuItem = [self addItem:kAllCategory index:0];
+        _districtMenuItem = [self addItem:kAllDistrict index:1];
         _orderMenuItem = [self addItem:@"默认排序" index:2];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
@@ -80,6 +80,12 @@
 }
 
 - (void)onItemClicked:(DealTopMenuItem *)item{
+    
+    //没有选择城市，不能选择菜单
+    if ([MetaDataTool sharedMetaDataTool].currentCity == nil) {
+        return;
+    }
+    
     _selectedItem.selected = NO;
     
     if (_selectedItem == item) {

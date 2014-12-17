@@ -12,6 +12,7 @@
 
 //所有子标题
 @property (nonatomic, strong) NSArray *titles;
+@property (nonatomic, copy) NSString *superTitle;
 
 @property (nonatomic, copy) void(^setTitleBlock)(NSString *title);
 @property (nonatomic, copy) NSString *(^getTitleBlock)();

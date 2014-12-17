@@ -24,6 +24,14 @@
             [item addTarget:self action:@selector(onItemClicked:) forControlEvents:UIControlEventTouchUpInside];
             item.frame = CGRectMake(i * kDropDownItemWidth, 0, 0, 0);
             [self.scrollView addSubview:item];
+            
+            //默认选中第0个
+            if (i == 0) {
+                item.selected = YES;
+                self.selectedItem = item;
+            }else{
+                item.selected = NO;
+            }
         }
         self.scrollView.contentSize = CGSizeMake(orderArray.count * kDropDownItemWidth, kDropDownItemHeight);
     }

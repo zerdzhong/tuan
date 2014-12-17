@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) DropDownSubTitle *subTitleView;
+@property (nonatomic, strong) DropDownMenuItem *selectedItem;
 @property (nonatomic, copy) void(^hiddenBlock)();
 
 - (void)settingSubTitleBlock;

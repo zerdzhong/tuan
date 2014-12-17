@@ -51,13 +51,13 @@ singleton_implementation(DianpingDealTool)
     
     //添加区域参数
     NSString *region = [MetaDataTool sharedMetaDataTool].currentDistrict;
-    if (region != nil) {
+    if (region != nil && ![region isEqualToString:kAllDistrict]) {
         [params setValue:region forKey:@"region"];
     }
 
     //添加分类参数
     NSString *category = [MetaDataTool sharedMetaDataTool].currentCategory;
-    if (category != nil) {
+    if (category != nil && ![category isEqualToString:kAllCategory]) {
         [params setValue:category forKey:@"category"];
     }
 

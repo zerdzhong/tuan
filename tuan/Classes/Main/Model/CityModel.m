@@ -9,11 +9,18 @@
 #import "CityModel.h"
 #import "NSObject+Value.h"
 #import "DistrictMode.h"
+#import "Common.h"
 
 @implementation CityModel
 
 -(void)setDistricts:(NSArray *)districts{
     NSMutableArray *array = [[NSMutableArray alloc]init];
+    
+    //添加全部商区
+    DistrictMode *all = [[DistrictMode alloc]init];
+    all.name = kAllDistrict;
+    [array addObject:all];
+    
     for (NSDictionary *dict in districts) {
         DistrictMode *district = [[DistrictMode alloc]init];
         [district setValues:dict];

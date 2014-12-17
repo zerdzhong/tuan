@@ -20,7 +20,6 @@
 
 @property (nonatomic, strong) UIView *cover;
 @property (nonatomic, strong) UIView *contentView;
-@property (nonatomic, strong) DropDownMenuItem *selectedItem;
 
 @end
 
@@ -113,7 +112,7 @@
     
     //判断当前item有没有子类别
     if (item.titles.count){
-        [self showSubtitlesView:item.titles];
+        [self showSubtitlesView:item];
     }else{
         //隐藏子标题
         [self hideSubtitlesView:item];
@@ -136,7 +135,7 @@
 }
 
 #pragma mark- 显示子标题
-- (void)showSubtitlesView:(NSArray *)titles{
+- (void)showSubtitlesView:(DropDownMenuItem *)item{
     //显示所有子标题
     if (_subTitleView == nil) {
         _subTitleView = [[DropDownSubTitle alloc]init];
@@ -146,7 +145,11 @@
     CGFloat y = self.scrollView.frame.origin.y + kDropDownItemHeight;
     _subTitleView.frame = CGRectMake(0, y, self.frame.size.width, _subTitleView.frame.size.height);
     
-    _subTitleView.titles = titles ;
+    //设置子标题的父标题
+    _subTitleView.superTitle = [item titleForState:UIControlStateNormal];
+    
+    //设置子标题内容
+    _subTitleView.titles = item.titles ;
     
     if (_subTitleView.superview == nil){
         //执行动画
