@@ -17,4 +17,12 @@
                           options:SDWebImageLowPriority | SDWebImageRetryFailed];
 }
 
+#pragma mark 清除缓存图片
++(void)clearMemory{
+    //清除缓存图片
+    [[SDImageCache sharedImageCache] clearMemory];
+    //关掉下载线程
+    [[SDWebImageManager sharedManager] cancelAll];
+}
+
 @end

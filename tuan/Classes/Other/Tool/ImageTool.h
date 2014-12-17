@@ -13,4 +13,6 @@
 
 +(void)loadImage:(NSString *)url placeholder:(NSString *)place imageView:(UIImageView *)imageView;
 
++(void)clearMemory;
+
 @end

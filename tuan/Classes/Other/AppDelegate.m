@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainController.h"
+#import "ImageTool.h"
 
 @interface AppDelegate ()
 
@@ -25,6 +26,11 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+//清楚SDWebImage缓存
+-(void)applicationDidReceiveMemoryWarning:(UIApplication *)application{
+    [ImageTool clearMemory];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

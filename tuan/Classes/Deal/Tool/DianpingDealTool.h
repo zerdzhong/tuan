@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Singleton.h"
 
-typedef void (^SuccessBlock)(NSArray *deals);
+typedef void (^SuccessBlock)(NSArray *deals, int totalCount);
 typedef void (^FailureBlock)(NSError *error);
 
 @interface DianpingDealTool : NSObject

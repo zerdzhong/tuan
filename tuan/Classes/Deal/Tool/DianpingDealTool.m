@@ -11,6 +11,7 @@
 #import "MetaDataTool.h"
 #import "DealModel.h"
 #import "NSObject+Value.h"
+#import "Common.h"
 
 typedef void (^RequestCompletion)(id result, NSError *error);
 
@@ -33,10 +34,11 @@ typedef void (^RequestCompletion)(id result, NSError *error);
 
 singleton_implementation(DianpingDealTool)
 
+#pragma mark- 外部请求
 - (void)dealsWithPage:(int)page success:(SuccessBlock)success failure:(FailureBlock)failure{
 
     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
-    [params setValue:@"5" forKey:@"limit"];
+    [params setValue:@"15" forKey:@"limit"];
     [params setValue:@(page) forKey:@"page"];
     //添加城市参数
     NSString *city = [MetaDataTool sharedMetaDataTool].currentCity.name;
@@ -77,7 +79,7 @@ singleton_implementation(DianpingDealTool)
                 [dealModel setValues:deal];
                 [dealArray addObject:dealModel];
             }
-            success(dealArray);
+            success(dealArray,[result[@"total_count"] intValue]);
         }
         
         if (failure != nil && error != nil) {
@@ -104,7 +106,7 @@ singleton_implementation(DianpingDealTool)
     RequestCompletion block = [_blocks objectForKey:request.description];
     if (block != nil) {
         block(result,nil);
-//        [_blocks removeObjectForKey:request.description];
+        [_blocks removeObjectForKey:request.description];
     }
     
 }
@@ -113,7 +115,7 @@ singleton_implementation(DianpingDealTool)
     RequestCompletion block = [_blocks objectForKey:request.description];
     if (block != nil) {
         block(nil,error);
-//        [_blocks removeObjectForKey:request.description];
+        [_blocks removeObjectForKey:request.description];
     }
 }
 

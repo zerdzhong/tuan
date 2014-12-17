@@ -14,6 +14,7 @@
 #import "DealCollectionCell.h"
 #import "DianpingDealTool.h"
 #import "MJRefresh.h"
+#import "ImageTool.h"
 
 #define kCellHeight 250
 #define kCellWidth 250
@@ -87,6 +88,8 @@
     
 }
 
+#pragma mark- 上下拉刷新
+
 - (void)addMJRefresh{
     
     [self.collectionView addHeaderWithTarget:self action:@selector(onHeaderRefresh)];
@@ -98,13 +101,18 @@
 - (void)onHeaderRefresh{
     //下拉刷新
     _page = 1;
-    [[DianpingDealTool sharedDianpingDealTool] dealsWithPage:_page success:^(NSArray *deals) {
+    [[DianpingDealTool sharedDianpingDealTool] dealsWithPage:_page success:^(NSArray *deals, int totalCount) {
+        //清除之前缓存
+        [ImageTool clearMemory];
+        
         _dealArray = [NSMutableArray array];
         [_dealArray addObjectsFromArray:deals];
         //刷新数据
         [self.collectionView reloadData];
         //停止刷新
         [self.collectionView headerEndRefreshing];
+        //根据数量判断是否隐藏footer
+        self.collectionView.footerHidden = totalCount <= [_dealArray count];
     } failure:^(NSError *error) {
         //停止刷新
         [self.collectionView headerEndRefreshing];
@@ -115,12 +123,15 @@
     //上拉加载
     _page++;
     
-    [[DianpingDealTool sharedDianpingDealTool] dealsWithPage:_page success:^(NSArray *deals) {
+    [[DianpingDealTool sharedDianpingDealTool] dealsWithPage:_page success:^(NSArray *deals, int totalCount) {
         [_dealArray addObjectsFromArray:deals];
         //刷新数据
         [self.collectionView reloadData];
         //停止刷新
         [self.collectionView footerEndRefreshing];
+        
+        //根据数量判断是否隐藏footer
+        self.collectionView.footerHidden = totalCount <= [_dealArray count];
     } failure:^(NSError *error) {
         //停止刷新
         [self.collectionView footerEndRefreshing];
@@ -129,17 +140,7 @@
 
 #pragma mark- notification
 - (void)dataChange{
-    
-    [[DianpingDealTool sharedDianpingDealTool] dealsWithPage:1 success:^(NSArray *deals) {
-        _dealArray = [[NSMutableArray alloc]init];
-        [_dealArray addObjectsFromArray:deals];
-        _page = 1;  //回到第一页
-        //刷新数据
-        [self.collectionView reloadData];
-    } failure:^(NSError *error) {
-        
-    }];
-    
+    [self.collectionView headerBeginRefreshing];
 }
 
 #pragma mark- 屏幕旋转处理
