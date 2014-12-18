@@ -84,7 +84,7 @@
         }
     }
     //隐藏多余的Item
-    for (int i = districtArray.count; i < _itemArray.count; i++) {
+    for (NSUInteger i = districtArray.count; i < _itemArray.count; i++) {
         DistrictMenuItem *item = _itemArray[i];
         item.hidden = YES;
     }
@@ -92,8 +92,6 @@
     
     //隐藏subtitle
     [self.subTitleView hideWithAnimation];
-    
-    MyLog(@"%d，%d",self.scrollView.subviews.count,[districtArray count]);
 }
 
 -(void)dealloc{

@@ -8,6 +8,7 @@
 
 #import "DealCollectionCell.h"
 #import "ImageTool.h"
+#import "Common.h"
 
 @implementation DealCollectionCell
 
@@ -23,7 +24,25 @@
     [_joinCount setTitle:[NSString stringWithFormat:@"%d", _dealModel.purchase_count] forState:UIControlStateNormal];
     
     // 4.价格
-    _price.text = [NSString stringWithFormat:@"%.f", _dealModel.current_price];
+    _price.text = _dealModel.current_price_text;
+    
+    //5.标签
+    NSDateFormatter *format = [[NSDateFormatter alloc]init];
+    format.dateFormat = @"yyyy-MM-dd";
+    NSString *now = [format stringFromDate:[NSDate date]];
+    //设置标签图片类型
+    if ([now isEqualToString:_dealModel.publish_date]) {
+        _badge.hidden = NO;
+        _badge.image = [UIImage imageNamed:@"ic_deal_new.png"];
+    } else if ([now isEqualToString:_dealModel.purchase_deadline]){
+        _badge.hidden = NO;
+        _badge.image = [UIImage imageNamed:@"ic_deal_soonOver.png"];
+    } else if ([now compare:_dealModel.purchase_deadline] == NSOrderedDescending){
+        _badge.hidden = NO;
+        _badge.image = [UIImage imageNamed:@"ic_deal_over.png"];
+    }else{
+        _badge.hidden = YES;
+    }
 }
 
 @end

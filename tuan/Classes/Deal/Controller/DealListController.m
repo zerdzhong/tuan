@@ -104,8 +104,9 @@
     [[DianpingDealTool sharedDianpingDealTool] dealsWithPage:_page success:^(NSArray *deals, int totalCount) {
         //清除之前缓存
         [ImageTool clearMemory];
-        
+        //清除之前的deal
         _dealArray = [NSMutableArray array];
+        
         [_dealArray addObjectsFromArray:deals];
         //刷新数据
         [self.collectionView reloadData];
@@ -176,7 +177,10 @@
 
 #pragma mark- collectionViewDelegate
 
-
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    DealModel *deal = _dealArray[indexPath.row];
+    MyLog(@"%@",deal.current_price_text);
+}
 
 #pragma mark- UICollectionViewDataSource
 
