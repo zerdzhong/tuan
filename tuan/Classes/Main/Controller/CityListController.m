@@ -12,13 +12,14 @@
 #import "CitySection.h"
 #import "MetaDataTool.h"
 #import "CitySearchReslutController.h"
+#import "CoverView.h"
 
 #define kSearchHeight 44
 
 @interface CityListController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
 
 @property (nonatomic, strong)NSMutableArray *citySections;
-@property (nonatomic, strong)UIView *cover;
+@property (nonatomic, strong)CoverView *cover;
 @property (nonatomic, strong)UITableView *tableView;
 @property (nonatomic, strong)UISearchBar *searchBar;
 @property (nonatomic, strong)CitySearchReslutController *searchResult;
@@ -64,12 +65,9 @@
 }
 
 - (void)addSearchCover{
-    _cover = [[UIView alloc]init];
-    _cover.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    _cover.backgroundColor = [UIColor blackColor];
+    _cover = [CoverView coverViewWithTarget:self action:@selector(onCoverClicked)];
     CGFloat height = self.view.frame.size.height - kSearchHeight;
     _cover.frame = CGRectMake(0, kSearchHeight, self.view.frame.size.width, height);
-    [_cover addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onCoverClicked)]];
     [self.view addSubview:_cover];
     _cover.hidden = YES;
 }
@@ -131,8 +129,8 @@
     _cover.hidden = NO;
     
     _cover.alpha = 0.0;
-    [UIView animateWithDuration:0.3 animations:^{
-        _cover.alpha = 0.7;
+    [UIView animateWithDuration:kAnimationDuration animations:^{
+        [_cover resetAlpha];
     }];
 }
 
@@ -169,7 +167,7 @@
 
 - (void)onCoverClicked{
     //移除蒙层
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:kAnimationDuration animations:^{
         _cover.alpha = 0.0;
     } completion:^(BOOL finished) {
         _cover.hidden = YES;

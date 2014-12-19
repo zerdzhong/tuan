@@ -11,8 +11,6 @@
 #import "UIImage+ZD.h"
 #import "MetaDataTool.h"
 
-#define kDuration 0.6
-
 #define kTitleWidth 100
 #define kTitleHeight 44
 
@@ -124,7 +122,7 @@
     }
  
     //设置自身高度
-    [UIView animateWithDuration:1.0 animations:^{
+    [UIView animateWithDuration:kAnimationDuration animations:^{
         NSUInteger row = (_titles.count + columns - 1) / columns;
         CGRect frame = self.frame;
         frame.size.height = row * kTitleHeight; 
@@ -139,7 +137,7 @@
     
     self.transform = CGAffineTransformMakeTranslation(0, -self.frame.size.height);
     self.alpha = 0;
-    [UIView animateWithDuration:kDuration animations:^{
+    [UIView animateWithDuration:kAnimationDuration animations:^{
         //1.scrollview 从上方出现
         self.transform = CGAffineTransformIdentity;
         //2.cover alpha 0 -> 0.4
@@ -148,7 +146,7 @@
 }
 //通过动画隐藏出来
 - (void)hideWithAnimation{
-    [UIView animateWithDuration:kDuration animations:^{
+    [UIView animateWithDuration:kAnimationDuration animations:^{
         //1.scrollview 从上方出现
         self.transform = CGAffineTransformMakeTranslation(0, -self.frame.size.height);
         //2.cover alpha 0 -> 0.4

@@ -15,14 +15,24 @@
 #import "DianpingDealTool.h"
 #import "MJRefresh.h"
 #import "ImageTool.h"
+#import "CoverView.h"
+#import "DealDetailController.h"
+#import "BaseNavigationController.h"
+#import "UIBarButtonItem+ZD.h"
 
 #define kCellHeight 250
 #define kCellWidth 250
+
+#define kDetailWidth 600
 
 @interface DealListController ()
 
 @property (nonatomic, strong) NSMutableArray *dealArray;
 @property (nonatomic, assign) int page;
+
+@property (nonatomic, strong) CoverView *cover;
+@property (nonatomic, strong) BaseNavigationController *detailNavController;
+@property (nonatomic, strong) DealDetailController *detailController;
 
 @end
 
@@ -175,11 +185,68 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+#pragma mark- 显示/隐藏详情控制器
+
+- (void)showDealDetailController:(DealModel *)deal{
+
+    //1.显示遮盖
+    if (_cover == nil) {
+        _cover = [CoverView coverViewWithTarget:self action:@selector(hideDealDetailController)];
+    }
+    _cover.frame = self.navigationController.view.bounds;
+    _cover.alpha = 0;
+    [UIView animateWithDuration:kAnimationDuration animations:^{
+        [_cover resetAlpha];
+    }];
+    [self.navigationController.view addSubview:_cover];
+    
+    //显示团购详情控制器
+    if (_detailNavController == nil) {
+        _detailController= [[DealDetailController alloc]init];
+        //添加关闭BarButtonItem
+        _detailController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"btn_nav_close.png" highlightedImage:@"btn_nav_close_hl.png" target:self action:@selector(hideDealDetailController)];
+        //初始化NavgationController
+        _detailNavController = [[BaseNavigationController alloc]
+                             initWithRootViewController:_detailController];
+        _detailNavController.view.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    }
+    //设置宽高
+    _detailNavController.view.frame = CGRectMake(_cover.frame.size.width, 0, kDetailWidth, _cover.frame.size.height);
+    _detailController.deal = deal;
+    [self.navigationController.view addSubview:_detailNavController.view];
+    [self.navigationController addChildViewController:_detailNavController];
+    
+    [UIView animateWithDuration:kAnimationDuration animations:^{
+        CGRect frame = _detailNavController.view.frame;
+        frame.origin.x -= kDetailWidth;
+        _detailNavController.view.frame = frame;
+    }];
+    
+}
+
+- (void)hideDealDetailController{
+    //隐藏
+    [UIView animateWithDuration:kAnimationDuration animations:^{
+        //隐藏遮盖
+        _cover.alpha = 0;
+        //隐藏详情
+        CGRect frame = _detailNavController.view.frame;
+        frame.origin.x += kDetailWidth;
+        _detailNavController.view.frame = frame;
+    } completion:^(BOOL finished) {
+        [_cover removeFromSuperview];
+        [_detailNavController.view removeFromSuperview];
+        [_detailNavController removeFromParentViewController];
+    }];
+}
+
 #pragma mark- collectionViewDelegate
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    //显示团购详情控制器
+    
     DealModel *deal = _dealArray[indexPath.row];
-    MyLog(@"%@",deal.current_price_text);
+    [self showDealDetailController:deal];
 }
 
 #pragma mark- UICollectionViewDataSource

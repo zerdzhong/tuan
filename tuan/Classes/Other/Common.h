@@ -30,6 +30,9 @@
 #define kDropDownItemWidth  100
 #define kDropDownItemHeight 60
 
+
+#define kAnimationDuration 0.4
+
 #define kCityChanged @"tuan_cityChanged"
 #define kCityKey @"tuan_city"
 

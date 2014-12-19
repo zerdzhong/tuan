@@ -25,22 +25,13 @@
 		5C1C43911A26258E006CB752 /* SlideBarBaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C43901A26258E006CB752 /* SlideBarBaseItem.m */; };
 		5C1C43961A2627AE006CB752 /* NSString+ZD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C43951A2627AE006CB752 /* NSString+ZD.m */; };
 		5C1C43991A262937006CB752 /* SlideBarMoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C43981A262937006CB752 /* SlideBarMoreItem.m */; };
-		5C43C8B11A3735E400CCD86A /* DistrictMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C43C8B01A3735E400CCD86A /* DistrictMenu.m */; };
-		5C43C8B41A37368F00CCD86A /* DropDownMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C43C8B31A37368F00CCD86A /* DropDownMenuItem.m */; };
-		5C43C8B71A37370200CCD86A /* DistrictMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C43C8B61A37370200CCD86A /* DistrictMenuItem.m */; };
-		5C43C8BB1A373D2B00CCD86A /* OrderMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C43C8BA1A373D2B00CCD86A /* OrderMenu.m */; };
-		5C43C8BE1A373D3900CCD86A /* OrderMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C43C8BD1A373D3900CCD86A /* OrderMenuItem.m */; };
 		5C43C8C11A3743C400CCD86A /* OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C43C8C01A3743C400CCD86A /* OrderModel.m */; };
 		5C43C8C31A37465D00CCD86A /* Orders.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C43C8C21A37465D00CCD86A /* Orders.plist */; };
 		5C47AA711A2CB65C0012EE42 /* Categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C47AA6F1A2CB65C0012EE42 /* Categories.plist */; };
 		5C47AA721A2CB65C0012EE42 /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C47AA701A2CB65C0012EE42 /* Cities.plist */; };
 		5C4DF5F91A3F062D00760231 /* DealCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4DF5F81A3F062D00760231 /* DealCollectionCell.xib */; };
 		5C4DF5FC1A3F347200760231 /* DealCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DF5FB1A3F347200760231 /* DealCollectionCell.m */; };
-		5C4EA2A11A3B1B4200A5E7D4 /* DropDownSubTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4EA2A01A3B1B4200A5E7D4 /* DropDownSubTitle.m */; };
-		5C548D291A35D5B6003C46A7 /* DropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D281A35D5B6003C46A7 /* DropDownMenu.m */; };
 		5C548D301A35DA67003C46A7 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D2F1A35DA67003C46A7 /* CategoryModel.m */; };
-		5C548D391A35DCEE003C46A7 /* CategoryMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D361A35DCEE003C46A7 /* CategoryMenu.m */; };
-		5C548D3A1A35DCEE003C46A7 /* CategoryMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D381A35DCEE003C46A7 /* CategoryMenuItem.m */; };
 		5C5D372C1A4065A900E16FB3 /* DianpingDealTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D372B1A4065A900E16FB3 /* DianpingDealTool.m */; };
 		5C5D374B1A40832700E16FB3 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C5D373B1A40832700E16FB3 /* MJRefresh.bundle */; };
 		5C5D374C1A40832700E16FB3 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D373E1A40832700E16FB3 /* MJRefreshBaseView.m */; };
@@ -115,6 +106,19 @@
 		5CC1266E1A24DAF9000C731E /* bg_uinavigation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CC1263A1A24DAF9000C731E /* bg_uinavigation@2x.png */; };
 		5CC200B81A276470008F5F95 /* SlideBarLocationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC200B71A276470008F5F95 /* SlideBarLocationItem.m */; };
 		5CC200BB1A2767DD008F5F95 /* SlideBarTabItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC200BA1A2767DD008F5F95 /* SlideBarTabItem.m */; };
+		5CC6F7AB1A44599C00796E11 /* CoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6F7AA1A44599C00796E11 /* CoverView.m */; };
+		5CC6F7AE1A445FB800796E11 /* DealDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6F7AD1A445FB800796E11 /* DealDetailController.m */; };
+		5CC6F7CA1A4468FB00796E11 /* CategoryMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6F7B21A4468FA00796E11 /* CategoryMenu.m */; };
+		5CC6F7CB1A4468FB00796E11 /* CategoryMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6F7B41A4468FA00796E11 /* CategoryMenuItem.m */; };
+		5CC6F7CC1A4468FB00796E11 /* DistrictMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6F7B71A4468FA00796E11 /* DistrictMenu.m */; };
+		5CC6F7CD1A4468FB00796E11 /* DistrictMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6F7B91A4468FA00796E11 /* DistrictMenuItem.m */; };
+		5CC6F7CE1A4468FB00796E11 /* DropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6F7BB1A4468FA00796E11 /* DropDownMenu.m */; };
+		5CC6F7CF1A4468FB00796E11 /* DropDownMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6F7BD1A4468FA00796E11 /* DropDownMenuItem.m */; };
+		5CC6F7D01A4468FB00796E11 /* DropDownSubTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6F7BF1A4468FA00796E11 /* DropDownSubTitle.m */; };
+		5CC6F7D11A4468FB00796E11 /* OrderMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6F7C21A4468FA00796E11 /* OrderMenu.m */; };
+		5CC6F7D21A4468FB00796E11 /* OrderMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6F7C41A4468FA00796E11 /* OrderMenuItem.m */; };
+		5CC6F7D31A4468FB00796E11 /* DealTopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6F7C71A4468FA00796E11 /* DealTopMenu.m */; };
+		5CC6F7D41A4468FB00796E11 /* DealTopMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6F7C91A4468FB00796E11 /* DealTopMenuItem.m */; };
 		5CDBFD591A2B531D00C3ADC8 /* CityListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDBFD581A2B531D00C3ADC8 /* CityListController.m */; };
 		5CECBC6E1A31EDB50016C211 /* bg_bottom_deal.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CECBBF21A31EDB50016C211 /* bg_bottom_deal.png */; };
 		5CECBC6F1A31EDB50016C211 /* bg_bottom_deal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CECBBF31A31EDB50016C211 /* bg_bottom_deal@2x.png */; };
@@ -237,8 +241,6 @@
 		5CECBCE41A31EDB50016C211 /* separator_filter_item.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CECBC6B1A31EDB50016C211 /* separator_filter_item.png */; };
 		5CECBCE51A31EDB50016C211 /* separator_topbar_item.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CECBC6C1A31EDB50016C211 /* separator_topbar_item.png */; };
 		5CECBCE61A31EDB50016C211 /* separator_topbar_item@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CECBC6D1A31EDB50016C211 /* separator_topbar_item@2x.png */; };
-		5CECBCEA1A31EFBA0016C211 /* DealTopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CECBCE91A31EFBA0016C211 /* DealTopMenu.m */; };
-		5CECBCED1A31F0420016C211 /* DealTopMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CECBCEC1A31F0420016C211 /* DealTopMenuItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -288,16 +290,6 @@
 		5C1C43951A2627AE006CB752 /* NSString+ZD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZD.m"; sourceTree = "<group>"; };
 		5C1C43971A262937006CB752 /* SlideBarMoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideBarMoreItem.h; sourceTree = "<group>"; };
 		5C1C43981A262937006CB752 /* SlideBarMoreItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideBarMoreItem.m; sourceTree = "<group>"; };
-		5C43C8AF1A3735E400CCD86A /* DistrictMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistrictMenu.h; sourceTree = "<group>"; };
-		5C43C8B01A3735E400CCD86A /* DistrictMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictMenu.m; sourceTree = "<group>"; };
-		5C43C8B21A37368F00CCD86A /* DropDownMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownMenuItem.h; sourceTree = "<group>"; };
-		5C43C8B31A37368F00CCD86A /* DropDownMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownMenuItem.m; sourceTree = "<group>"; };
-		5C43C8B51A37370200CCD86A /* DistrictMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistrictMenuItem.h; sourceTree = "<group>"; };
-		5C43C8B61A37370200CCD86A /* DistrictMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictMenuItem.m; sourceTree = "<group>"; };
-		5C43C8B91A373D2B00CCD86A /* OrderMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderMenu.h; sourceTree = "<group>"; };
-		5C43C8BA1A373D2B00CCD86A /* OrderMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderMenu.m; sourceTree = "<group>"; };
-		5C43C8BC1A373D3900CCD86A /* OrderMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderMenuItem.h; sourceTree = "<group>"; };
-		5C43C8BD1A373D3900CCD86A /* OrderMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderMenuItem.m; sourceTree = "<group>"; };
 		5C43C8BF1A3743C400CCD86A /* OrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderModel.h; sourceTree = "<group>"; };
 		5C43C8C01A3743C400CCD86A /* OrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderModel.m; sourceTree = "<group>"; };
 		5C43C8C21A37465D00CCD86A /* Orders.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Orders.plist; sourceTree = "<group>"; };
@@ -306,16 +298,8 @@
 		5C4DF5F81A3F062D00760231 /* DealCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealCollectionCell.xib; sourceTree = "<group>"; };
 		5C4DF5FA1A3F347200760231 /* DealCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealCollectionCell.h; sourceTree = "<group>"; };
 		5C4DF5FB1A3F347200760231 /* DealCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealCollectionCell.m; sourceTree = "<group>"; };
-		5C4EA29F1A3B1B4200A5E7D4 /* DropDownSubTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownSubTitle.h; sourceTree = "<group>"; };
-		5C4EA2A01A3B1B4200A5E7D4 /* DropDownSubTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownSubTitle.m; sourceTree = "<group>"; };
-		5C548D271A35D5B6003C46A7 /* DropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownMenu.h; sourceTree = "<group>"; };
-		5C548D281A35D5B6003C46A7 /* DropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownMenu.m; sourceTree = "<group>"; };
 		5C548D2E1A35DA67003C46A7 /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
 		5C548D2F1A35DA67003C46A7 /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
-		5C548D351A35DCEE003C46A7 /* CategoryMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryMenu.h; sourceTree = "<group>"; };
-		5C548D361A35DCEE003C46A7 /* CategoryMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryMenu.m; sourceTree = "<group>"; };
-		5C548D371A35DCEE003C46A7 /* CategoryMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryMenuItem.h; sourceTree = "<group>"; };
-		5C548D381A35DCEE003C46A7 /* CategoryMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryMenuItem.m; sourceTree = "<group>"; };
 		5C5D372A1A4065A900E16FB3 /* DianpingDealTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DianpingDealTool.h; sourceTree = "<group>"; };
 		5C5D372B1A4065A900E16FB3 /* DianpingDealTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DianpingDealTool.m; sourceTree = "<group>"; };
 		5C5D373B1A40832700E16FB3 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
@@ -414,6 +398,32 @@
 		5CC200B71A276470008F5F95 /* SlideBarLocationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideBarLocationItem.m; sourceTree = "<group>"; };
 		5CC200B91A2767DD008F5F95 /* SlideBarTabItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideBarTabItem.h; sourceTree = "<group>"; };
 		5CC200BA1A2767DD008F5F95 /* SlideBarTabItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideBarTabItem.m; sourceTree = "<group>"; };
+		5CC6F7A91A44599C00796E11 /* CoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverView.h; sourceTree = "<group>"; };
+		5CC6F7AA1A44599C00796E11 /* CoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverView.m; sourceTree = "<group>"; };
+		5CC6F7AC1A445FB800796E11 /* DealDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealDetailController.h; sourceTree = "<group>"; };
+		5CC6F7AD1A445FB800796E11 /* DealDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealDetailController.m; sourceTree = "<group>"; };
+		5CC6F7B11A4468FA00796E11 /* CategoryMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryMenu.h; sourceTree = "<group>"; };
+		5CC6F7B21A4468FA00796E11 /* CategoryMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryMenu.m; sourceTree = "<group>"; };
+		5CC6F7B31A4468FA00796E11 /* CategoryMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryMenuItem.h; sourceTree = "<group>"; };
+		5CC6F7B41A4468FA00796E11 /* CategoryMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryMenuItem.m; sourceTree = "<group>"; };
+		5CC6F7B61A4468FA00796E11 /* DistrictMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistrictMenu.h; sourceTree = "<group>"; };
+		5CC6F7B71A4468FA00796E11 /* DistrictMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictMenu.m; sourceTree = "<group>"; };
+		5CC6F7B81A4468FA00796E11 /* DistrictMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistrictMenuItem.h; sourceTree = "<group>"; };
+		5CC6F7B91A4468FA00796E11 /* DistrictMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictMenuItem.m; sourceTree = "<group>"; };
+		5CC6F7BA1A4468FA00796E11 /* DropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownMenu.h; sourceTree = "<group>"; };
+		5CC6F7BB1A4468FA00796E11 /* DropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownMenu.m; sourceTree = "<group>"; };
+		5CC6F7BC1A4468FA00796E11 /* DropDownMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownMenuItem.h; sourceTree = "<group>"; };
+		5CC6F7BD1A4468FA00796E11 /* DropDownMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownMenuItem.m; sourceTree = "<group>"; };
+		5CC6F7BE1A4468FA00796E11 /* DropDownSubTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownSubTitle.h; sourceTree = "<group>"; };
+		5CC6F7BF1A4468FA00796E11 /* DropDownSubTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownSubTitle.m; sourceTree = "<group>"; };
+		5CC6F7C11A4468FA00796E11 /* OrderMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderMenu.h; sourceTree = "<group>"; };
+		5CC6F7C21A4468FA00796E11 /* OrderMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderMenu.m; sourceTree = "<group>"; };
+		5CC6F7C31A4468FA00796E11 /* OrderMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderMenuItem.h; sourceTree = "<group>"; };
+		5CC6F7C41A4468FA00796E11 /* OrderMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderMenuItem.m; sourceTree = "<group>"; };
+		5CC6F7C61A4468FA00796E11 /* DealTopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealTopMenu.h; sourceTree = "<group>"; };
+		5CC6F7C71A4468FA00796E11 /* DealTopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealTopMenu.m; sourceTree = "<group>"; };
+		5CC6F7C81A4468FA00796E11 /* DealTopMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealTopMenuItem.h; sourceTree = "<group>"; };
+		5CC6F7C91A4468FB00796E11 /* DealTopMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealTopMenuItem.m; sourceTree = "<group>"; };
 		5CDBFD571A2B531D00C3ADC8 /* CityListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityListController.h; sourceTree = "<group>"; };
 		5CDBFD581A2B531D00C3ADC8 /* CityListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityListController.m; sourceTree = "<group>"; };
 		5CECBBF21A31EDB50016C211 /* bg_bottom_deal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_bottom_deal.png; sourceTree = "<group>"; };
@@ -537,10 +547,6 @@
 		5CECBC6B1A31EDB50016C211 /* separator_filter_item.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = separator_filter_item.png; sourceTree = "<group>"; };
 		5CECBC6C1A31EDB50016C211 /* separator_topbar_item.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = separator_topbar_item.png; sourceTree = "<group>"; };
 		5CECBC6D1A31EDB50016C211 /* separator_topbar_item@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "separator_topbar_item@2x.png"; sourceTree = "<group>"; };
-		5CECBCE81A31EFBA0016C211 /* DealTopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealTopMenu.h; sourceTree = "<group>"; };
-		5CECBCE91A31EFBA0016C211 /* DealTopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealTopMenu.m; sourceTree = "<group>"; };
-		5CECBCEB1A31F0420016C211 /* DealTopMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealTopMenuItem.h; sourceTree = "<group>"; };
-		5CECBCEC1A31F0420016C211 /* DealTopMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealTopMenuItem.m; sourceTree = "<group>"; };
 		EB039EA788D1FB3113293492 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F096BC6A3A9CAC4D1064C553 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F8D926D827B5708B2B148E39 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -607,6 +613,8 @@
 			children = (
 				5C03738C1A28BC14009C9B67 /* DealListController.h */,
 				5C03738D1A28BC14009C9B67 /* DealListController.m */,
+				5CC6F7AC1A445FB800796E11 /* DealDetailController.h */,
+				5CC6F7AD1A445FB800796E11 /* DealDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -696,28 +704,6 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		5C43C8AE1A3735D300CCD86A /* District */ = {
-			isa = PBXGroup;
-			children = (
-				5C43C8AF1A3735E400CCD86A /* DistrictMenu.h */,
-				5C43C8B01A3735E400CCD86A /* DistrictMenu.m */,
-				5C43C8B51A37370200CCD86A /* DistrictMenuItem.h */,
-				5C43C8B61A37370200CCD86A /* DistrictMenuItem.m */,
-			);
-			path = District;
-			sourceTree = "<group>";
-		};
-		5C43C8B81A373CE600CCD86A /* Order */ = {
-			isa = PBXGroup;
-			children = (
-				5C43C8B91A373D2B00CCD86A /* OrderMenu.h */,
-				5C43C8BA1A373D2B00CCD86A /* OrderMenu.m */,
-				5C43C8BC1A373D3900CCD86A /* OrderMenuItem.h */,
-				5C43C8BD1A373D3900CCD86A /* OrderMenuItem.m */,
-			);
-			path = Order;
-			sourceTree = "<group>";
-		};
 		5C47AA6E1A2CB65C0012EE42 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -739,17 +725,6 @@
 				5C43C8C01A3743C400CCD86A /* OrderModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		5C548D341A35DCEE003C46A7 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				5C548D351A35DCEE003C46A7 /* CategoryMenu.h */,
-				5C548D361A35DCEE003C46A7 /* CategoryMenu.m */,
-				5C548D371A35DCEE003C46A7 /* CategoryMenuItem.h */,
-				5C548D381A35DCEE003C46A7 /* CategoryMenuItem.m */,
-			);
-			path = Category;
 			sourceTree = "<group>";
 		};
 		5C5D37291A40658400E16FB3 /* Tool */ = {
@@ -941,6 +916,7 @@
 		5CC125F91A24D879000C731E /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				5CC6F7A81A44598E00796E11 /* View */,
 				5C5D372D1A40798900E16FB3 /* Lib */,
 				5C91A2631A3F3B5700B34142 /* Tool */,
 				5C0D668D1A3DC1FE00684377 /* API */,
@@ -1046,6 +1022,82 @@
 				5CC1263A1A24DAF9000C731E /* bg_uinavigation@2x.png */,
 			);
 			path = Nav;
+			sourceTree = "<group>";
+		};
+		5CC6F7A81A44598E00796E11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5CC6F7A91A44599C00796E11 /* CoverView.h */,
+				5CC6F7AA1A44599C00796E11 /* CoverView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5CC6F7AF1A4468FA00796E11 /* DropDownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				5CC6F7B01A4468FA00796E11 /* Category */,
+				5CC6F7B51A4468FA00796E11 /* District */,
+				5CC6F7BA1A4468FA00796E11 /* DropDownMenu.h */,
+				5CC6F7BB1A4468FA00796E11 /* DropDownMenu.m */,
+				5CC6F7BC1A4468FA00796E11 /* DropDownMenuItem.h */,
+				5CC6F7BD1A4468FA00796E11 /* DropDownMenuItem.m */,
+				5CC6F7BE1A4468FA00796E11 /* DropDownSubTitle.h */,
+				5CC6F7BF1A4468FA00796E11 /* DropDownSubTitle.m */,
+				5CC6F7C01A4468FA00796E11 /* Order */,
+			);
+			path = DropDownMenu;
+			sourceTree = "<group>";
+		};
+		5CC6F7B01A4468FA00796E11 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5CC6F7B11A4468FA00796E11 /* CategoryMenu.h */,
+				5CC6F7B21A4468FA00796E11 /* CategoryMenu.m */,
+				5CC6F7B31A4468FA00796E11 /* CategoryMenuItem.h */,
+				5CC6F7B41A4468FA00796E11 /* CategoryMenuItem.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		5CC6F7B51A4468FA00796E11 /* District */ = {
+			isa = PBXGroup;
+			children = (
+				5CC6F7B61A4468FA00796E11 /* DistrictMenu.h */,
+				5CC6F7B71A4468FA00796E11 /* DistrictMenu.m */,
+				5CC6F7B81A4468FA00796E11 /* DistrictMenuItem.h */,
+				5CC6F7B91A4468FA00796E11 /* DistrictMenuItem.m */,
+			);
+			path = District;
+			sourceTree = "<group>";
+		};
+		5CC6F7C01A4468FA00796E11 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				5CC6F7C11A4468FA00796E11 /* OrderMenu.h */,
+				5CC6F7C21A4468FA00796E11 /* OrderMenu.m */,
+				5CC6F7C31A4468FA00796E11 /* OrderMenuItem.h */,
+				5CC6F7C41A4468FA00796E11 /* OrderMenuItem.m */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		5CC6F7C51A4468FA00796E11 /* TopMenu */ = {
+			isa = PBXGroup;
+			children = (
+				5CC6F7C61A4468FA00796E11 /* DealTopMenu.h */,
+				5CC6F7C71A4468FA00796E11 /* DealTopMenu.m */,
+				5CC6F7C81A4468FA00796E11 /* DealTopMenuItem.h */,
+				5CC6F7C91A4468FB00796E11 /* DealTopMenuItem.m */,
+			);
+			path = TopMenu;
+			sourceTree = "<group>";
+		};
+		5CC6F7D51A44691600796E11 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		5CECBBF01A31EDB50016C211 /* Deal */ = {
@@ -1211,19 +1263,9 @@
 		5CECBCE71A31EF9C0016C211 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5C548D341A35DCEE003C46A7 /* Category */,
-				5C43C8AE1A3735D300CCD86A /* District */,
-				5C43C8B81A373CE600CCD86A /* Order */,
-				5CECBCE81A31EFBA0016C211 /* DealTopMenu.h */,
-				5CECBCE91A31EFBA0016C211 /* DealTopMenu.m */,
-				5CECBCEB1A31F0420016C211 /* DealTopMenuItem.h */,
-				5CECBCEC1A31F0420016C211 /* DealTopMenuItem.m */,
-				5C548D271A35D5B6003C46A7 /* DropDownMenu.h */,
-				5C548D281A35D5B6003C46A7 /* DropDownMenu.m */,
-				5C43C8B21A37368F00CCD86A /* DropDownMenuItem.h */,
-				5C43C8B31A37368F00CCD86A /* DropDownMenuItem.m */,
-				5C4EA29F1A3B1B4200A5E7D4 /* DropDownSubTitle.h */,
-				5C4EA2A01A3B1B4200A5E7D4 /* DropDownSubTitle.m */,
+				5CC6F7D51A44691600796E11 /* Detail */,
+				5CC6F7AF1A4468FA00796E11 /* DropDownMenu */,
+				5CC6F7C51A4468FA00796E11 /* TopMenu */,
 				5C4DF5F81A3F062D00760231 /* DealCollectionCell.xib */,
 				5C4DF5FA1A3F347200760231 /* DealCollectionCell.h */,
 				5C4DF5FB1A3F347200760231 /* DealCollectionCell.m */,
@@ -1553,41 +1595,43 @@
 				5CC125FE1A24D879000C731E /* main.m in Sources */,
 				5C0373A11A28C88C009C9B67 /* UIImage+ZD.m in Sources */,
 				5C5D374E1A40832700E16FB3 /* MJRefreshFooterView.m in Sources */,
+				5CC6F7AB1A44599C00796E11 /* CoverView.m in Sources */,
+				5CC6F7CE1A4468FB00796E11 /* DropDownMenu.m in Sources */,
 				5C1C43961A2627AE006CB752 /* NSString+ZD.m in Sources */,
-				5C43C8B11A3735E400CCD86A /* DistrictMenu.m in Sources */,
+				5CC6F7D41A4468FB00796E11 /* DealTopMenuItem.m in Sources */,
+				5CC6F7D11A4468FB00796E11 /* OrderMenu.m in Sources */,
+				5CC6F7CA1A4468FB00796E11 /* CategoryMenu.m in Sources */,
 				5C0D9CB81A2F3A6500AED66E /* CityModel.m in Sources */,
+				5CC6F7D31A4468FB00796E11 /* DealTopMenu.m in Sources */,
+				5CC6F7D01A4468FB00796E11 /* DropDownSubTitle.m in Sources */,
 				5C1C43911A26258E006CB752 /* SlideBarBaseItem.m in Sources */,
-				5C43C8BB1A373D2B00CCD86A /* OrderMenu.m in Sources */,
 				5C1C43991A262937006CB752 /* SlideBarMoreItem.m in Sources */,
 				5C03738E1A28BC14009C9B67 /* DealListController.m in Sources */,
 				5C91A2661A3F3B6600B34142 /* ImageTool.m in Sources */,
 				5CBA81741A2F4E570025D988 /* MetaDataTool.m in Sources */,
+				5CC6F7CF1A4468FB00796E11 /* DropDownMenuItem.m in Sources */,
 				5C5D37521A40832700E16FB3 /* UIView+MJExtension.m in Sources */,
 				5CC126011A24D8BF000C731E /* MainController.m in Sources */,
-				5C4EA2A11A3B1B4200A5E7D4 /* DropDownSubTitle.m in Sources */,
 				5C4DF5FC1A3F347200760231 /* DealCollectionCell.m in Sources */,
-				5C43C8B71A37370200CCD86A /* DistrictMenuItem.m in Sources */,
-				5CECBCEA1A31EFBA0016C211 /* DealTopMenu.m in Sources */,
-				5CECBCED1A31F0420016C211 /* DealTopMenuItem.m in Sources */,
 				5C43C8C11A3743C400CCD86A /* OrderModel.m in Sources */,
 				5C5D372C1A4065A900E16FB3 /* DianpingDealTool.m in Sources */,
 				5CC200BB1A2767DD008F5F95 /* SlideBarTabItem.m in Sources */,
-				5C43C8B41A37368F00CCD86A /* DropDownMenuItem.m in Sources */,
+				5CC6F7CB1A4468FB00796E11 /* CategoryMenuItem.m in Sources */,
 				5C5D37501A40832700E16FB3 /* UIScrollView+MJExtension.m in Sources */,
+				5CC6F7CC1A4468FB00796E11 /* DistrictMenu.m in Sources */,
+				5CC6F7D21A4468FB00796E11 /* OrderMenuItem.m in Sources */,
 				5C548D301A35DA67003C46A7 /* CategoryModel.m in Sources */,
 				5C0D9CBB1A2F3AB900AED66E /* DistrictMode.m in Sources */,
 				5C649E931A3DCBDC00073256 /* DealModel.m in Sources */,
 				5CDBFD591A2B531D00C3ADC8 /* CityListController.m in Sources */,
-				5C548D391A35DCEE003C46A7 /* CategoryMenu.m in Sources */,
 				5CC125FD1A24D879000C731E /* AppDelegate.m in Sources */,
 				5C0D9CB51A2F3A1D00AED66E /* CityBaseModel.m in Sources */,
 				5C03739B1A28C711009C9B67 /* BaseNavigationController.m in Sources */,
+				5CC6F7CD1A4468FB00796E11 /* DistrictMenuItem.m in Sources */,
 				5C5D374D1A40832700E16FB3 /* MJRefreshConst.m in Sources */,
 				5C649E961A3DCDC100073256 /* NSObject+Value.m in Sources */,
-				5C548D3A1A35DCEE003C46A7 /* CategoryMenuItem.m in Sources */,
 				5C0373941A28BC30009C9B67 /* CollectController.m in Sources */,
 				5C5D374C1A40832700E16FB3 /* MJRefreshBaseView.m in Sources */,
-				5C43C8BE1A373D3900CCD86A /* OrderMenuItem.m in Sources */,
 				5C5D37511A40832700E16FB3 /* UIScrollView+MJRefresh.m in Sources */,
 				5C0373A01A28C88C009C9B67 /* UIBarButtonItem+ZD.m in Sources */,
 				5C1C438E1A261833006CB752 /* SlideBar.m in Sources */,
@@ -1595,11 +1639,11 @@
 				5C7C13661A2A0C95002120F7 /* MoreController.m in Sources */,
 				5C0373971A28BC3C009C9B67 /* MineController.m in Sources */,
 				5C5D374F1A40832700E16FB3 /* MJRefreshHeaderView.m in Sources */,
+				5CC6F7AE1A445FB800796E11 /* DealDetailController.m in Sources */,
 				5C0D66941A3DC1FE00684377 /* DPRequest.m in Sources */,
 				5C0373911A28BC21009C9B67 /* MapController.m in Sources */,
 				5C0D66931A3DC1FE00684377 /* DPAPI.m in Sources */,
 				5C7F62691A30A42A00DA74F8 /* CitySearchReslutController.m in Sources */,
-				5C548D291A35D5B6003C46A7 /* DropDownMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

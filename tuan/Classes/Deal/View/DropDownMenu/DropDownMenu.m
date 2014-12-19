@@ -12,13 +12,11 @@
 #import "OrderMenuItem.h"
 #import "Common.h"
 #import "MetaDataTool.h"
-
-#define kDuration 0.4
-#define kCoverAlpha 0.4
+#import "CoverView.h"
 
 @interface DropDownMenu ()
 
-@property (nonatomic, strong) UIView *cover;
+@property (nonatomic, strong) CoverView *cover;
 @property (nonatomic, strong) UIView *contentView;
 
 @end
@@ -33,17 +31,8 @@
         self.autoresizingMask =  UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
         //添加蒙板
-        UIView *cover = [[UIView alloc]init];
-        cover.alpha = kCoverAlpha ;
+        CoverView *cover = [CoverView coverViewWithTarget:self action:@selector(hideWithAnimation)];
         cover.frame = self.bounds;
-        cover.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-        cover.backgroundColor = [UIColor blackColor];
-        
-        [cover addGestureRecognizer:[[UITapGestureRecognizer alloc]
-                                     initWithTarget:self
-                                     action:@selector(hideWithAnimation)]
-         ];
-        
         [self addSubview:cover];
         _cover = cover;
         
@@ -70,19 +59,19 @@
     _contentView.transform = CGAffineTransformMakeTranslation(0, -_contentView.frame.size.height);
     _contentView.alpha = 0;
     _cover.alpha = 0;
-    [UIView animateWithDuration:kDuration animations:^{
+    [UIView animateWithDuration:kAnimationDuration animations:^{
         //1.scrollview 从上方出现
         _contentView.transform = CGAffineTransformIdentity;
         _contentView.alpha = 1;
-        //2.cover alpha 0 -> 0.4
-        _cover.alpha = kCoverAlpha;
+        //2.cover alpha 0 -> 0.6
+        [_cover resetAlpha];
     }];
     
 
 }
 #pragma mark- 通过动画隐藏出来
 - (void)hideWithAnimation{
-    [UIView animateWithDuration:kDuration animations:^{
+    [UIView animateWithDuration:kAnimationDuration animations:^{
         //1.scrollview 缩到上方
         _contentView.transform = CGAffineTransformMakeTranslation(0, -_contentView.frame.size.height);
         _contentView.alpha = 0;
@@ -92,7 +81,7 @@
         //重置属性
         _contentView.transform = CGAffineTransformIdentity;
         _contentView.alpha = 1;
-        _cover.alpha = kCoverAlpha;
+        [_cover resetAlpha];
         //从父控件移除
         [self removeFromSuperview];
         if (_hiddenBlock != nil) {
