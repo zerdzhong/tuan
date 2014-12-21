@@ -25,6 +25,9 @@
 		5C1C43911A26258E006CB752 /* SlideBarBaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C43901A26258E006CB752 /* SlideBarBaseItem.m */; };
 		5C1C43961A2627AE006CB752 /* NSString+ZD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C43951A2627AE006CB752 /* NSString+ZD.m */; };
 		5C1C43991A262937006CB752 /* SlideBarMoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C43981A262937006CB752 /* SlideBarMoreItem.m */; };
+		5C1F63001A46AFE2003B7314 /* DetailBuyDock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C1F62FF1A46AFE2003B7314 /* DetailBuyDock.xib */; };
+		5C1F63031A46B547003B7314 /* DetailBuyDock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1F63021A46B547003B7314 /* DetailBuyDock.m */; };
+		5C1F63061A46BAD4003B7314 /* CenterLineLable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1F63051A46BAD4003B7314 /* CenterLineLable.m */; };
 		5C43C8C11A3743C400CCD86A /* OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C43C8C01A3743C400CCD86A /* OrderModel.m */; };
 		5C43C8C31A37465D00CCD86A /* Orders.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C43C8C21A37465D00CCD86A /* Orders.plist */; };
 		5C47AA711A2CB65C0012EE42 /* Categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C47AA6F1A2CB65C0012EE42 /* Categories.plist */; };
@@ -290,6 +293,11 @@
 		5C1C43951A2627AE006CB752 /* NSString+ZD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZD.m"; sourceTree = "<group>"; };
 		5C1C43971A262937006CB752 /* SlideBarMoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideBarMoreItem.h; sourceTree = "<group>"; };
 		5C1C43981A262937006CB752 /* SlideBarMoreItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideBarMoreItem.m; sourceTree = "<group>"; };
+		5C1F62FF1A46AFE2003B7314 /* DetailBuyDock.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailBuyDock.xib; sourceTree = "<group>"; };
+		5C1F63011A46B547003B7314 /* DetailBuyDock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailBuyDock.h; sourceTree = "<group>"; };
+		5C1F63021A46B547003B7314 /* DetailBuyDock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailBuyDock.m; sourceTree = "<group>"; };
+		5C1F63041A46BAD4003B7314 /* CenterLineLable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterLineLable.h; sourceTree = "<group>"; };
+		5C1F63051A46BAD4003B7314 /* CenterLineLable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterLineLable.m; sourceTree = "<group>"; };
 		5C43C8BF1A3743C400CCD86A /* OrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderModel.h; sourceTree = "<group>"; };
 		5C43C8C01A3743C400CCD86A /* OrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderModel.m; sourceTree = "<group>"; };
 		5C43C8C21A37465D00CCD86A /* Orders.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Orders.plist; sourceTree = "<group>"; };
@@ -704,6 +712,18 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		5C1F62FE1A46AFD4003B7314 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				5C1F62FF1A46AFE2003B7314 /* DetailBuyDock.xib */,
+				5C1F63011A46B547003B7314 /* DetailBuyDock.h */,
+				5C1F63021A46B547003B7314 /* DetailBuyDock.m */,
+				5C1F63041A46BAD4003B7314 /* CenterLineLable.h */,
+				5C1F63051A46BAD4003B7314 /* CenterLineLable.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		5C47AA6E1A2CB65C0012EE42 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -1093,13 +1113,6 @@
 			path = TopMenu;
 			sourceTree = "<group>";
 		};
-		5CC6F7D51A44691600796E11 /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Detail;
-			sourceTree = "<group>";
-		};
 		5CECBBF01A31EDB50016C211 /* Deal */ = {
 			isa = PBXGroup;
 			children = (
@@ -1263,7 +1276,7 @@
 		5CECBCE71A31EF9C0016C211 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5CC6F7D51A44691600796E11 /* Detail */,
+				5C1F62FE1A46AFD4003B7314 /* Detail */,
 				5CC6F7AF1A4468FA00796E11 /* DropDownMenu */,
 				5CC6F7C51A4468FA00796E11 /* TopMenu */,
 				5C4DF5F81A3F062D00760231 /* DealCollectionCell.xib */,
@@ -1540,6 +1553,7 @@
 				5CECBCE41A31EDB50016C211 /* separator_filter_item.png in Resources */,
 				5CECBC8A1A31EDB50016C211 /* ic_filter_category_22@2x.png in Resources */,
 				5CECBC7E1A31EDB50016C211 /* ic_filter_category_-1.png in Resources */,
+				5C1F63001A46AFE2003B7314 /* DetailBuyDock.xib in Resources */,
 				5CECBCC41A31EDB50016C211 /* ic_no@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1613,6 +1627,7 @@
 				5C5D37521A40832700E16FB3 /* UIView+MJExtension.m in Sources */,
 				5CC126011A24D8BF000C731E /* MainController.m in Sources */,
 				5C4DF5FC1A3F347200760231 /* DealCollectionCell.m in Sources */,
+				5C1F63031A46B547003B7314 /* DetailBuyDock.m in Sources */,
 				5C43C8C11A3743C400CCD86A /* OrderModel.m in Sources */,
 				5C5D372C1A4065A900E16FB3 /* DianpingDealTool.m in Sources */,
 				5CC200BB1A2767DD008F5F95 /* SlideBarTabItem.m in Sources */,
@@ -1632,6 +1647,7 @@
 				5C649E961A3DCDC100073256 /* NSObject+Value.m in Sources */,
 				5C0373941A28BC30009C9B67 /* CollectController.m in Sources */,
 				5C5D374C1A40832700E16FB3 /* MJRefreshBaseView.m in Sources */,
+				5C1F63061A46BAD4003B7314 /* CenterLineLable.m in Sources */,
 				5C5D37511A40832700E16FB3 /* UIScrollView+MJRefresh.m in Sources */,
 				5C0373A01A28C88C009C9B67 /* UIBarButtonItem+ZD.m in Sources */,
 				5C1C438E1A261833006CB752 /* SlideBar.m in Sources */,

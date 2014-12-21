@@ -9,8 +9,11 @@
 #import "DealDetailController.h"
 #import "Common.h"
 #import "UIBarButtonItem+ZD.h"
+#import "DetailBuyDock.h"
 
 @interface DealDetailController ()
+
+@property (nonatomic, strong) DetailBuyDock *buyDock;
 
 @end
 
@@ -23,7 +26,6 @@
     self.view.backgroundColor = kGlobalBgColor;
     //标题
     self.title = _deal.title;
-    //
     
     self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem itemWithImage:@"btn_share.png"
                                                               highlightedImage:@"btn_share_pressed.png"
@@ -34,10 +36,20 @@
                                                               highlightedImage:@"ic_deal_collect_pressed.png"
                                                                         target:self
                                                                         action:nil]];
+    
+    //添加购买栏
+    _buyDock = [DetailBuyDock buyDock];
+    _buyDock.dealModel = _deal;
+    _buyDock.frame = CGRectMake(0, 64, self.view.frame.size.width, 60);
+    [self.view addSubview:_buyDock];
 }
+
+#pragma mark- 添加购买栏
+
 
 -(void)setDeal:(DealModel *)deal{
     _deal = deal;
+    _buyDock.dealModel = _deal;
     //标题
     self.title = _deal.title;
 }
@@ -46,6 +58,8 @@
 #pragma mark- 关闭自己
 - (void)onClose{
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

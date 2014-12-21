@@ -10,8 +10,19 @@
 
 @implementation DealModel
 
--(void)setCurrent_price:(double)current_price{
-    NSString *doubleString = [NSString stringWithFormat:@"%f",current_price];
+- (void)setCurrent_price:(double)current_price{
+    _current_price = current_price;
+    _current_price_text = [self doubleToString:_current_price];
+}
+
+- (void)setList_price:(double)list_price{
+    _list_price = list_price;
+    _list_price_text = [self doubleToString:_list_price];
+}
+
+- (NSString *)doubleToString:(double)num{
+    NSString *resultString;
+    NSString *doubleString = [NSString stringWithFormat:@"%f",num];
     if ([doubleString containsString:@"."]) {
         const char *floatChars = [doubleString UTF8String];
         int length = (int)[doubleString length];
@@ -25,13 +36,15 @@
                 break;
             }
         }
-        _current_price_text = [doubleString substringToIndex:i+1];
-        if ([_current_price_text hasSuffix:@"."]) {
-            _current_price_text = [_current_price_text substringToIndex:_current_price_text.length - 1];
+        resultString = [doubleString substringToIndex:i+1];
+        if ([resultString hasSuffix:@"."]) {
+            resultString = [resultString substringToIndex:resultString.length - 1];
         }
     }else{
-        _current_price_text = doubleString;
+        resultString = doubleString;
     }
+    
+    return resultString;
 }
 
 @end
