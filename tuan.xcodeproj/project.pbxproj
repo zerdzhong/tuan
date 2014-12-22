@@ -49,6 +49,9 @@
 		5C7C13661A2A0C95002120F7 /* MoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7C13651A2A0C95002120F7 /* MoreController.m */; };
 		5C7F62691A30A42A00DA74F8 /* CitySearchReslutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7F62681A30A42A00DA74F8 /* CitySearchReslutController.m */; };
 		5C91A2661A3F3B6600B34142 /* ImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C91A2651A3F3B6600B34142 /* ImageTool.m */; };
+		5CB9B29A1A485AA8000437E8 /* DetailSlideDock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CB9B2991A485AA8000437E8 /* DetailSlideDock.xib */; };
+		5CB9B29D1A485CFF000437E8 /* DetailSlideDock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9B29C1A485CFF000437E8 /* DetailSlideDock.m */; };
+		5CB9B2A11A48648B000437E8 /* DealDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CB9B2A01A48648B000437E8 /* DealDetailController.xib */; };
 		5CBA81741A2F4E570025D988 /* MetaDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA81731A2F4E570025D988 /* MetaDataTool.m */; };
 		5CC125C61A24D548000C731E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC125C51A24D548000C731E /* Images.xcassets */; };
 		5CC125D51A24D548000C731E /* tuanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC125D41A24D548000C731E /* tuanTests.m */; };
@@ -336,6 +339,10 @@
 		5C7F62681A30A42A00DA74F8 /* CitySearchReslutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitySearchReslutController.m; sourceTree = "<group>"; };
 		5C91A2641A3F3B6600B34142 /* ImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTool.h; sourceTree = "<group>"; };
 		5C91A2651A3F3B6600B34142 /* ImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTool.m; sourceTree = "<group>"; };
+		5CB9B2991A485AA8000437E8 /* DetailSlideDock.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailSlideDock.xib; sourceTree = "<group>"; };
+		5CB9B29B1A485CFF000437E8 /* DetailSlideDock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailSlideDock.h; sourceTree = "<group>"; };
+		5CB9B29C1A485CFF000437E8 /* DetailSlideDock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailSlideDock.m; sourceTree = "<group>"; };
+		5CB9B2A01A48648B000437E8 /* DealDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealDetailController.xib; sourceTree = "<group>"; };
 		5CBA81721A2F4E570025D988 /* MetaDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetaDataTool.h; sourceTree = "<group>"; };
 		5CBA81731A2F4E570025D988 /* MetaDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetaDataTool.m; sourceTree = "<group>"; };
 		5CBA81751A2F4F490025D988 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
@@ -623,6 +630,7 @@
 				5C03738D1A28BC14009C9B67 /* DealListController.m */,
 				5CC6F7AC1A445FB800796E11 /* DealDetailController.h */,
 				5CC6F7AD1A445FB800796E11 /* DealDetailController.m */,
+				5CB9B2A01A48648B000437E8 /* DealDetailController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -715,11 +723,14 @@
 		5C1F62FE1A46AFD4003B7314 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				5C1F62FF1A46AFE2003B7314 /* DetailBuyDock.xib */,
 				5C1F63011A46B547003B7314 /* DetailBuyDock.h */,
 				5C1F63021A46B547003B7314 /* DetailBuyDock.m */,
+				5C1F62FF1A46AFE2003B7314 /* DetailBuyDock.xib */,
 				5C1F63041A46BAD4003B7314 /* CenterLineLable.h */,
 				5C1F63051A46BAD4003B7314 /* CenterLineLable.m */,
+				5CB9B29B1A485CFF000437E8 /* DetailSlideDock.h */,
+				5CB9B29C1A485CFF000437E8 /* DetailSlideDock.m */,
+				5CB9B2991A485AA8000437E8 /* DetailSlideDock.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1279,9 +1290,9 @@
 				5C1F62FE1A46AFD4003B7314 /* Detail */,
 				5CC6F7AF1A4468FA00796E11 /* DropDownMenu */,
 				5CC6F7C51A4468FA00796E11 /* TopMenu */,
-				5C4DF5F81A3F062D00760231 /* DealCollectionCell.xib */,
 				5C4DF5FA1A3F347200760231 /* DealCollectionCell.h */,
 				5C4DF5FB1A3F347200760231 /* DealCollectionCell.m */,
+				5C4DF5F81A3F062D00760231 /* DealCollectionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1529,6 +1540,7 @@
 				5CC126561A24DAF9000C731E /* ic_map.png in Resources */,
 				5CECBCE51A31EDB50016C211 /* separator_topbar_item.png in Resources */,
 				5CECBCD21A31EDB50016C211 /* ic_arrow_down@2x.png in Resources */,
+				5CB9B2A11A48648B000437E8 /* DealDetailController.xib in Resources */,
 				5CECBC721A31EDB50016C211 /* bg_filter_toggle_hl.png in Resources */,
 				5CECBCC61A31EDB50016C211 /* ic_people@2x.png in Resources */,
 				5CECBC931A31EDB50016C211 /* ic_filter_category_78@2x.png in Resources */,
@@ -1551,6 +1563,7 @@
 				5CC126431A24DAF9000C731E /* Icon-Small.png in Resources */,
 				5CC1263B1A24DAF9000C731E /* Default-Landscape@2x~ipad.png in Resources */,
 				5CECBCE41A31EDB50016C211 /* separator_filter_item.png in Resources */,
+				5CB9B29A1A485AA8000437E8 /* DetailSlideDock.xib in Resources */,
 				5CECBC8A1A31EDB50016C211 /* ic_filter_category_22@2x.png in Resources */,
 				5CECBC7E1A31EDB50016C211 /* ic_filter_category_-1.png in Resources */,
 				5C1F63001A46AFE2003B7314 /* DetailBuyDock.xib in Resources */,
@@ -1638,6 +1651,7 @@
 				5C548D301A35DA67003C46A7 /* CategoryModel.m in Sources */,
 				5C0D9CBB1A2F3AB900AED66E /* DistrictMode.m in Sources */,
 				5C649E931A3DCBDC00073256 /* DealModel.m in Sources */,
+				5CB9B29D1A485CFF000437E8 /* DetailSlideDock.m in Sources */,
 				5CDBFD591A2B531D00C3ADC8 /* CityListController.m in Sources */,
 				5CC125FD1A24D879000C731E /* AppDelegate.m in Sources */,
 				5C0D9CB51A2F3A1D00AED66E /* CityBaseModel.m in Sources */,

@@ -96,6 +96,9 @@
     //刷新控件
     [self addMJRefresh];
     
+    //test 为了设置默认城市 以后加了定位之后再去掉
+    [MetaDataTool sharedMetaDataTool];
+    
 }
 
 #pragma mark- 上下拉刷新

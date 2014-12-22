@@ -10,6 +10,7 @@
 #import "Common.h"
 #import "UIBarButtonItem+ZD.h"
 #import "DetailBuyDock.h"
+#import "DetailSlideDock.h"
 
 @interface DealDetailController ()
 
@@ -37,6 +38,15 @@
                                                                         target:self
                                                                         action:nil]];
     
+//    //添加购买栏
+//    [self addBuyDock];
+//    //添加右边边栏
+//    [self addDetailSlideDock];
+}
+
+#pragma mark- 添加购买栏
+
+- (void)addBuyDock{
     //添加购买栏
     _buyDock = [DetailBuyDock buyDock];
     _buyDock.dealModel = _deal;
@@ -44,7 +54,13 @@
     [self.view addSubview:_buyDock];
 }
 
-#pragma mark- 添加购买栏
+- (void)addDetailSlideDock{
+    DetailSlideDock *slideDock = [DetailSlideDock detailSlideDock];
+    CGFloat x = self.view.frame.size.width - slideDock.frame.size.width;
+    CGFloat y = self.view.frame.size.height - slideDock.frame.size.height - 100;
+    slideDock.frame = CGRectMake(x, y, 0, 0);
+    [self.view addSubview:slideDock];
+}
 
 
 -(void)setDeal:(DealModel *)deal{

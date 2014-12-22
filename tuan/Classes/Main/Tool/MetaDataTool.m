@@ -36,11 +36,17 @@ singleton_implementation(MetaDataTool)
         [self loadCategoryData];
         //3.排序数据
         [self loadOrderData];
+        
+        //test 设置默认城市为北京
+        [self setDefaultCity];
     }
     
     return self;
 }
 
+- (void)setDefaultCity{
+    self.currentCity = [_totalCities objectForKey:@"北京"];
+}
 
 #pragma mark- 初始化城市数据
 - (void)loadCityData{

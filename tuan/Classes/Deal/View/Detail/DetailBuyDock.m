@@ -7,8 +7,22 @@
 //
 
 #import "DetailBuyDock.h"
+#import "UIImage+ZD.h"
 
 @implementation DetailBuyDock
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+
+       UIView *containerView = [[NSBundle mainBundle]loadNibNamed:@"DetailBuyDock" owner:self options:nil][0];
+        CGRect newFrame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+        containerView.frame = newFrame;
+        [self addSubview:containerView];
+    }
+    return self;
+}
 
 -(void)setDealModel:(DealModel *)dealModel{
     _dealModel = dealModel;
@@ -19,6 +33,10 @@
 + (instancetype)buyDock{
     
     return [[NSBundle mainBundle]loadNibNamed:@"DetailBuyDock" owner:nil options:nil][0];
+}
+
+-(void)drawRect:(CGRect)rect{
+    [[UIImage resizedImage:@"bg_buyBtn.png"] drawInRect:rect];
 }
 
 @end
