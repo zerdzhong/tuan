@@ -9,6 +9,12 @@
 #import "DetailSlideDock.h"
 #import "Common.h"
 
+@interface DetailSlideDock ()
+
+@property (nonatomic, strong) UIButton *selectedBtn;
+
+@end
+
 @implementation DetailSlideDock
 
 - (instancetype)initWithCoder:(NSCoder *)coder
@@ -24,13 +30,33 @@
     return self;
 }
 
-- (IBAction)onBtnClicked:(id)sender {
-    MyLog(@"%@",sender);
-}
-
 + (instancetype)detailSlideDock{
     
     return [[NSBundle mainBundle]loadNibNamed:@"DetailSlideDock" owner:nil options:nil][0];
+}
+
+-(void)awakeFromNib{
+    [self onBtnClicked:_infoBtn];
+}
+
+- (IBAction)onBtnClicked:(UIButton *)sender {
+    
+    //通知代理
+    if ([_delegate respondsToSelector:@selector(detailDock:btnClickedFrom:to:)]) {
+        [_delegate detailDock:self btnClickedFrom:(int)_selectedBtn.tag to:(int)sender.tag];
+    }
+    
+    //控制按钮状态
+    _selectedBtn.enabled = YES;
+    _selectedBtn = sender;
+    _selectedBtn.enabled = NO;
+//    //让被选中的按钮变成最上面
+//    if (sender == _infoBtn) {        //最上边的按钮
+//        [self insertSubview:_merchantBtn atIndex:0];
+//    }else if (sender == _merchantBtn){
+//        [self insertSubview:_infoBtn atIndex:0];
+//    }
+//    [self bringSubviewToFront:_selectedBtn]; 
 }
 
 //忽略size

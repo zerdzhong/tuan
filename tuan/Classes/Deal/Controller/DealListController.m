@@ -23,7 +23,7 @@
 #define kCellHeight 250
 #define kCellWidth 250
 
-#define kDetailWidth 600
+#define kDetailWidth 550
 
 @interface DealListController ()
 
@@ -211,13 +211,14 @@
         //初始化NavgationController
         _detailNavController = [[BaseNavigationController alloc]
                              initWithRootViewController:_detailController];
-        _detailNavController.view.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+        _detailNavController.view.autoresizingMask = UIViewAutoresizingFlexibleHeight| UIViewAutoresizingFlexibleLeftMargin;
     }
     //设置宽高
     _detailNavController.view.frame = CGRectMake(_cover.frame.size.width, 0, kDetailWidth, _cover.frame.size.height);
-    _detailController.deal = deal;
     [self.navigationController.view addSubview:_detailNavController.view];
     [self.navigationController addChildViewController:_detailNavController];
+    
+    _detailController.deal = deal;
     
     [UIView animateWithDuration:kAnimationDuration animations:^{
         CGRect frame = _detailNavController.view.frame;

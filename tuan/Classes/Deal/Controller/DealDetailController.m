@@ -11,10 +11,15 @@
 #import "UIBarButtonItem+ZD.h"
 #import "DetailBuyDock.h"
 #import "DetailSlideDock.h"
+#import "DealDetailInfoController.h"
+#import "DealDetailWebController.h"
+#import "DealDetailMerchantController.h"
 
-@interface DealDetailController ()
+@interface DealDetailController ()<DetailSlideDockDelegate>
 
-@property (nonatomic, strong) DetailBuyDock *buyDock;
+@property (nonatomic, weak) IBOutlet DetailBuyDock *buyDock;
+@property (weak, nonatomic) IBOutlet DetailSlideDock *slideDock;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
 
 @end
 
@@ -38,30 +43,32 @@
                                                                         target:self
                                                                         action:nil]];
     
-//    //添加购买栏
-//    [self addBuyDock];
-//    //添加右边边栏
-//    [self addDetailSlideDock];
-}
-
-#pragma mark- 添加购买栏
-
-- (void)addBuyDock{
-    //添加购买栏
-    _buyDock = [DetailBuyDock buyDock];
+    //设置buyDock内容
     _buyDock.dealModel = _deal;
-    _buyDock.frame = CGRectMake(0, 64, self.view.frame.size.width, 60);
-    [self.view addSubview:_buyDock];
+    //设置slideDock代理
+    _slideDock.delegate = self;
+    //初始化子控制器
+    [self addAllChildController];
 }
 
-- (void)addDetailSlideDock{
-    DetailSlideDock *slideDock = [DetailSlideDock detailSlideDock];
-    CGFloat x = self.view.frame.size.width - slideDock.frame.size.width;
-    CGFloat y = self.view.frame.size.height - slideDock.frame.size.height - 100;
-    slideDock.frame = CGRectMake(x, y, 0, 0);
-    [self.view addSubview:slideDock];
+- (void)addAllChildController{
+    //团购简介
+    DealDetailInfoController *infoController = [[DealDetailInfoController alloc]init];
+    infoController.view.backgroundColor = [UIColor redColor];
+    [self addChildViewController:infoController];
+    
+    //默认选中团购简介
+    [self detailDock:nil btnClickedFrom:0 to:0];
+    
+    //图文详情
+    DealDetailWebController *webController = [[DealDetailWebController alloc]init];
+    webController.view.backgroundColor = [UIColor yellowColor];
+    [self addChildViewController:webController];
+    //商家信息
+    DealDetailMerchantController *merchantController = [[DealDetailMerchantController alloc]init];
+    merchantController.view.backgroundColor = [UIColor blueColor];
+    [self addChildViewController:merchantController];
 }
-
 
 -(void)setDeal:(DealModel *)deal{
     _deal = deal;
@@ -75,7 +82,16 @@
 - (void)onClose{
 }
 
-
+#pragma mark- slideDockDelegate
+-(void)detailDock:(DetailSlideDock *)dock btnClickedFrom:(int)from to:(int)to{
+    //移除旧的控制器
+    UIViewController *old = self.childViewControllers[from];
+    [old.view removeFromSuperview];
+    //添加新的控制器
+    UIViewController *new = self.childViewControllers[to];
+    new.view.frame = CGRectMake(0, 0, _containerView.frame.size.width, _containerView.frame.size.height);
+    [_containerView addSubview:new.view];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

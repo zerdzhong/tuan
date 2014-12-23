@@ -4,16 +4,23 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6254"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DealDetailController">
             <connections>
+                <outlet property="buyDock" destination="Os1-tk-a4Z" id="WIr-s0-eYa"/>
+                <outlet property="containerView" destination="SUk-Nv-mMH" id="mG8-f7-vJe"/>
+                <outlet property="slideDock" destination="Sdu-Lk-9ix" id="P0N-Uw-Nf8"/>
                 <outlet property="view" destination="wS0-IC-hGf" id="HNz-5z-o1y"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="wS0-IC-hGf">
-            <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SUk-Nv-mMH" userLabel="containerView">
+                    <rect key="frame" x="0.0" y="64" width="555" height="536"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Os1-tk-a4Z" customClass="DetailBuyDock">
                     <rect key="frame" x="0.0" y="64" width="600" height="70"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -21,9 +28,14 @@
                         <constraint firstAttribute="width" constant="600" id="Yy6-uA-ub2"/>
                         <constraint firstAttribute="height" constant="70" id="kyf-QX-jN2"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Yy6-uA-ub2"/>
+                        </mask>
+                    </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sdu-Lk-9ix" customClass="DetailSlideDock">
-                    <rect key="frame" x="555" y="65" width="45" height="435"/>
+                    <rect key="frame" x="555" y="284" width="45" height="435"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="435" id="Pwu-PM-o4t"/>
@@ -33,14 +45,19 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Sdu-Lk-9ix" secondAttribute="bottom" constant="100" id="EPH-js-Dz9"/>
+                <constraint firstAttribute="bottom" secondItem="SUk-Nv-mMH" secondAttribute="bottom" id="4et-rd-IAx"/>
+                <constraint firstItem="Sdu-Lk-9ix" firstAttribute="top" secondItem="Os1-tk-a4Z" secondAttribute="bottom" constant="150" id="5yh-Lv-r5U"/>
+                <constraint firstItem="SUk-Nv-mMH" firstAttribute="leading" secondItem="wS0-IC-hGf" secondAttribute="leading" id="9bv-Zb-KCd"/>
+                <constraint firstItem="Os1-tk-a4Z" firstAttribute="leading" secondItem="wS0-IC-hGf" secondAttribute="leading" id="DWD-4U-Xp8"/>
                 <constraint firstItem="Os1-tk-a4Z" firstAttribute="top" secondItem="wS0-IC-hGf" secondAttribute="top" constant="64" id="PBK-pa-QA9"/>
+                <constraint firstAttribute="trailing" secondItem="Os1-tk-a4Z" secondAttribute="trailing" id="QJ5-f8-3vs"/>
+                <constraint firstItem="SUk-Nv-mMH" firstAttribute="trailing" secondItem="Sdu-Lk-9ix" secondAttribute="leading" id="VHO-q1-bUD"/>
                 <constraint firstAttribute="trailing" secondItem="Sdu-Lk-9ix" secondAttribute="trailing" id="YBA-kw-Ksw"/>
                 <constraint firstItem="Os1-tk-a4Z" firstAttribute="leading" secondItem="wS0-IC-hGf" secondAttribute="leading" id="Yaa-fR-8v6"/>
-                <constraint firstAttribute="trailing" secondItem="Os1-tk-a4Z" secondAttribute="trailing" id="cmC-Rp-Ob8"/>
+                <constraint firstItem="SUk-Nv-mMH" firstAttribute="top" secondItem="Os1-tk-a4Z" secondAttribute="top" id="dOG-8t-UOt"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
-            <point key="canvasLocation" x="757" y="153"/>
+            <point key="canvasLocation" x="727" y="95"/>
         </view>
     </objects>
 </document>
