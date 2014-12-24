@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet DetailSlideDock *slideDock;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 
+@property (nonatomic, strong) DealDetailWebController *webController;
+
 @end
 
 @implementation DealDetailController
@@ -56,14 +58,15 @@
     DealDetailInfoController *infoController = [[DealDetailInfoController alloc]init];
     infoController.view.backgroundColor = [UIColor redColor];
     [self addChildViewController:infoController];
-    
+
     //默认选中团购简介
     [self detailDock:nil btnClickedFrom:0 to:0];
     
+    
     //图文详情
-    DealDetailWebController *webController = [[DealDetailWebController alloc]init];
-    webController.view.backgroundColor = [UIColor yellowColor];
-    [self addChildViewController:webController];
+    _webController = [[DealDetailWebController alloc]init];
+    _webController.deal = _deal;
+    [self addChildViewController:_webController];
     //商家信息
     DealDetailMerchantController *merchantController = [[DealDetailMerchantController alloc]init];
     merchantController.view.backgroundColor = [UIColor blueColor];
@@ -73,6 +76,7 @@
 -(void)setDeal:(DealModel *)deal{
     _deal = deal;
     _buyDock.dealModel = _deal;
+    _webController.deal = _deal;
     //标题
     self.title = _deal.title;
 }
