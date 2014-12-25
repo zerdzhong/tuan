@@ -94,6 +94,7 @@
     //添加新的控制器
     UIViewController *new = self.childViewControllers[to];
     new.view.frame = CGRectMake(0, 0, _containerView.frame.size.width, _containerView.frame.size.height);
+    MyLog(@"%f,%f",new.view.frame.size.width,new.view.frame.size.height);
     [_containerView addSubview:new.view];
 }
 

@@ -17,6 +17,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //添加scrollview
+//    UIScrollView *scrollView = [[UIScrollView alloc]init];
+//    scrollView.center = CGPointMake(self.view.frame.size.width * 0.5, self.view.frame.size.height * 0.5);
+//    scrollView.bounds = CGRectMake(0, 0, 430, self.view.frame.size.height);
+//    scrollView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+//    scrollView.backgroundColor = [UIColor grayColor];
+//    [self.view addSubview:scrollView];
+    
 }
 
 - (void)didReceiveMemoryWarning {

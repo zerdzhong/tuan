@@ -72,17 +72,30 @@
     
     webView.scrollView.contentInset = UIEdgeInsetsMake(70, 0, 0, 0);
     
+//    NSString *htmlString = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('html')[0].innerHTML"];
+//    MyLog(@"%@",htmlString);
+    
     //拼接脚本
     NSMutableString *script = [NSMutableString string];
+    //删除header
     [script appendString:@"var header = document.body.getElementsByTagName(\"header\")[0];"];
     [script appendString:@"document.body.removeChild(header);"];
+    //删除购买条
     [script appendString:@"var cost_box = document.body.getElementsByTagName(\"div\")[0];"];
     [script appendString:@"document.body.removeChild(cost_box);"];
-    [script appendString:@"var spanCount = document.body.getElementsByTagName(\"span\").length;"];
-    [script appendString:@"var buy = document.body.getElementsByTagName(\"span\")[spanCount -1];"];
-    [script appendString:@"document.body.removeChild(buy);"];
-    [script appendString:@"var footer = document.body.getElementsByTagName(\"footer\")[0];"];
-    [script appendString:@"document.body.removeChild(footer);"];
+    //删除购买按钮
+    [script appendString:@"var spans = document.body.getElementsByTagName(\"span\");"];
+    [script appendString:@"var buy = spans[spans.length -1];"];
+    [script appendString:@"if (document.body == buy.parentNode) {"];
+    [script appendString:@"document.body.removeChild(buy);}"];
+    [script appendString:@"var buyBtn = document.body.getElementsByTagName(\"a\")[0];"];
+    [script appendString:@"if (buyBtn.parentNode = document.body) {"];
+    [script appendString:@"document.body.removeChild(buyBtn);}"];
+    //删除footer
+    [script appendString:@"var footers = document.body.getElementsByTagName(\"footer\");"];
+    [script appendString:@"for (var i = footers.length -1 ; i >= 0; i--) {"];
+    [script appendString:@"var footer = footers[0];"];
+    [script appendString:@"document.body.removeChild(footer);}"];
     //执行脚本
     [webView stringByEvaluatingJavaScriptFromString:script];
     
