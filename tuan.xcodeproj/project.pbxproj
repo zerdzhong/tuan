@@ -35,6 +35,7 @@
 		5C4DF5F91A3F062D00760231 /* DealCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4DF5F81A3F062D00760231 /* DealCollectionCell.xib */; };
 		5C4DF5FC1A3F347200760231 /* DealCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DF5FB1A3F347200760231 /* DealCollectionCell.m */; };
 		5C548D301A35DA67003C46A7 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D2F1A35DA67003C46A7 /* CategoryModel.m */; };
+		5C5494C21A4DA993001BAAF7 /* DealDetailInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5494C11A4DA993001BAAF7 /* DealDetailInfoController.xib */; };
 		5C5D372C1A4065A900E16FB3 /* DianpingDealTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D372B1A4065A900E16FB3 /* DianpingDealTool.m */; };
 		5C5D374B1A40832700E16FB3 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C5D373B1A40832700E16FB3 /* MJRefresh.bundle */; };
 		5C5D374C1A40832700E16FB3 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D373E1A40832700E16FB3 /* MJRefreshBaseView.m */; };
@@ -49,7 +50,6 @@
 		5C7C13661A2A0C95002120F7 /* MoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7C13651A2A0C95002120F7 /* MoreController.m */; };
 		5C7F62691A30A42A00DA74F8 /* CitySearchReslutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7F62681A30A42A00DA74F8 /* CitySearchReslutController.m */; };
 		5C91A2661A3F3B6600B34142 /* ImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C91A2651A3F3B6600B34142 /* ImageTool.m */; };
-		5C9CE5EC1A4C543600418F92 /* DealDetailInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C9CE5EB1A4C543600418F92 /* DealDetailInfoController.xib */; };
 		5CB9B29A1A485AA8000437E8 /* DetailSlideDock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CB9B2991A485AA8000437E8 /* DetailSlideDock.xib */; };
 		5CB9B29D1A485CFF000437E8 /* DetailSlideDock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9B29C1A485CFF000437E8 /* DetailSlideDock.m */; };
 		5CB9B2A11A48648B000437E8 /* DealDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CB9B2A01A48648B000437E8 /* DealDetailController.xib */; };
@@ -315,6 +315,7 @@
 		5C4DF5FB1A3F347200760231 /* DealCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealCollectionCell.m; sourceTree = "<group>"; };
 		5C548D2E1A35DA67003C46A7 /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
 		5C548D2F1A35DA67003C46A7 /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
+		5C5494C11A4DA993001BAAF7 /* DealDetailInfoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealDetailInfoController.xib; sourceTree = "<group>"; };
 		5C5D372A1A4065A900E16FB3 /* DianpingDealTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DianpingDealTool.h; sourceTree = "<group>"; };
 		5C5D372B1A4065A900E16FB3 /* DianpingDealTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DianpingDealTool.m; sourceTree = "<group>"; };
 		5C5D373B1A40832700E16FB3 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
@@ -343,7 +344,6 @@
 		5C7F62681A30A42A00DA74F8 /* CitySearchReslutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitySearchReslutController.m; sourceTree = "<group>"; };
 		5C91A2641A3F3B6600B34142 /* ImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTool.h; sourceTree = "<group>"; };
 		5C91A2651A3F3B6600B34142 /* ImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTool.m; sourceTree = "<group>"; };
-		5C9CE5EB1A4C543600418F92 /* DealDetailInfoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealDetailInfoController.xib; sourceTree = "<group>"; };
 		5CB9B2991A485AA8000437E8 /* DetailSlideDock.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailSlideDock.xib; sourceTree = "<group>"; };
 		5CB9B29B1A485CFF000437E8 /* DetailSlideDock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailSlideDock.h; sourceTree = "<group>"; };
 		5CB9B29C1A485CFF000437E8 /* DetailSlideDock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailSlideDock.m; sourceTree = "<group>"; };
@@ -644,7 +644,7 @@
 				5CB9B2A01A48648B000437E8 /* DealDetailController.xib */,
 				5CD8C9161A49A85C008D53B0 /* DealDetailInfoController.h */,
 				5CD8C9171A49A85C008D53B0 /* DealDetailInfoController.m */,
-				5C9CE5EB1A4C543600418F92 /* DealDetailInfoController.xib */,
+				5C5494C11A4DA993001BAAF7 /* DealDetailInfoController.xib */,
 				5CD8C9191A49A870008D53B0 /* DealDetailWebController.h */,
 				5CD8C91A1A49A870008D53B0 /* DealDetailWebController.m */,
 				5CD8C91C1A49A884008D53B0 /* DealDetailMerchantController.h */,
@@ -1561,7 +1561,7 @@
 				5CB9B2A11A48648B000437E8 /* DealDetailController.xib in Resources */,
 				5CECBC721A31EDB50016C211 /* bg_filter_toggle_hl.png in Resources */,
 				5CECBCC61A31EDB50016C211 /* ic_people@2x.png in Resources */,
-				5C9CE5EC1A4C543600418F92 /* DealDetailInfoController.xib in Resources */,
+				5C5494C21A4DA993001BAAF7 /* DealDetailInfoController.xib in Resources */,
 				5CECBC931A31EDB50016C211 /* ic_filter_category_78@2x.png in Resources */,
 				5CECBC9F1A31EDB50016C211 /* btn_dealcomment@2x.png in Resources */,
 				5CECBCD61A31EDB50016C211 /* ic_search@2x.png in Resources */,

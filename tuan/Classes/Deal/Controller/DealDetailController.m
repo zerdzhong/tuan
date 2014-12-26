@@ -51,6 +51,20 @@
     _slideDock.delegate = self;
     //初始化子控制器
     [self addAllChildController];
+    
+    MyLog(@"superVC-did-load:%f,%f",self.view.frame.size.width,self.view.frame.size.height);
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    MyLog(@"superVC-will-appear:%f,%f",self.view.frame.size.width,self.view.frame.size.height);
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    MyLog(@"superVC-did-appear:%f,%f",self.view.frame.size.width,self.view.frame.size.height);
+    //默认选中团购简介
+    [self detailDock:nil btnClickedFrom:0 to:0];
 }
 
 - (void)addAllChildController{
@@ -58,10 +72,6 @@
     DealDetailInfoController *infoController = [[DealDetailInfoController alloc]init];
     infoController.view.backgroundColor = [UIColor redColor];
     [self addChildViewController:infoController];
-
-    //默认选中团购简介
-    [self detailDock:nil btnClickedFrom:0 to:0];
-    
     
     //图文详情
     _webController = [[DealDetailWebController alloc]init];
@@ -94,7 +104,6 @@
     //添加新的控制器
     UIViewController *new = self.childViewControllers[to];
     new.view.frame = CGRectMake(0, 0, _containerView.frame.size.width, _containerView.frame.size.height);
-    MyLog(@"%f,%f",new.view.frame.size.width,new.view.frame.size.height);
     [_containerView addSubview:new.view];
 }
 
