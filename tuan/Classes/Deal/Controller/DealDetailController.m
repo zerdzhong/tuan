@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 
 @property (nonatomic, strong) DealDetailWebController *webController;
+@property (nonatomic, strong) DealDetailInfoController *infoController;
 
 @end
 
@@ -51,27 +52,25 @@
     _slideDock.delegate = self;
     //初始化子控制器
     [self addAllChildController];
-    
-    MyLog(@"superVC-did-load:%f,%f",self.view.frame.size.width,self.view.frame.size.height);
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    MyLog(@"superVC-will-appear:%f,%f",self.view.frame.size.width,self.view.frame.size.height);
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    MyLog(@"superVC-did-appear:%f,%f",self.view.frame.size.width,self.view.frame.size.height);
     //默认选中团购简介
     [self detailDock:nil btnClickedFrom:0 to:0];
+    _infoController.deal = _deal;
+    
 }
 
 - (void)addAllChildController{
     //团购简介
-    DealDetailInfoController *infoController = [[DealDetailInfoController alloc]init];
-    infoController.view.backgroundColor = [UIColor redColor];
-    [self addChildViewController:infoController];
+    _infoController = [[DealDetailInfoController alloc]init];
+    _infoController.view.backgroundColor = [UIColor redColor];
+    [self addChildViewController:_infoController];
     
     //图文详情
     _webController = [[DealDetailWebController alloc]init];
@@ -105,6 +104,14 @@
     UIViewController *new = self.childViewControllers[to];
     new.view.frame = CGRectMake(0, 0, _containerView.frame.size.width, _containerView.frame.size.height);
     [_containerView addSubview:new.view];
+    
+//    UIViewController *new = self.childViewControllers[to];
+//    new.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    CGFloat w = self.view.frame.size.width - _buyDock.frame.size.width;
+//    CGFloat h = self.view.frame.size.height;
+//    new.view.frame = CGRectMake(0, 0, w, h);
+//    [self.view insertSubview:new.view atIndex:0];
+    
 }
 
 - (void)didReceiveMemoryWarning {

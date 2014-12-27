@@ -7,6 +7,7 @@
 //  一个团购模型
 
 #import <Foundation/Foundation.h>
+#import "RestrictionModel.h"
 
 @interface DealModel : NSObject
 
@@ -27,5 +28,12 @@
 @property (nonatomic, copy) NSString *image_url;            // 图片
 @property (nonatomic, copy) NSString *s_image_url;          // 小图
 @property (nonatomic, copy) NSString *deal_h5_url;          // 链接
+
+
+//扩充详情界面需要的信息
+@property (nonatomic, copy) NSString *details;  //详情
+@property (nonatomic, copy) NSString *notice;   //重要通知
+@property (nonatomic, strong) RestrictionModel *restrictions;   //约束条件
+
 
 @end

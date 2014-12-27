@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DealModel.h"
 
 @interface DealDetailInfoController : UIViewController
+
+@property (nonatomic, strong) DealModel *deal;
 
 @end

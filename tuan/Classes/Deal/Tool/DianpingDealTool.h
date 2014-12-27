@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Singleton.h"
 
+@class DealModel;
+
 typedef void (^SuccessBlock)(NSArray *deals, int totalCount);
 typedef void (^FailureBlock)(NSError *error);
 
@@ -16,6 +18,10 @@ typedef void (^FailureBlock)(NSError *error);
 
 singleton_interface(DianpingDealTool)
 
+#pragma mark 获取指定页数的团购信息
 - (void)dealsWithPage:(int)page success:(SuccessBlock)success failure:(FailureBlock)failure;
+
+#pragma mark 获取指定团购的详细信息
+- (void)dealWithID:(NSString *)ID success:(void (^)(DealModel *deal))success failure:(FailureBlock)failure;
 
 @end

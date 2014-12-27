@@ -7,6 +7,7 @@
 //
 
 #import "DealModel.h"
+#import "NSObject+Value.h"
 
 @implementation DealModel
 
@@ -18,6 +19,15 @@
 - (void)setList_price:(double)list_price{
     _list_price = list_price;
     _list_price_text = [self doubleToString:_list_price];
+}
+
+-(void)setRestrictions:(RestrictionModel *)restrictions{
+    if ([restrictions isKindOfClass:[NSDictionary class]]) {
+        _restrictions = [[RestrictionModel alloc]init];
+        [_restrictions setValues:(NSDictionary *)restrictions];
+    }else{
+        _restrictions = restrictions;
+    }
 }
 
 - (NSString *)doubleToString:(double)num{

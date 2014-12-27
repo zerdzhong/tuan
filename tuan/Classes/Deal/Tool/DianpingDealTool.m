@@ -34,7 +34,7 @@ typedef void (^RequestCompletion)(id result, NSError *error);
 
 singleton_implementation(DianpingDealTool)
 
-#pragma mark- 外部请求
+#pragma mark 获取指定页数的团购信息
 - (void)dealsWithPage:(int)page success:(SuccessBlock)success failure:(FailureBlock)failure{
 
     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
@@ -69,7 +69,7 @@ singleton_implementation(DianpingDealTool)
     
     //请求数据
     [self requestUrl:@"v1/deal/find_deals" params:params block:^(id result, NSError *error) {
-        if (success != nil && result != nil ) {
+        if (success != nil && result != nil ) { //请求成功
             //转换成数据Model
             NSArray *array = result[@"deals"];
             
@@ -82,10 +82,25 @@ singleton_implementation(DianpingDealTool)
             success(dealArray,[result[@"total_count"] intValue]);
         }
         
-        if (failure != nil && error != nil) {
+        if (failure != nil && error != nil) {   //请求失败
             failure(error);
         }
         
+    }];
+}
+
+#pragma mark 获取指定团购的详细信息
+- (void)dealWithID:(NSString *)ID success:(void (^)(DealModel *deal))success failure:(FailureBlock)failure{
+    [self requestUrl:@"v1/deal/get_single_deal" params:@{@"deal_id":ID} block:^(id result, NSError *error) {
+        if (success != nil && result != nil ) {
+            //成功了
+            DealModel *deal = [[DealModel alloc]init];
+            [deal setValues:result[@"deals"][0]];
+            success(deal);
+        }else{
+            //失败了
+            failure(error);
+        }
     }];
 }
 
