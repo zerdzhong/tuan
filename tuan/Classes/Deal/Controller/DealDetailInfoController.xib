@@ -6,187 +6,33 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DealDetailInfoController">
             <connections>
-                <outlet property="anyTimeRefund" destination="gHl-g7-W9R" id="cS3-vP-GxX"/>
-                <outlet property="desc" destination="1A2-0L-wDi" id="wsj-oS-VRP"/>
-                <outlet property="headerView" destination="Ssk-g8-MxO" id="Exl-sJ-6ee"/>
-                <outlet property="image" destination="JP6-ag-RE1" id="HlM-yE-BaF"/>
-                <outlet property="overdueRefund" destination="HjH-St-nDx" id="R2W-zU-LZ5"/>
-                <outlet property="purchaseCount" destination="wUY-ol-0mt" id="ekc-Jv-HYO"/>
-                <outlet property="reservation" destination="KDX-8O-Gq3" id="gIZ-O1-DGM"/>
-                <outlet property="scrollView" destination="kfD-Is-dTP" id="ld8-aa-8hg"/>
-                <outlet property="time" destination="c6e-xV-LYH" id="PSW-KK-iGU"/>
+                <outlet property="tableView" destination="0z9-Bb-8Rd" id="k0U-mA-fWG"/>
                 <outlet property="view" destination="rOj-W7-COC" id="PSq-c1-8mg"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="rOj-W7-COC">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfD-Is-dTP">
-                    <rect key="frame" x="40" y="0.0" width="520" height="600"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ssk-g8-MxO" userLabel="headerView" customClass="DealDetailInfoHeaderView">
-                            <rect key="frame" x="0.0" y="70" width="520" height="379"/>
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_deal.png" translatesAutoresizingMaskIntoConstraints="NO" id="JP6-ag-RE1">
-                                    <rect key="frame" x="15" y="2" width="490" height="250"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="250" id="9IN-3A-Bj4"/>
-                                    </constraints>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1A2-0L-wDi" userLabel="desc">
-                                    <rect key="frame" x="15" y="260" width="490" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator_dotline_item.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lqz-F3-JGo">
-                                    <rect key="frame" x="0.0" y="283" width="520" height="1"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="1" id="72V-Zz-jU1"/>
-                                    </constraints>
-                                </imageView>
-                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHl-g7-W9R" userLabel="button1">
-                                    <rect key="frame" x="0.0" y="289" width="260" height="45"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="45" id="FL8-cv-0z0"/>
-                                        <constraint firstAttribute="width" constant="260" id="oZ4-nO-wJ5"/>
-                                    </constraints>
-                                    <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" title="支持&quot;随时退款&quot;" image="ic_yes.png">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="disabled" image="ic_no.png">
-                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="oZ4-nO-wJ5"/>
-                                        </mask>
-                                    </variation>
-                                </button>
-                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6e-xV-LYH" userLabel="button2">
-                                    <rect key="frame" x="260" y="289" width="260" height="45"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="45" id="4re-lX-tHM"/>
-                                        <constraint firstAttribute="width" constant="260" id="QTA-6n-kZo"/>
-                                    </constraints>
-                                    <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" title="10天5小时43分钟" image="ic_time.png">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="QTA-6n-kZo"/>
-                                        </mask>
-                                    </variation>
-                                </button>
-                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDX-8O-Gq3" userLabel="button3">
-                                    <rect key="frame" x="0.0" y="334" width="260" height="45"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="45" id="Xr1-q7-SZm"/>
-                                    </constraints>
-                                    <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" title="无需预约" image="ic_yes.png">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="disabled" title="需要预约" image="ic_no.png">
-                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                </button>
-                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUY-ol-0mt" userLabel="button4">
-                                    <rect key="frame" x="260" y="334" width="260" height="45"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="45" id="iRj-Wj-bfR"/>
-                                    </constraints>
-                                    <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" title="1212人已购买" image="ic_people.png">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                </button>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator_refund_item.png" translatesAutoresizingMaskIntoConstraints="NO" id="mJz-L7-roZ">
-                                    <rect key="frame" x="260" y="289" width="1" height="85"/>
-                                </imageView>
-                            </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="wUY-ol-0mt" firstAttribute="top" secondItem="KDX-8O-Gq3" secondAttribute="top" id="08a-FQ-fdE"/>
-                                <constraint firstItem="wUY-ol-0mt" firstAttribute="width" secondItem="KDX-8O-Gq3" secondAttribute="width" id="0hs-JX-BKg"/>
-                                <constraint firstItem="1A2-0L-wDi" firstAttribute="top" secondItem="JP6-ag-RE1" secondAttribute="bottom" constant="8" id="1aN-Hk-sIe"/>
-                                <constraint firstItem="mJz-L7-roZ" firstAttribute="bottom" secondItem="KDX-8O-Gq3" secondAttribute="bottom" constant="-5" id="3hf-su-rTl"/>
-                                <constraint firstAttribute="centerX" secondItem="mJz-L7-roZ" secondAttribute="centerX" id="5WJ-vm-Ajl"/>
-                                <constraint firstItem="gHl-g7-W9R" firstAttribute="width" secondItem="c6e-xV-LYH" secondAttribute="width" id="5ez-jJ-eRe"/>
-                                <constraint firstItem="wUY-ol-0mt" firstAttribute="leading" secondItem="KDX-8O-Gq3" secondAttribute="trailing" id="5sA-Vb-xdG"/>
-                                <constraint firstItem="JP6-ag-RE1" firstAttribute="top" secondItem="Ssk-g8-MxO" secondAttribute="top" constant="2" id="9Hh-4u-ldW"/>
-                                <constraint firstItem="Lqz-F3-JGo" firstAttribute="top" secondItem="1A2-0L-wDi" secondAttribute="bottom" constant="2" id="BH0-UJ-Dgf"/>
-                                <constraint firstItem="KDX-8O-Gq3" firstAttribute="top" secondItem="gHl-g7-W9R" secondAttribute="bottom" id="GLl-9a-Yo6"/>
-                                <constraint firstAttribute="bottom" secondItem="KDX-8O-Gq3" secondAttribute="bottom" id="HjH-St-nDx"/>
-                                <constraint firstItem="gHl-g7-W9R" firstAttribute="top" secondItem="mJz-L7-roZ" secondAttribute="top" id="Qr3-60-7Vf"/>
-                                <constraint firstItem="1A2-0L-wDi" firstAttribute="trailing" secondItem="JP6-ag-RE1" secondAttribute="trailing" id="Qxv-cG-ngb"/>
-                                <constraint firstItem="Lqz-F3-JGo" firstAttribute="leading" secondItem="Ssk-g8-MxO" secondAttribute="leading" id="SCn-H4-x3Y"/>
-                                <constraint firstAttribute="bottom" secondItem="wUY-ol-0mt" secondAttribute="bottom" id="U0q-WA-k2n"/>
-                                <constraint firstAttribute="trailing" secondItem="wUY-ol-0mt" secondAttribute="trailing" id="VYb-kT-ebu"/>
-                                <constraint firstAttribute="height" constant="420" id="WwJ-A7-Gpv"/>
-                                <constraint firstItem="gHl-g7-W9R" firstAttribute="top" secondItem="c6e-xV-LYH" secondAttribute="top" id="bIW-p2-lCE"/>
-                                <constraint firstItem="1A2-0L-wDi" firstAttribute="leading" secondItem="JP6-ag-RE1" secondAttribute="leading" id="coQ-NO-3KV"/>
-                                <constraint firstAttribute="trailing" secondItem="JP6-ag-RE1" secondAttribute="trailing" constant="15" id="dcv-xy-RWF"/>
-                                <constraint firstItem="gHl-g7-W9R" firstAttribute="leading" secondItem="KDX-8O-Gq3" secondAttribute="leading" id="ddM-lF-3zD"/>
-                                <constraint firstAttribute="trailing" secondItem="Lqz-F3-JGo" secondAttribute="trailing" id="doq-ey-Pg2"/>
-                                <constraint firstItem="JP6-ag-RE1" firstAttribute="leading" secondItem="Ssk-g8-MxO" secondAttribute="leading" constant="15" id="jPa-yP-dzr"/>
-                                <constraint firstItem="c6e-xV-LYH" firstAttribute="leading" secondItem="gHl-g7-W9R" secondAttribute="trailing" id="jU5-cU-fYL"/>
-                                <constraint firstAttribute="bottom" secondItem="mJz-L7-roZ" secondAttribute="bottom" constant="5" id="kiU-jp-IQG"/>
-                                <constraint firstAttribute="trailing" secondItem="c6e-xV-LYH" secondAttribute="trailing" id="mvY-yP-jcV"/>
-                                <constraint firstItem="gHl-g7-W9R" firstAttribute="top" secondItem="Lqz-F3-JGo" secondAttribute="bottom" constant="5" id="oh4-hB-BqR"/>
-                                <constraint firstItem="KDX-8O-Gq3" firstAttribute="leading" secondItem="Ssk-g8-MxO" secondAttribute="leading" id="qPH-Sh-EB1"/>
-                                <constraint firstItem="gHl-g7-W9R" firstAttribute="leading" secondItem="Ssk-g8-MxO" secondAttribute="leading" id="tPg-QM-hyI"/>
-                            </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="WwJ-A7-Gpv"/>
-                                    <exclude reference="3hf-su-rTl"/>
-                                </mask>
-                            </variation>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="bottom" secondItem="Ssk-g8-MxO" secondAttribute="bottom" constant="50" id="JtH-NR-SwV"/>
-                        <constraint firstAttribute="trailing" secondItem="Ssk-g8-MxO" secondAttribute="trailing" id="Y92-Fa-bxd"/>
-                        <constraint firstAttribute="centerX" secondItem="Ssk-g8-MxO" secondAttribute="centerX" id="Zlv-EW-u7T"/>
-                        <constraint firstItem="Ssk-g8-MxO" firstAttribute="top" secondItem="kfD-Is-dTP" secondAttribute="top" constant="70" id="bbu-3b-Fof"/>
-                        <constraint firstItem="Ssk-g8-MxO" firstAttribute="leading" secondItem="kfD-Is-dTP" secondAttribute="leading" id="sXc-qR-oTx"/>
-                    </constraints>
-                </scrollView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0z9-Bb-8Rd">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="768"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="kfD-Is-dTP" secondAttribute="bottom" id="JiD-TN-vJ8"/>
-                <constraint firstItem="kfD-Is-dTP" firstAttribute="leading" secondItem="rOj-W7-COC" secondAttribute="leading" constant="40" id="Mx3-c3-Kcn"/>
-                <constraint firstAttribute="trailing" secondItem="kfD-Is-dTP" secondAttribute="trailing" constant="40" id="Xlo-z6-AgD"/>
-                <constraint firstItem="kfD-Is-dTP" firstAttribute="top" secondItem="rOj-W7-COC" secondAttribute="top" id="n4J-Yk-Q2A"/>
+                <constraint firstAttribute="bottom" secondItem="0z9-Bb-8Rd" secondAttribute="bottom" id="54W-WE-bO1"/>
+                <constraint firstItem="0z9-Bb-8Rd" firstAttribute="top" secondItem="rOj-W7-COC" secondAttribute="top" id="K07-yO-27w"/>
+                <constraint firstItem="0z9-Bb-8Rd" firstAttribute="leading" secondItem="rOj-W7-COC" secondAttribute="leading" id="Mqp-r5-QU1"/>
+                <constraint firstAttribute="trailing" secondItem="0z9-Bb-8Rd" secondAttribute="trailing" id="vaK-Lb-kbm"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="305" y="293"/>
+            <point key="canvasLocation" x="394" y="313"/>
         </view>
     </objects>
-    <resources>
-        <image name="ic_no.png" width="19" height="19"/>
-        <image name="ic_people.png" width="22" height="22"/>
-        <image name="ic_time.png" width="22" height="22"/>
-        <image name="ic_yes.png" width="19" height="19"/>
-        <image name="placeholder_deal.png" width="273" height="172"/>
-        <image name="separator_dotline_item.png" width="459" height="1"/>
-        <image name="separator_refund_item.png" width="1" height="52"/>
-    </resources>
 </document>

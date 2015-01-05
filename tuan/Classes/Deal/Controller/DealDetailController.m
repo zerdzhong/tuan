@@ -15,6 +15,8 @@
 #import "DealDetailWebController.h"
 #import "DealDetailMerchantController.h"
 
+#define kMargin 20
+
 @interface DealDetailController ()<DetailSlideDockDelegate>
 
 @property (nonatomic, weak) IBOutlet DetailBuyDock *buyDock;
@@ -31,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     //背景色
     self.view.backgroundColor = kGlobalBgColor;
     //标题
@@ -60,16 +63,16 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    //默认选中团购简介
+    
     [self detailDock:nil btnClickedFrom:0 to:0];
     _infoController.deal = _deal;
-    
 }
 
 - (void)addAllChildController{
     //团购简介
     _infoController = [[DealDetailInfoController alloc]init];
-    _infoController.view.backgroundColor = [UIColor redColor];
+    //默认选中团购简介
+//    _infoController.deal = _deal;
     [self addChildViewController:_infoController];
     
     //图文详情

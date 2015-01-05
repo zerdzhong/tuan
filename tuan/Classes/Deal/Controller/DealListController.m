@@ -31,8 +31,8 @@
 @property (nonatomic, assign) int page;
 
 @property (nonatomic, strong) CoverView *cover;
-@property (nonatomic, strong) BaseNavigationController *detailNavController;
-@property (nonatomic, strong) DealDetailController *detailController;
+//@property (nonatomic, strong) BaseNavigationController *detailNavController;
+//@property (nonatomic, strong) DealDetailController *detailController;
 
 @end
 
@@ -204,43 +204,43 @@
     [self.navigationController.view addSubview:_cover];
     
     //显示团购详情控制器
-    if (_detailNavController == nil) {
-        _detailController= [[DealDetailController alloc]init];
-        //添加关闭BarButtonItem
-        _detailController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"btn_nav_close.png" highlightedImage:@"btn_nav_close_hl.png" target:self action:@selector(hideDealDetailController)];
-        //初始化NavgationController
-        _detailNavController = [[BaseNavigationController alloc]
-                             initWithRootViewController:_detailController];
-        _detailNavController.view.autoresizingMask = UIViewAutoresizingFlexibleHeight| UIViewAutoresizingFlexibleLeftMargin;
-    }
+    DealDetailController *detailController= [[DealDetailController alloc]init];
+    //添加关闭BarButtonItem
+    detailController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"btn_nav_close.png" highlightedImage:@"btn_nav_close_hl.png" target:self action:@selector(hideDealDetailController)];
+    //初始化NavgationController
+    BaseNavigationController *detailNavController = [[BaseNavigationController alloc]
+                            initWithRootViewController:detailController];
+    detailNavController.view.autoresizingMask = UIViewAutoresizingFlexibleHeight| UIViewAutoresizingFlexibleLeftMargin;
     //设置宽高
-    _detailNavController.view.frame = CGRectMake(_cover.frame.size.width, 0, kDetailWidth, _cover.frame.size.height);
-    [self.navigationController.view addSubview:_detailNavController.view];
-    [self.navigationController addChildViewController:_detailNavController];
+    detailNavController.view.frame = CGRectMake(_cover.frame.size.width, 0, kDetailWidth, _cover.frame.size.height);
+    [self.navigationController.view addSubview:detailNavController.view];
+    [self.navigationController addChildViewController:detailNavController];
     
-    _detailController.deal = deal;
+    detailController.deal = deal;
     
     [UIView animateWithDuration:kAnimationDuration animations:^{
-        CGRect frame = _detailNavController.view.frame;
+        CGRect frame = detailNavController.view.frame;
         frame.origin.x -= kDetailWidth;
-        _detailNavController.view.frame = frame;
+        detailNavController.view.frame = frame;
     }];
     
 }
 
 - (void)hideDealDetailController{
+    UIViewController *nav = [self.navigationController.childViewControllers lastObject];
     //隐藏
     [UIView animateWithDuration:kAnimationDuration animations:^{
         //隐藏遮盖
         _cover.alpha = 0;
         //隐藏详情
-        CGRect frame = _detailNavController.view.frame;
+        CGRect frame = nav.view.frame;
         frame.origin.x += kDetailWidth;
-        _detailNavController.view.frame = frame;
+        nav.view.frame = frame;
     } completion:^(BOOL finished) {
         [_cover removeFromSuperview];
-        [_detailNavController.view removeFromSuperview];
-        [_detailNavController removeFromParentViewController];
+        [nav.view removeFromSuperview];
+        [nav removeFromParentViewController];
+//        _detailNavController.view = nil;
     }];
 }
 

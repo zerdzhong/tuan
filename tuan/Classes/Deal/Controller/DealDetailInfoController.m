@@ -7,23 +7,20 @@
 //
 
 #import "DealDetailInfoController.h"
-#import "DealDetailInfoHeaderView.h"
 #import "ImageTool.h"
 #import "Common.h"
 #import "DianpingDealTool.h"
+#import "DetailInfoTextView.h"
+#import "DetailInfoHeaderView.h"
+
+#define kMargin 20
 
 @interface DealDetailInfoController ()
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet DealDetailInfoHeaderView *headerView;
+@property (nonatomic, strong) UIScrollView *scrollView;
 
-@property (weak, nonatomic) IBOutlet UIImageView *image; 
-@property (weak, nonatomic) IBOutlet UILabel *desc;
-@property (weak, nonatomic) IBOutlet UIButton *anyTimeRefund;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *overdueRefund;
-@property (weak, nonatomic) IBOutlet UIButton *time;
-@property (weak, nonatomic) IBOutlet UIButton *purchaseCount;
-@property (weak, nonatomic) IBOutlet UIButton *reservation;
+//团购详情
+@property (nonatomic, strong) DetailInfoHeaderView *headerView;
 
 @end
 
@@ -32,46 +29,72 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    _scrollView = [[UIScrollView alloc]init];
+    _scrollView.frame = CGRectMake(0, 0, 430, self.view.frame.size.height);
+    CGFloat x = self.view.frame.size.width * 0.5;
+    CGFloat y = self.view.frame.size.height * 0.5;
+    _scrollView.center = CGPointMake(x, y);
+    _scrollView.autoresizingMask =  UIViewAutoresizingFlexibleLeftMargin| UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
+    _scrollView.showsHorizontalScrollIndicator=NO;
+    _scrollView.showsVerticalScrollIndicator=NO;
+    _scrollView.scrollEnabled = YES;
+//    _scrollView.contentInset = UIEdgeInsetsMake(70, 0, 0, 0);
+//    _scrollView.contentOffset = CGPointMake(0, -70);
+    [self.view addSubview:_scrollView];
+    
+    _headerView = [DetailInfoHeaderView detailInfoHeader];
+    _headerView.frame = CGRectMake(0, 100, _scrollView.frame.size.width, _headerView.frame.size.height);
+    [_scrollView addSubview:_headerView];
+    
 }
 -(void)setDeal:(DealModel *)deal{
     _deal = deal;
-    //设置图片
-    [ImageTool loadImage:_deal.image_url placeholder:@"placeholder_deal.png" imageView:_image];
-    //购买人数
-    NSString *purchaseString = [NSString stringWithFormat:@"%d人已购买",_deal.purchase_count];
-    [_purchaseCount setTitle:purchaseString forState:UIControlStateNormal];
-  
-    //剩余时间
-    NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
-    fmt.dateFormat = @"yyyy-MM-dd";
-    NSDate *deadline = [[fmt dateFromString:_deal.purchase_deadline]dateByAddingTimeInterval:24 * 3600];
-    NSDate *now = [NSDate date];
-    
-    //日历时间
-    NSCalendar *calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSDateComponents *compt = [calendar components:NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute fromDate:now toDate:deadline options:0];
-    NSString *timeString = [NSString stringWithFormat:@"%ld天%ld小时%ld分钟",compt.day,compt.hour,compt.minute];
-    [_time setTitle:timeString forState:UIControlStateNormal];
-    
-    //设置描述
-    _desc.text = deal.desc;
-    
-    //加载详细的团购信息
-    [self loadDetailInfo];
-    
+    _headerView.deal = _deal;
+    if (_deal.restrictions == nil) {
+        [self loadDetailInfo];
+    }
 }
 
 - (void)loadDetailInfo{
     [[DianpingDealTool sharedDianpingDealTool] dealWithID:_deal.deal_id success:^(DealModel *deal) {
         //获得到团购的详细信息
         
-        //设置是否可以退款
-        _anyTimeRefund.enabled = deal.restrictions.is_refundable;
-        _reservation.enabled = deal.restrictions.is_reservation_required;
+        _deal = deal;
+        
+        //设置是否可以退
+        
+        //添加详情数据
+        if (_deal.details.length != 0) {
+            [self addInfoTextView:_deal.details title:@"团购详情" icon:@"ic_content.png"];
+        }
+        //团购详情
+        if (_deal.restrictions.special_tips.length != 0) {
+            [self addInfoTextView:_deal.restrictions.special_tips title:@"购买须知" icon:@"ic_tip.png"];
+        }
+        
+        //购买须知
+        if (_deal.notice.length != 0) {
+            [self addInfoTextView:_deal.notice title:@"重要通知" icon:@"ic_tip.png"];
+        }
+        
+        //
         
     } failure:^(NSError *error) {
         
     }];
+}
+
+- (void)addInfoTextView:(NSString *)text title:(NSString *)title icon:(NSString *)icon{
+    UIView *lastView = [_scrollView.subviews lastObject];
+    DetailInfoTextView *textView = [DetailInfoTextView detailInfoText];
+    textView.frame = CGRectMake(0, CGRectGetMaxY(lastView.frame) + kMargin , _scrollView.frame.size.width, 200);
+//    textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin ;
+    [textView setInfoBtnTitle:title icon:icon];
+    [_scrollView addSubview:textView];
+    
+    [textView setInfoText:text];
+    _scrollView.contentSize = CGSizeMake(0, CGRectGetMaxY(textView.frame) + 20);
 }
 
 - (void)didReceiveMemoryWarning {

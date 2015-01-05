@@ -78,6 +78,7 @@
         }
         
         c = class_getSuperclass(c);
+        free(ivars);
     }
 }
 @end
