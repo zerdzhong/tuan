@@ -35,5 +35,6 @@
 @property (nonatomic, copy) NSString *notice;   //重要通知
 @property (nonatomic, strong) RestrictionModel *restrictions;   //约束条件
 
+@property (nonatomic, assign) BOOL collected;   //额外属性 是否收藏
 
 @end

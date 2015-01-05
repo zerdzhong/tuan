@@ -14,6 +14,7 @@
 #import "DealDetailInfoController.h"
 #import "DealDetailWebController.h"
 #import "DealDetailMerchantController.h"
+#import "CollectDealTool.h"
 
 #define kMargin 20
 
@@ -39,15 +40,17 @@
     //标题
     self.title = _deal.title;
     
+    NSString *collectIcon = [[CollectDealTool sharedCollectDealTool] isDealCollected:_deal] ? @"ic_collect_suc.png":@"ic_deal_collect.png";
+    
     self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem itemWithImage:@"btn_share.png"
                                                               highlightedImage:@"btn_share_pressed.png"
                                                                         target:self
                                                                         action:nil],
                                                 
-                                                [UIBarButtonItem itemWithImage:@"ic_deal_collect.png"
+                                                [UIBarButtonItem itemWithImage:collectIcon
                                                               highlightedImage:@"ic_deal_collect_pressed.png"
                                                                         target:self
-                                                                        action:nil]];
+                                                                        action:@selector(onCollectClicked)]];
     
     //设置buyDock内容
     _buyDock.dealModel = _deal;
@@ -91,6 +94,15 @@
     _webController.deal = _deal;
     //标题
     self.title = _deal.title;
+}
+
+#pragma mark- 收藏按钮
+- (void)onCollectClicked{
+    if(_deal.collected){
+        [[CollectDealTool sharedCollectDealTool] disCollectDeal:_deal];
+    }else{
+        [[CollectDealTool sharedCollectDealTool] collectDeal:_deal];
+    }
 }
 
 

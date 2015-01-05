@@ -57,4 +57,31 @@
     return resultString;
 }
 
+#pragma mark- 根据团购id判断是否为同一个团购
+-(BOOL)isEqual:(DealModel *)object{
+    return [_deal_id isEqualToString:object.deal_id];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    if (self = [super init]){
+        self.image_url = [coder decodeObjectForKey:@"image_url"];
+        self.purchase_count = [coder decodeIntForKey:@"purchase_count"];
+        self.current_price = [coder decodeDoubleForKey:@"current_price"];
+        self.desc = [coder decodeObjectForKey:@"desc"];
+        self.deal_id = [coder decodeObjectForKey:@"deal_id"];
+    }
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder
+{
+    [coder encodeObject:_image_url forKey:@"image_url"];
+    [coder encodeInt:_purchase_count forKey:@"purchase_count"];
+    [coder encodeDouble:_current_price forKey:@"current_price"];
+    [coder encodeObject:_desc forKey:@"desc"];
+    [coder encodeObject:_deal_id forKey:@"deal_id"];
+}
+
 @end
