@@ -9,7 +9,6 @@
 #import "MainController.h"
 #import "SlideBar.h"
 #import "Common.h"
-
 #import "DealListController.h"
 #import "MapController.h"
 #import "CollectController.h"
