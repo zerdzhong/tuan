@@ -28,6 +28,7 @@
 		5C1F63001A46AFE2003B7314 /* DetailBuyDock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C1F62FF1A46AFE2003B7314 /* DetailBuyDock.xib */; };
 		5C1F63031A46B547003B7314 /* DetailBuyDock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1F63021A46B547003B7314 /* DetailBuyDock.m */; };
 		5C1F63061A46BAD4003B7314 /* CenterLineLable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1F63051A46BAD4003B7314 /* CenterLineLable.m */; };
+		5C25B2201A5E62A0000EB1D2 /* BaseDealListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C25B21F1A5E62A0000EB1D2 /* BaseDealListController.m */; };
 		5C3D06DF1A4E9EE700078FF3 /* bg_order_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3D06DD1A4E9EE700078FF3 /* bg_order_cell.png */; };
 		5C3D06E01A4E9EE700078FF3 /* bg_order_cell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3D06DE1A4E9EE700078FF3 /* bg_order_cell@2x.png */; };
 		5C3D06E31A4ED62800078FF3 /* RestrictionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3D06E21A4ED62800078FF3 /* RestrictionModel.m */; };
@@ -312,6 +313,8 @@
 		5C1F63021A46B547003B7314 /* DetailBuyDock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailBuyDock.m; sourceTree = "<group>"; };
 		5C1F63041A46BAD4003B7314 /* CenterLineLable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterLineLable.h; sourceTree = "<group>"; };
 		5C1F63051A46BAD4003B7314 /* CenterLineLable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterLineLable.m; sourceTree = "<group>"; };
+		5C25B21E1A5E62A0000EB1D2 /* BaseDealListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDealListController.h; sourceTree = "<group>"; };
+		5C25B21F1A5E62A0000EB1D2 /* BaseDealListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDealListController.m; sourceTree = "<group>"; };
 		5C3D06DD1A4E9EE700078FF3 /* bg_order_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_order_cell.png; sourceTree = "<group>"; };
 		5C3D06DE1A4E9EE700078FF3 /* bg_order_cell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_order_cell@2x.png"; sourceTree = "<group>"; };
 		5C3D06E11A4ED62800078FF3 /* RestrictionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestrictionModel.h; sourceTree = "<group>"; };
@@ -709,6 +712,8 @@
 			children = (
 				5C0373991A28C711009C9B67 /* BaseNavigationController.h */,
 				5C03739A1A28C711009C9B67 /* BaseNavigationController.m */,
+				5C25B21E1A5E62A0000EB1D2 /* BaseDealListController.h */,
+				5C25B21F1A5E62A0000EB1D2 /* BaseDealListController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1705,6 +1710,7 @@
 				5C0D9CBB1A2F3AB900AED66E /* DistrictMode.m in Sources */,
 				5C649E931A3DCBDC00073256 /* DealModel.m in Sources */,
 				5CB9B29D1A485CFF000437E8 /* DetailSlideDock.m in Sources */,
+				5C25B2201A5E62A0000EB1D2 /* BaseDealListController.m in Sources */,
 				5CDBFD591A2B531D00C3ADC8 /* CityListController.m in Sources */,
 				5CD8C91B1A49A870008D53B0 /* DealDetailWebController.m in Sources */,
 				5C8828EE1A5250A80084C9C4 /* DetailInfoHeaderView.m in Sources */,

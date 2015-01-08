@@ -7,6 +7,7 @@
 //
 
 #import "CollectController.h"
+#import "CollectDealTool.h"
 
 @implementation CollectController
 
@@ -15,6 +16,7 @@
     
     self.title = @"收藏";
     
+    _dealArray = [NSMutableArray arrayWithArray:[CollectDealTool sharedCollectDealTool].collectDeals];
 }
 
 @end
