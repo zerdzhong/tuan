@@ -7,6 +7,7 @@
 //
 
 #import "CollectDealTool.h"
+#import "Common.h"
 
 #define kFilePath         [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"collect.data"]
 
@@ -45,12 +46,15 @@ singleton_implementation(CollectDealTool)
     [_collectDeals insertObject:deal atIndex:0];
     [NSKeyedArchiver archiveRootObject:_collectDeals toFile:kFilePath];
     deal.collected = YES;
+    [[NSNotificationCenter defaultCenter]postNotificationName:kCollectChanged object:nil];
 }
 //取消收藏团购
 - (void)disCollectDeal:(DealModel *)deal{
     [_collectDeals removeObject:deal];
     [NSKeyedArchiver archiveRootObject:_collectDeals toFile:kFilePath];
     deal.collected = NO;
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:kCollectChanged object:nil];
 }
 
 @end

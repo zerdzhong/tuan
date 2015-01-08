@@ -31,4 +31,9 @@
     return [[self alloc]initWithImage:imgString highlightedImage:highlightedImgString target:target action:action];
 }
 
+- (void)setCustomButtonImage:(NSString *)image forState:(UIControlState)state{
+    UIButton *btn = (UIButton *)self.customView;
+    [btn setImage:[UIImage imageNamed:image] forState:state];
+}
+
 @end

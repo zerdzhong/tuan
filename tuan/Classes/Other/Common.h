@@ -39,6 +39,7 @@
 #define KCategoryChanged @"tuan_categoryChanged"
 #define KDistrictChanged @"tuan_districtChanged"
 #define KOrderChanged @"tuan_orderChanged"
+#define kCollectChanged @"tuan_colloecChanged"
 
 #define kGlobalBgColor [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_deal.png"]]
 

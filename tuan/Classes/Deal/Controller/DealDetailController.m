@@ -27,6 +27,8 @@
 @property (nonatomic, strong) DealDetailWebController *webController;
 @property (nonatomic, strong) DealDetailInfoController *infoController;
 
+@property (nonatomic, strong) UIBarButtonItem *collectButton;
+
 @end
 
 @implementation DealDetailController
@@ -42,15 +44,24 @@
     
     NSString *collectIcon = [[CollectDealTool sharedCollectDealTool] isDealCollected:_deal] ? @"ic_collect_suc.png":@"ic_deal_collect.png";
     
+    //添加监听 收藏改变通知
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onCollectChanged)
+                                                 name:kCollectChanged
+                                               object:nil];
+    
+    
+    _collectButton = [UIBarButtonItem itemWithImage:collectIcon
+                                   highlightedImage:@"ic_deal_collect_pressed.png"
+                                             target:self
+                                             action:@selector(onCollectClicked)];
+    
     self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem itemWithImage:@"btn_share.png"
                                                               highlightedImage:@"btn_share_pressed.png"
                                                                         target:self
                                                                         action:nil],
-                                                
-                                                [UIBarButtonItem itemWithImage:collectIcon
-                                                              highlightedImage:@"ic_deal_collect_pressed.png"
-                                                                        target:self
-                                                                        action:@selector(onCollectClicked)]];
+                                                _collectButton
+                                                ];
     
     //设置buyDock内容
     _buyDock.dealModel = _deal;
@@ -96,7 +107,7 @@
     self.title = _deal.title;
 }
 
-#pragma mark- 收藏按钮
+#pragma mark- 收藏相关
 - (void)onCollectClicked{
     if(_deal.collected){
         [[CollectDealTool sharedCollectDealTool] disCollectDeal:_deal];
@@ -105,6 +116,12 @@
     }
 }
 
+- (void)onCollectChanged{
+    //改变收藏按钮图片
+    NSString *collectIcon = [[CollectDealTool sharedCollectDealTool] isDealCollected:_deal] ? @"ic_collect_suc.png":@"ic_deal_collect.png";
+    
+    [_collectButton setCustomButtonImage:collectIcon forState:UIControlStateNormal];
+}
 
 #pragma mark- 关闭自己
 - (void)onClose{
@@ -132,6 +149,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 /*
