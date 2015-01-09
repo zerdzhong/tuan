@@ -44,11 +44,8 @@
     
     NSString *collectIcon = [[CollectDealTool sharedCollectDealTool] isDealCollected:_deal] ? @"ic_collect_suc.png":@"ic_deal_collect.png";
     
-    //添加监听 收藏改变通知
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(onCollectChanged)
-                                                 name:kCollectChanged
-                                               object:nil];
+    //添加监听 收藏改变通知 KVO
+    [[CollectDealTool sharedCollectDealTool] addObserver:self forKeyPath:@"collectDeals" options:NSKeyValueObservingOptionNew context:NULL];
     
     
     _collectButton = [UIBarButtonItem itemWithImage:collectIcon
@@ -86,13 +83,13 @@
     //团购简介
     _infoController = [[DealDetailInfoController alloc]init];
     //默认选中团购简介
-//    _infoController.deal = _deal;
     [self addChildViewController:_infoController];
     
     //图文详情
     _webController = [[DealDetailWebController alloc]init];
     _webController.deal = _deal;
     [self addChildViewController:_webController];
+    
     //商家信息
     DealDetailMerchantController *merchantController = [[DealDetailMerchantController alloc]init];
     merchantController.view.backgroundColor = [UIColor blueColor];
@@ -136,14 +133,13 @@
     UIViewController *new = self.childViewControllers[to];
     new.view.frame = CGRectMake(0, 0, _containerView.frame.size.width, _containerView.frame.size.height);
     [_containerView addSubview:new.view];
-    
-//    UIViewController *new = self.childViewControllers[to];
-//    new.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//    CGFloat w = self.view.frame.size.width - _buyDock.frame.size.width;
-//    CGFloat h = self.view.frame.size.height;
-//    new.view.frame = CGRectMake(0, 0, w, h);
-//    [self.view insertSubview:new.view atIndex:0];
-    
+}
+
+#pragma mark- KVO
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    if ([keyPath isEqualToString:@"collectDeals"]) {
+        [self onCollectChanged];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -153,7 +149,7 @@
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[CollectDealTool sharedCollectDealTool] removeObserver:self forKeyPath:@"collectDeals"];
 }
 
 /*

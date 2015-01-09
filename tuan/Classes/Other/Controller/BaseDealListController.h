@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class CoverView;
+
 @interface BaseDealListController : UICollectionViewController{
     NSMutableArray *_dealArray;
+    CoverView *_cover;
 }
 
 @end

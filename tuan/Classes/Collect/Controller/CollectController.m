@@ -19,21 +19,21 @@
     
     _dealArray = [NSMutableArray arrayWithArray:[CollectDealTool sharedCollectDealTool].collectDeals];
     
-    //添加监听 收藏改变通知
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(onCollectChanged)
-                                                 name:kCollectChanged
-                                               object:nil];
+    //KVO
+    [[CollectDealTool sharedCollectDealTool] addObserver:self forKeyPath:@"collectDeals" options:NSKeyValueObservingOptionNew context:NULL];
+
 }
 
-- (void)onCollectChanged{
-    _dealArray = [NSMutableArray arrayWithArray:[CollectDealTool sharedCollectDealTool].collectDeals];
-    [self.collectionView reloadData];
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    if ([keyPath isEqualToString:@"collectDeals"]) {
+        _dealArray = [NSMutableArray arrayWithArray:[CollectDealTool sharedCollectDealTool].collectDeals];
+        [self.collectionView reloadData];
+    }
 }
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[CollectDealTool sharedCollectDealTool] removeObserver:self forKeyPath:@"collectDeals"];
 }
 
 @end

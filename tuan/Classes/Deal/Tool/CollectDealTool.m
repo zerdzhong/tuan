@@ -43,18 +43,30 @@ singleton_implementation(CollectDealTool)
 
 //收藏团购
 - (void)collectDeal:(DealModel *)deal{
-    [_collectDeals insertObject:deal atIndex:0];
+    [[self mutableArrayValueForKey:@"collectDeals"] insertObject:deal atIndex:0];
     [NSKeyedArchiver archiveRootObject:_collectDeals toFile:kFilePath];
     deal.collected = YES;
     [[NSNotificationCenter defaultCenter]postNotificationName:kCollectChanged object:nil];
 }
 //取消收藏团购
 - (void)disCollectDeal:(DealModel *)deal{
-    [_collectDeals removeObject:deal];
+    [[self mutableArrayValueForKey:@"collectDeals"] removeObject:deal];
     [NSKeyedArchiver archiveRootObject:_collectDeals toFile:kFilePath];
     deal.collected = NO;
     
     [[NSNotificationCenter defaultCenter]postNotificationName:kCollectChanged object:nil];
+}
+
+-(void)insertObject:(DealModel *)object inCollectDealsAtIndex:(NSUInteger)index{
+    [_collectDeals insertObject:object atIndex:index];
+}
+
+-(void)removeObjectFromCollectDealsAtIndex:(NSUInteger)index{
+    [_collectDeals removeObjectAtIndex:index];
+}
+
+-(void)removeCollectDealsObject:(DealModel *)object{
+    [_collectDeals removeObject:object];
 }
 
 @end
