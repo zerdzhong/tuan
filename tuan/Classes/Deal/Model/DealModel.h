@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "RestrictionModel.h"
+#import "DealBusinessModel.h"
 
 @interface DealModel : NSObject
 
@@ -29,6 +30,9 @@
 @property (nonatomic, copy) NSString *s_image_url;          // 小图
 @property (nonatomic, copy) NSString *deal_h5_url;          // 链接
 
+
+//商家信息
+@property (nonatomic, strong) NSArray *businesses;
 
 //扩充详情界面需要的信息
 @property (nonatomic, copy) NSString *details;  //详情

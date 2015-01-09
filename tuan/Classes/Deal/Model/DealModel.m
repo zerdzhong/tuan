@@ -8,6 +8,7 @@
 
 #import "DealModel.h"
 #import "NSObject+Value.h"
+#import "DealBusinessModel.h"
 
 @implementation DealModel
 
@@ -27,6 +28,21 @@
         [_restrictions setValues:(NSDictionary *)restrictions];
     }else{
         _restrictions = restrictions;
+    }
+}
+
+- (void)setBusinesses:(NSArray *)businesses{
+    NSDictionary *dicObj = [businesses lastObject];
+    if ([dicObj isKindOfClass:[NSDictionary class]]) {
+        NSMutableArray *temp = [NSMutableArray array];
+        for (NSDictionary *dict in businesses) {
+            DealBusinessModel *bus = [[DealBusinessModel alloc]init];
+            [bus setValues:dict];
+            [temp addObject:bus];
+        }
+        _businesses = temp;
+    }else {
+        _businesses = businesses;
     }
 }
 

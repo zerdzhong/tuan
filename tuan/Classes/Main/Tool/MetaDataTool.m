@@ -146,6 +146,19 @@ singleton_implementation(MetaDataTool)
     return nil;
 }
 
+#pragma mark- 根据分类提供图标
+- (NSString *)iconNameWithCategory:(NSString *)categoryName{
+    for (CategoryModel *category in _totalCategories) {
+        if ([category.name isEqualToString:categoryName]) {
+            return category.icon;
+        }
+        if ([category.subcategories containsObject:categoryName]) {
+            return category.icon;
+        }
+    }
+    return nil;
+}
+
 #pragma mark- 改变当前城市
 -(void)setCurrentCity:(CityModel *)currentCity{
     _currentCity = currentCity;

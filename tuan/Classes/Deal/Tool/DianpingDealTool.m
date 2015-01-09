@@ -34,9 +34,24 @@ typedef void (^RequestCompletion)(id result, NSError *error);
 
 singleton_implementation(DianpingDealTool)
 
+#pragma mark 获取指定团购的详细信息
+- (void)dealWithID:(NSString *)ID success:(void (^)(DealModel *deal))success failure:(FailureBlock)failure{
+    [self requestUrl:@"v1/deal/get_single_deal" params:@{@"deal_id":ID} block:^(id result, NSError *error) {
+        if (success != nil && result != nil ) {
+            //成功了
+            DealModel *deal = [[DealModel alloc]init];
+            [deal setValues:result[@"deals"][0]];
+            success(deal);
+        }else{
+            //失败了
+            failure(error);
+        }
+    }];
+}
+
 #pragma mark 获取指定页数的团购信息
 - (void)dealsWithPage:(int)page success:(SuccessBlock)success failure:(FailureBlock)failure{
-
+    
     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
     [params setValue:@"15" forKey:@"limit"];
     [params setValue:@(page) forKey:@"page"];
@@ -54,13 +69,13 @@ singleton_implementation(DianpingDealTool)
     if (region != nil && ![region isEqualToString:kAllDistrict]) {
         [params setValue:region forKey:@"region"];
     }
-
+    
     //添加分类参数
     NSString *category = [MetaDataTool sharedMetaDataTool].currentCategory;
     if (category != nil && ![category isEqualToString:kAllCategory]) {
         [params setValue:category forKey:@"category"];
     }
-
+    
     //添加分类参数
     OrderModel *order = [MetaDataTool sharedMetaDataTool].currentOrder;
     if (order != nil) {
@@ -68,40 +83,46 @@ singleton_implementation(DianpingDealTool)
     }
     
     //请求数据
-    [self requestUrl:@"v1/deal/find_deals" params:params block:^(id result, NSError *error) {
-        if (success != nil && result != nil ) { //请求成功
-            //转换成数据Model
-            NSArray *array = result[@"deals"];
-            
-            NSMutableArray *dealArray = [[NSMutableArray alloc]init];
-            for (NSDictionary *deal in array) {
-                DealModel *dealModel = [[DealModel alloc]init];
-                [dealModel setValues:deal];
-                [dealArray addObject:dealModel];
-            }
-            success(dealArray,[result[@"total_count"] intValue]);
-        }
-        
-        if (failure != nil && error != nil) {   //请求失败
-            failure(error);
-        }
-        
-    }];
+    [self getDealsWithParams:params success:success failure:failure];
 }
 
-#pragma mark 获取指定团购的详细信息
-- (void)dealWithID:(NSString *)ID success:(void (^)(DealModel *deal))success failure:(FailureBlock)failure{
-    [self requestUrl:@"v1/deal/get_single_deal" params:@{@"deal_id":ID} block:^(id result, NSError *error) {
-        if (success != nil && result != nil ) {
-            //成功了
-            DealModel *deal = [[DealModel alloc]init];
-            [deal setValues:result[@"deals"][0]];
-            success(deal);
-        }else{
-            //失败了
-            failure(error);
-        }
-    }];
+#pragma mark 获取周边团购
+- (void)dealWithCoordinate:(CLLocationCoordinate2D) coor success:(SuccessBlock)success failure:(FailureBlock)failure
+{
+    [self getDealsWithParams:@{
+                               @"city":@"合肥",
+                               @"latitude":@(coor.latitude),
+                               @"longitude":@(coor.longitude),
+                               @"radius":@5000
+                               }
+                     success:success
+                     failure:failure];
+}
+
+#pragma mark- 使用find_deals批量获取团购
+
+- (void)getDealsWithParams:(NSDictionary *)params success:(SuccessBlock)success failure:(FailureBlock)failure
+{
+    [self requestUrl:@"v1/deal/find_deals"
+              params:params
+               block:^(id result, NSError *error) {
+                   
+                   if (success != nil && result != nil ) { //请求成功
+                       //转换成数据Model
+                       NSArray *array = result[@"deals"];
+                       
+                       NSMutableArray *dealArray = [[NSMutableArray alloc]init];
+                       for (NSDictionary *deal in array) {
+                           DealModel *dealModel = [[DealModel alloc]init];
+                           [dealModel setValues:deal];
+                           [dealArray addObject:dealModel];
+                       }
+                       success(dealArray,[result[@"total_count"] intValue]);
+                   }
+                   if (failure != nil && error != nil) {   //请求失败
+                       failure(error);
+                   }
+               }];
 }
 
 #pragma mark- 封装点评请求

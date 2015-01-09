@@ -27,5 +27,6 @@ singleton_interface(MetaDataTool)
 @property (nonatomic, strong) OrderModel *currentOrder;   //当前排序
 
 - (OrderModel *)orderWithName:(NSString *)name;
+- (NSString *)iconNameWithCategory:(NSString *)categoryName;
 
 @end

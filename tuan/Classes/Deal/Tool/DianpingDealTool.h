@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Singleton.h"
+#import <CoreLocation/CoreLocation.h>
 
 @class DealModel;
 
@@ -23,5 +24,9 @@ singleton_interface(DianpingDealTool)
 
 #pragma mark 获取指定团购的详细信息
 - (void)dealWithID:(NSString *)ID success:(void (^)(DealModel *deal))success failure:(FailureBlock)failure;
+
+#pragma mark 获取周边团购
+
+- (void)dealWithCoordinate:(CLLocationCoordinate2D) coor success:(SuccessBlock)success failure:(FailureBlock)failure;
 
 @end
