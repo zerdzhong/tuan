@@ -89,6 +89,7 @@
         self.purchase_deadline = [coder decodeObjectForKey:@"purchase_deadline"];
         self.publish_date = [coder decodeObjectForKey:@"publish_date"];
         self.list_price = [coder decodeDoubleForKey:@"list_price"];
+        self.title = [coder decodeObjectForKey:@"title"];
     }
     
     return self;
@@ -104,6 +105,7 @@
     [coder encodeObject:_purchase_deadline forKey:@"purchase_deadline"];
     [coder encodeObject:_publish_date forKey:@"publish_date"];
     [coder encodeDouble:_list_price forKey:@"list_price"];
+    [coder encodeObject:_title forKey:@"title"];
 }
 
 @end

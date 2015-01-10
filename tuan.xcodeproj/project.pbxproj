@@ -85,6 +85,7 @@
 		5C8828F41A5250B80084C9C4 /* DetailInfoTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C8828F21A5250B80084C9C4 /* DetailInfoTextView.xib */; };
 		5C91A2661A3F3B6600B34142 /* ImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C91A2651A3F3B6600B34142 /* ImageTool.m */; };
 		5C932C981A6159B8000775D6 /* BaseDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C932C971A6159B8000775D6 /* BaseDetailController.m */; };
+		5C932C9A1A618784000775D6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C932C991A618783000775D6 /* QuartzCore.framework */; };
 		5CB9B29A1A485AA8000437E8 /* DetailSlideDock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CB9B2991A485AA8000437E8 /* DetailSlideDock.xib */; };
 		5CB9B29D1A485CFF000437E8 /* DetailSlideDock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9B29C1A485CFF000437E8 /* DetailSlideDock.m */; };
 		5CB9B2A11A48648B000437E8 /* DealDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CB9B2A01A48648B000437E8 /* DealDetailController.xib */; };
@@ -422,6 +423,7 @@
 		5C91A2651A3F3B6600B34142 /* ImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTool.m; sourceTree = "<group>"; };
 		5C932C961A6159B8000775D6 /* BaseDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDetailController.h; sourceTree = "<group>"; };
 		5C932C971A6159B8000775D6 /* BaseDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDetailController.m; sourceTree = "<group>"; };
+		5C932C991A618783000775D6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5CB9B2991A485AA8000437E8 /* DetailSlideDock.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailSlideDock.xib; sourceTree = "<group>"; };
 		5CB9B29B1A485CFF000437E8 /* DetailSlideDock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailSlideDock.h; sourceTree = "<group>"; };
 		5CB9B29C1A485CFF000437E8 /* DetailSlideDock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailSlideDock.m; sourceTree = "<group>"; };
@@ -661,6 +663,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C932C9A1A618784000775D6 /* QuartzCore.framework in Frameworks */,
 				0C0E7880B86CDF6FC44756EF /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1455,6 +1458,7 @@
 		C7301B7E162E8D68DCE94865 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5C932C991A618783000775D6 /* QuartzCore.framework */,
 				EB039EA788D1FB3113293492 /* libPods.a */,
 			);
 			name = Frameworks;

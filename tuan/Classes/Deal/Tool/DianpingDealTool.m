@@ -38,10 +38,13 @@ singleton_implementation(DianpingDealTool)
 - (void)dealWithID:(NSString *)ID success:(void (^)(DealModel *deal))success failure:(FailureBlock)failure{
     [self requestUrl:@"v1/deal/get_single_deal" params:@{@"deal_id":ID} block:^(id result, NSError *error) {
         if (success != nil && result != nil ) {
-            //成功了
-            DealModel *deal = [[DealModel alloc]init];
-            [deal setValues:result[@"deals"][0]];
-            success(deal);
+            NSArray *deals = result[@"deals"];
+            if (deals != nil && deals.count) {
+                //成功了
+                DealModel *deal = [[DealModel alloc]init];
+                [deal setValues:result[@"deals"][0]];
+                success(deal);
+            }
         }else{
             //失败了
             failure(error);
