@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseDetailController.h"
 
-@interface MapController : UIViewController
+@interface MapController : BaseDetailController
 
 @end

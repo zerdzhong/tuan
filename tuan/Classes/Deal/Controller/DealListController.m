@@ -59,7 +59,7 @@
                                                object:nil];
     
     //设置背景色
-    self.collectionView.backgroundColor = kGlobalBgColor;
+    _collectionView.backgroundColor = kGlobalBgColor;
     
     //添加右边搜索框
     UISearchBar *searchBar = [[UISearchBar alloc]init];
@@ -85,9 +85,9 @@
 
 - (void)addMJRefresh{
     
-    [self.collectionView addHeaderWithTarget:self action:@selector(onHeaderRefresh)];
+    [_collectionView addHeaderWithTarget:self action:@selector(onHeaderRefresh)];
     
-    [self.collectionView addFooterWithTarget:self action:@selector(onFooterRefresh)];
+    [_collectionView addFooterWithTarget:self action:@selector(onFooterRefresh)];
     
 }
 
@@ -102,14 +102,14 @@
         
         [_dealArray addObjectsFromArray:deals];
         //刷新数据
-        [self.collectionView reloadData];
+        [_collectionView reloadData];
         //停止刷新
-        [self.collectionView headerEndRefreshing];
+        [_collectionView headerEndRefreshing];
         //根据数量判断是否隐藏footer
-        self.collectionView.footerHidden = totalCount <= [_dealArray count];
+        _collectionView.footerHidden = totalCount <= [_dealArray count];
     } failure:^(NSError *error) {
         //停止刷新
-        [self.collectionView headerEndRefreshing];
+        [_collectionView headerEndRefreshing];
     }];
 }
 
@@ -120,21 +120,21 @@
     [[DianpingDealTool sharedDianpingDealTool] dealsWithPage:_page success:^(NSArray *deals, int totalCount) {
         [_dealArray addObjectsFromArray:deals];
         //刷新数据
-        [self.collectionView reloadData];
+        [_collectionView reloadData];
         //停止刷新
-        [self.collectionView footerEndRefreshing];
+        [_collectionView footerEndRefreshing];
         
         //根据数量判断是否隐藏footer
-        self.collectionView.footerHidden = totalCount <= [_dealArray count];
+        _collectionView.footerHidden = totalCount <= [_dealArray count];
     } failure:^(NSError *error) {
         //停止刷新
-        [self.collectionView footerEndRefreshing];
+        [_collectionView footerEndRefreshing];
     }];
 }
 
 #pragma mark- notification
 - (void)dataChange{
-    [self.collectionView headerBeginRefreshing];
+    [_collectionView headerBeginRefreshing];
 }
 
 - (void)dealloc

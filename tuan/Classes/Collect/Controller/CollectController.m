@@ -27,7 +27,7 @@
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
     if ([keyPath isEqualToString:@"collectDeals"]) {
         _dealArray = [NSMutableArray arrayWithArray:[CollectDealTool sharedCollectDealTool].collectDeals];
-        [self.collectionView reloadData];
+        [_collectionView reloadData];
     }
 }
 

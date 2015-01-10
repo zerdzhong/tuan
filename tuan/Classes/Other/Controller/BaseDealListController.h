@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseDetailController.h"
 
 @class CoverView;
 
-@interface BaseDealListController : UICollectionViewController{
+@interface BaseDealListController : BaseDetailController{
     NSMutableArray *_dealArray;
-    CoverView *_cover;
+    UICollectionView *_collectionView;
 }
 
 @end

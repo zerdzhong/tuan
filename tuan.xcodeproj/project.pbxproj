@@ -84,6 +84,7 @@
 		5C8828F31A5250B80084C9C4 /* DetailInfoTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8828F11A5250B80084C9C4 /* DetailInfoTextView.m */; };
 		5C8828F41A5250B80084C9C4 /* DetailInfoTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C8828F21A5250B80084C9C4 /* DetailInfoTextView.xib */; };
 		5C91A2661A3F3B6600B34142 /* ImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C91A2651A3F3B6600B34142 /* ImageTool.m */; };
+		5C932C981A6159B8000775D6 /* BaseDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C932C971A6159B8000775D6 /* BaseDetailController.m */; };
 		5CB9B29A1A485AA8000437E8 /* DetailSlideDock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CB9B2991A485AA8000437E8 /* DetailSlideDock.xib */; };
 		5CB9B29D1A485CFF000437E8 /* DetailSlideDock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9B29C1A485CFF000437E8 /* DetailSlideDock.m */; };
 		5CB9B2A11A48648B000437E8 /* DealDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CB9B2A01A48648B000437E8 /* DealDetailController.xib */; };
@@ -419,6 +420,8 @@
 		5C8828F21A5250B80084C9C4 /* DetailInfoTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailInfoTextView.xib; sourceTree = "<group>"; };
 		5C91A2641A3F3B6600B34142 /* ImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTool.h; sourceTree = "<group>"; };
 		5C91A2651A3F3B6600B34142 /* ImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTool.m; sourceTree = "<group>"; };
+		5C932C961A6159B8000775D6 /* BaseDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDetailController.h; sourceTree = "<group>"; };
+		5C932C971A6159B8000775D6 /* BaseDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDetailController.m; sourceTree = "<group>"; };
 		5CB9B2991A485AA8000437E8 /* DetailSlideDock.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailSlideDock.xib; sourceTree = "<group>"; };
 		5CB9B29B1A485CFF000437E8 /* DetailSlideDock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailSlideDock.h; sourceTree = "<group>"; };
 		5CB9B29C1A485CFF000437E8 /* DetailSlideDock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailSlideDock.m; sourceTree = "<group>"; };
@@ -769,6 +772,8 @@
 				5C03739A1A28C711009C9B67 /* BaseNavigationController.m */,
 				5C25B21E1A5E62A0000EB1D2 /* BaseDealListController.h */,
 				5C25B21F1A5E62A0000EB1D2 /* BaseDealListController.m */,
+				5C932C961A6159B8000775D6 /* BaseDetailController.h */,
+				5C932C971A6159B8000775D6 /* BaseDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1806,6 +1811,7 @@
 				5C86EA1A1A60129500372B9E /* DealBusinessModel.m in Sources */,
 				5C1C43961A2627AE006CB752 /* NSString+ZD.m in Sources */,
 				5CC6F7D41A4468FB00796E11 /* DealTopMenuItem.m in Sources */,
+				5C932C981A6159B8000775D6 /* BaseDetailController.m in Sources */,
 				5C8828F31A5250B80084C9C4 /* DetailInfoTextView.m in Sources */,
 				5CC6F7D11A4468FB00796E11 /* OrderMenu.m in Sources */,
 				5CC6F7CA1A4468FB00796E11 /* CategoryMenu.m in Sources */,
