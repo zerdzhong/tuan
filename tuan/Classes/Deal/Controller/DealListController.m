@@ -77,7 +77,7 @@
     [self addMJRefresh];
     
     //test 为了设置默认城市 以后加了定位之后再去掉
-    [MetaDataTool sharedMetaDataTool];
+//    [MetaDataTool sharedMetaDataTool];
     
 }
 

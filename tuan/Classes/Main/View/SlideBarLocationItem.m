@@ -10,12 +10,15 @@
 #import "CityListController.h"
 #import "Common.h"
 #import "MetaDataTool.h"
+#import "LocationTool.h"
+#import <CoreLocation/CoreLocation.h>
 
 #define kImageScale 0.6
 
 @interface SlideBarLocationItem () <UIPopoverControllerDelegate>
 
-@property (nonatomic, strong)UIPopoverController *popover;
+@property (nonatomic, strong) UIPopoverController *popover;
+@property (nonatomic, strong) UIActivityIndicatorView *indicator;
 
 @end
 
@@ -27,8 +30,6 @@
     if (self) {
         // 设置自动伸缩
         self.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-        //设置图片
-        [self setIcon:@"ic_district.png"];
         //设置默认文字
         [self setTitle:@"定位中" forState:UIControlStateNormal];
         self.titleLabel.font = [UIFont systemFontOfSize:17];
@@ -44,9 +45,25 @@
         
         // 6.监听城市改变的通知
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cityChange) name:kCityChanged object:nil];
+        //定位城市
+        [self loadCity];
         
     }
     return self;
+}
+
+- (void)loadCity{
+    //添加
+    _indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [_indicator setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self addSubview:_indicator];
+    
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_indicator attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_indicator attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1 constant:-10]];
+    
+    [_indicator startAnimating];
+    
+    [LocationTool sharedLocationTool];
 }
 
 - (void)cityChange
@@ -61,6 +78,14 @@
     
     // 3.变为enable
     self.enabled = YES;
+    
+    //移除 Indicator
+    [_indicator removeFromSuperview];
+    _indicator = nil;
+    
+    //设置图片
+    [self setIcon:@"ic_district.png"];
+    
 }
 
 - (void)screenRotate{

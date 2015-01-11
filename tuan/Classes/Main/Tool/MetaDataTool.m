@@ -38,7 +38,7 @@ singleton_implementation(MetaDataTool)
         [self loadOrderData];
         
         //test 设置默认城市为北京
-        [self setDefaultCity];
+//        [self setDefaultCity];
     }
     
     return self;

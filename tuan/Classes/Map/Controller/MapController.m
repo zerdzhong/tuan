@@ -12,13 +12,13 @@
 #import "DealPosAnnotation.h"
 #import "DealModel.h"
 #import "Common.h"
+#import "LocationTool.h"
 #import <QuartzCore/QuartzCore.h>
 
 #define kSpan MKCoordinateSpanMake(0.02, 0.03)
 
-@interface MapController () <MKMapViewDelegate,CLLocationManagerDelegate>
+@interface MapController () <MKMapViewDelegate>
 
-@property (nonatomic, strong) CLLocationManager *locationManage;
 @property (nonatomic, strong) MKMapView *mapView;
 @property (nonatomic, strong) NSMutableArray *showingBusinesses;
 
@@ -58,20 +58,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    
-    if([CLLocationManager locationServicesEnabled]){
-        self.locationManage = [[CLLocationManager alloc] init];
-        self.locationManage.delegate = self;
-        self.locationManage.distanceFilter = 200;
-        self.locationManage.desiredAccuracy = kCLLocationAccuracyBestForNavigation;//kCLLocationAccuracyBest;
-        if ([self.locationManage respondsToSelector:@selector(requestAlwaysAuthorization)]) {
-            //使用期间
-//            [self.locationManage requestWhenInUseAuthorization];
-            //始终
-            [self.locationManage requestAlwaysAuthorization];
-        }
-    }
-    [self.locationManage startUpdatingLocation];
+    [LocationTool sharedLocationTool];
 }
 
 
