@@ -107,6 +107,7 @@
                 [_showingBusinesses addObject:@(business.ID)];
             }
         }
+        
     } failure:^(NSError *error) {
         
     }];

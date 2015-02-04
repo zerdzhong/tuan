@@ -92,8 +92,13 @@ singleton_implementation(DianpingDealTool)
 #pragma mark 获取周边团购
 - (void)dealWithCoordinate:(CLLocationCoordinate2D) coor success:(SuccessBlock)success failure:(FailureBlock)failure
 {
+    NSString *currentCityName = [MetaDataTool sharedMetaDataTool].currentCity.name;
+    if (currentCityName == nil || currentCityName.length == 0) {
+        return;
+    }
+    
     [self getDealsWithParams:@{
-                               @"city":@"合肥",
+                               @"city":currentCityName,
                                @"latitude":@(coor.latitude),
                                @"longitude":@(coor.longitude),
                                @"radius":@5000
