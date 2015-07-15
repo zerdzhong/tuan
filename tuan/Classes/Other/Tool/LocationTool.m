@@ -30,7 +30,7 @@ singleton_implementation(LocationTool)
         self.locationManage.delegate = self;
         self.locationManage.distanceFilter = 200;
         self.locationManage.desiredAccuracy = kCLLocationAccuracyBestForNavigation;//kCLLocationAccuracyBest;
-        
+       
         if([CLLocationManager locationServicesEnabled]){
             if ([self.locationManage respondsToSelector:@selector(requestAlwaysAuthorization)]) {
                 //使用期间

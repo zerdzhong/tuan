@@ -25,10 +25,10 @@
 
 #define kDetailWidth 550
 
-@interface DealListController ()
+@interface DealListController () <UIGestureRecognizerDelegate>
 
 @property (nonatomic, assign) int page;
-//@property (nonatomic, strong) CoverView *cover;
+@property (nonatomic, strong) UISearchBar *searchBar;
 
 @end
 
@@ -66,6 +66,7 @@
     searchBar.frame = CGRectMake(0, 0, 210, 40);
     searchBar.barStyle = UIBarStyleBlack;
     searchBar.placeholder = @"请输入商品名、商铺等";
+    self.searchBar = searchBar;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:searchBar];
     
     //添加左边的菜单栏
@@ -76,10 +77,20 @@
     //刷新控件
     [self addMJRefresh];
     
-    //test 为了设置默认城市 以后加了定位之后再去掉
-//    [MetaDataTool sharedMetaDataTool];
-    
+//    [self setUpForDismissKeyboard];
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAnywhereToDismissKeyboard:)];
+    tapGes.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapGes];
 }
+
+#pragma mark- Keyboard
+
+- (void)tapAnywhereToDismissKeyboard:(UIGestureRecognizer *)gestureRecognizer {
+    //此method会将self.view里所有的subview的first responder都resign掉
+    [self.view endEditing:YES];
+    [self.searchBar resignFirstResponder];
+}
+
 
 #pragma mark- 上下拉刷新
 
