@@ -14,6 +14,7 @@
 #import "CollectController.h"
 #import "MineController.h"
 #import "BaseNavigationController.h"
+#import <Masonry.h>
 
 @interface MainController ()<SliderBarDelegate>
 
@@ -28,9 +29,15 @@
     
     //添加侧边
     SlideBar *slideBar = [[SlideBar alloc]init];
-    slideBar.frame = CGRectMake(0, 0, 0, self.view.frame.size.height);
     slideBar.delegate = self;
     [self.view addSubview:slideBar];
+    
+    [slideBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_top);
+        make.bottom.equalTo(self.view.mas_bottom);
+        make.left.equalTo(self.view.mas_left);
+        make.width.equalTo(@(kItemWidth));
+    }];
     
     //添加子控制器
     [self addAllChildController];
@@ -76,10 +83,15 @@
     
     //添加新的
     UIViewController *newViewController = self.childViewControllers[to];
-    newViewController.view.frame = CGRectMake(kItemWidth, 0,self.view.frame.size.width - kItemWidth, self.view.frame.size.height);
-    newViewController.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    newViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:newViewController.view];
     
+    [newViewController.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_top);
+        make.left.equalTo(self.view.mas_left).offset(kItemWidth);
+        make.right.equalTo(self.view.mas_right);
+        make.bottom.equalTo(self.view.mas_bottom);
+    }];
     
 }
 

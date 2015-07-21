@@ -128,7 +128,10 @@
 -(void)detailDock:(DetailSlideDock *)dock btnClickedFrom:(int)from to:(int)to{
     //移除旧的控制器
     UIViewController *old = self.childViewControllers[from];
-    [old.view removeFromSuperview];
+//    [old.view removeFromSuperview];
+    if (old.view != nil) {
+        [old.view removeFromSuperview];
+    }
     //添加新的控制器
     UIViewController *new = self.childViewControllers[to];
     new.view.frame = CGRectMake(0, 0, _containerView.frame.size.width, _containerView.frame.size.height);

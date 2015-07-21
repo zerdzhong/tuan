@@ -24,8 +24,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        //自动伸缩
-        self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleRightMargin;
+        self.translatesAutoresizingMaskIntoConstraints = NO;
+        
         //设置背景
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_tabbar.png"]];
         //添加logo
