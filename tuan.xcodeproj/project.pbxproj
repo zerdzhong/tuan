@@ -40,6 +40,7 @@
 		5C4DF5FC1A3F347200760231 /* DealCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DF5FB1A3F347200760231 /* DealCollectionCell.m */; };
 		5C548D301A35DA67003C46A7 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C548D2F1A35DA67003C46A7 /* CategoryModel.m */; };
 		5C56198A1A5AD7CB003DF10A /* CollectDealTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5619891A5AD7CB003DF10A /* CollectDealTool.m */; };
+		5C5AAA361B56AC2800FFF034 /* DealMoveTransion.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5AAA351B56AC2800FFF034 /* DealMoveTransion.m */; };
 		5C5D372C1A4065A900E16FB3 /* DianpingDealTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D372B1A4065A900E16FB3 /* DianpingDealTool.m */; };
 		5C5D374B1A40832700E16FB3 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C5D373B1A40832700E16FB3 /* MJRefresh.bundle */; };
 		5C5D374C1A40832700E16FB3 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D373E1A40832700E16FB3 /* MJRefreshBaseView.m */; };
@@ -53,6 +54,7 @@
 		5C649E961A3DCDC100073256 /* NSObject+Value.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C649E951A3DCDC100073256 /* NSObject+Value.m */; };
 		5C7C13661A2A0C95002120F7 /* MoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7C13651A2A0C95002120F7 /* MoreController.m */; };
 		5C7F62691A30A42A00DA74F8 /* CitySearchReslutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7F62681A30A42A00DA74F8 /* CitySearchReslutController.m */; };
+		5C85BE071B5D23F4005185A1 /* DealDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C85BE051B5D23F4005185A1 /* DealDetailController.xib */; };
 		5C86E9FC1A60030D00372B9E /* btn_map_locate.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C86E9E41A60030D00372B9E /* btn_map_locate.png */; };
 		5C86E9FD1A60030D00372B9E /* btn_map_locate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C86E9E51A60030D00372B9E /* btn_map_locate@2x.png */; };
 		5C86E9FE1A60030D00372B9E /* btn_map_locate_hl.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C86E9E61A60030D00372B9E /* btn_map_locate_hl.png */; };
@@ -89,7 +91,6 @@
 		5CADBCAD1A62AB3C00315873 /* LocationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CADBCAC1A62AB3C00315873 /* LocationTool.m */; };
 		5CB9B29A1A485AA8000437E8 /* DetailSlideDock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CB9B2991A485AA8000437E8 /* DetailSlideDock.xib */; };
 		5CB9B29D1A485CFF000437E8 /* DetailSlideDock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9B29C1A485CFF000437E8 /* DetailSlideDock.m */; };
-		5CB9B2A11A48648B000437E8 /* DealDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CB9B2A01A48648B000437E8 /* DealDetailController.xib */; };
 		5CBA81741A2F4E570025D988 /* MetaDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA81731A2F4E570025D988 /* MetaDataTool.m */; };
 		5CC125C61A24D548000C731E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC125C51A24D548000C731E /* Images.xcassets */; };
 		5CC125D51A24D548000C731E /* tuanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC125D41A24D548000C731E /* tuanTests.m */; };
@@ -360,6 +361,8 @@
 		5C548D2F1A35DA67003C46A7 /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
 		5C5619881A5AD7CB003DF10A /* CollectDealTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectDealTool.h; sourceTree = "<group>"; };
 		5C5619891A5AD7CB003DF10A /* CollectDealTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectDealTool.m; sourceTree = "<group>"; };
+		5C5AAA341B56AC2800FFF034 /* DealMoveTransion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealMoveTransion.h; sourceTree = "<group>"; };
+		5C5AAA351B56AC2800FFF034 /* DealMoveTransion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealMoveTransion.m; sourceTree = "<group>"; };
 		5C5D372A1A4065A900E16FB3 /* DianpingDealTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DianpingDealTool.h; sourceTree = "<group>"; };
 		5C5D372B1A4065A900E16FB3 /* DianpingDealTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DianpingDealTool.m; sourceTree = "<group>"; };
 		5C5D373B1A40832700E16FB3 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
@@ -386,6 +389,7 @@
 		5C7C13651A2A0C95002120F7 /* MoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreController.m; sourceTree = "<group>"; };
 		5C7F62671A30A42A00DA74F8 /* CitySearchReslutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitySearchReslutController.h; sourceTree = "<group>"; };
 		5C7F62681A30A42A00DA74F8 /* CitySearchReslutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitySearchReslutController.m; sourceTree = "<group>"; };
+		5C85BE051B5D23F4005185A1 /* DealDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealDetailController.xib; sourceTree = "<group>"; };
 		5C86E9E41A60030D00372B9E /* btn_map_locate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_map_locate.png; sourceTree = "<group>"; };
 		5C86E9E51A60030D00372B9E /* btn_map_locate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_map_locate@2x.png"; sourceTree = "<group>"; };
 		5C86E9E61A60030D00372B9E /* btn_map_locate_hl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_map_locate_hl.png; sourceTree = "<group>"; };
@@ -430,7 +434,6 @@
 		5CB9B2991A485AA8000437E8 /* DetailSlideDock.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailSlideDock.xib; sourceTree = "<group>"; };
 		5CB9B29B1A485CFF000437E8 /* DetailSlideDock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailSlideDock.h; sourceTree = "<group>"; };
 		5CB9B29C1A485CFF000437E8 /* DetailSlideDock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailSlideDock.m; sourceTree = "<group>"; };
-		5CB9B2A01A48648B000437E8 /* DealDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealDetailController.xib; sourceTree = "<group>"; };
 		5CBA81721A2F4E570025D988 /* MetaDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetaDataTool.h; sourceTree = "<group>"; };
 		5CBA81731A2F4E570025D988 /* MetaDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetaDataTool.m; sourceTree = "<group>"; };
 		5CBA81751A2F4F490025D988 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
@@ -725,7 +728,7 @@
 				5C03738D1A28BC14009C9B67 /* DealListController.m */,
 				5CC6F7AC1A445FB800796E11 /* DealDetailController.h */,
 				5CC6F7AD1A445FB800796E11 /* DealDetailController.m */,
-				5CB9B2A01A48648B000437E8 /* DealDetailController.xib */,
+				5C85BE051B5D23F4005185A1 /* DealDetailController.xib */,
 				5CD8C9161A49A85C008D53B0 /* DealDetailInfoController.h */,
 				5CD8C9171A49A85C008D53B0 /* DealDetailInfoController.m */,
 				5CD8C9191A49A870008D53B0 /* DealDetailWebController.h */,
@@ -881,6 +884,8 @@
 				5C5D372B1A4065A900E16FB3 /* DianpingDealTool.m */,
 				5C5619881A5AD7CB003DF10A /* CollectDealTool.h */,
 				5C5619891A5AD7CB003DF10A /* CollectDealTool.m */,
+				5C5AAA341B56AC2800FFF034 /* DealMoveTransion.h */,
+				5C5AAA351B56AC2800FFF034 /* DealMoveTransion.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1520,10 +1525,11 @@
 				TargetAttributes = {
 					5CC125B41A24D548000C731E = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = U46NZDWC3Y;
+						DevelopmentTeam = F37Q38QHF9;
 					};
 					5CC125CD1A24D548000C731E = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = F37Q38QHF9;
 						TestTargetID = 5CC125B41A24D548000C731E;
 					};
 				};
@@ -1565,6 +1571,7 @@
 				5CECBCBB1A31EDB50016C211 /* ic_content@2x.png in Resources */,
 				5CECBC791A31EDB50016C211 /* bg_top_deal@2x.png in Resources */,
 				5CECBCD81A31EDB50016C211 /* ic_deal_new@2x.png in Resources */,
+				5C85BE071B5D23F4005185A1 /* DealDetailController.xib in Resources */,
 				5CC1263D1A24DAF9000C731E /* Default-Portrait@2x~ipad.png in Resources */,
 				5CC126621A24DAF9000C731E /* separator_tabbar_item.png in Resources */,
 				5CECBCCC1A31EDB50016C211 /* ic_yes@2x.png in Resources */,
@@ -1726,7 +1733,6 @@
 				5CC126561A24DAF9000C731E /* ic_map.png in Resources */,
 				5CECBCE51A31EDB50016C211 /* separator_topbar_item.png in Resources */,
 				5CECBCD21A31EDB50016C211 /* ic_arrow_down@2x.png in Resources */,
-				5CB9B2A11A48648B000437E8 /* DealDetailController.xib in Resources */,
 				5CECBC721A31EDB50016C211 /* bg_filter_toggle_hl.png in Resources */,
 				5C8828F41A5250B80084C9C4 /* DetailInfoTextView.xib in Resources */,
 				5CECBCC61A31EDB50016C211 /* ic_people@2x.png in Resources */,
@@ -1818,6 +1824,7 @@
 				5CC6F7AB1A44599C00796E11 /* CoverView.m in Sources */,
 				5CD8C91E1A49A884008D53B0 /* DealDetailMerchantController.m in Sources */,
 				5CC6F7CE1A4468FB00796E11 /* DropDownMenu.m in Sources */,
+				5C5AAA361B56AC2800FFF034 /* DealMoveTransion.m in Sources */,
 				5C86EA1A1A60129500372B9E /* DealBusinessModel.m in Sources */,
 				5C1C43961A2627AE006CB752 /* NSString+ZD.m in Sources */,
 				5CC6F7D41A4468FB00796E11 /* DealTopMenuItem.m in Sources */,
@@ -1984,12 +1991,13 @@
 			baseConfigurationReference = F096BC6A3A9CAC4D1064C553 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 振东 钟 (8YR5JXP346)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 振东 钟 (8YR5JXP346)";
 				INFOPLIST_FILE = tuan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "62b70e3c-93d5-43da-a4f2-020f6f9ff352";
 			};
 			name = Debug;
 		};
@@ -1998,12 +2006,13 @@
 			baseConfigurationReference = F8D926D827B5708B2B148E39 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 振东 钟 (8YR5JXP346)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 振东 钟 (8YR5JXP346)";
 				INFOPLIST_FILE = tuan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "62b70e3c-93d5-43da-a4f2-020f6f9ff352";
 			};
 			name = Release;
 		};
@@ -2011,6 +2020,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -2022,6 +2033,7 @@
 				INFOPLIST_FILE = tuanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tuan.app/tuan";
 			};
 			name = Debug;
@@ -2030,6 +2042,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -2037,6 +2051,7 @@
 				INFOPLIST_FILE = tuanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tuan.app/tuan";
 			};
 			name = Release;
